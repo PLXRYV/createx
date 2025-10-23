@@ -1,0 +1,33 @@
+body {
+    font-family: "Lato", sans-serif;
+    color: var(--colors-gray-900);
+    background-color: var(--colors-white);
+    font-size: 14px;
+    line-height: 160%;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+
+button {
+    color: var(--colors-white);
+    font-family: "Lato", sans-serif;
+    letter-spacing: var(--spacing-small);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 1230px) {
+    .container {
+        max-width: 80%;
+    }
+}
