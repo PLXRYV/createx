@@ -26,30 +26,7 @@
     letter-spacing: var(--spacing-base-regular);
 }
 
-.courses__header-button {
-    padding: var(--padding-base);
-    background: linear-gradient(to top right,var(--colors-primary), var(--colors-orange));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border: 1px solid var(--colors-orange);
-    font-size: var(--size-h6);
-    font-weight: var(--weight-base-bold);
-    line-height: var(--height-base-btn);
-    transition: all .6s;
-    transform: translateY(25%);
-}
-
-.courses__header-button:hover {
-    color: var(--colors-white);
-    background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-text-fill-color: initial;
-    border: none;
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
+.courses__header-button {}
 
 .courses__content {
     display: grid;

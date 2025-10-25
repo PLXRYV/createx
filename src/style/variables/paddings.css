@@ -1,4 +1,17 @@
 :root {
-  --padding-medium: 0 32px;
-  --padding-base: 0 40px;
+  --paddings-btn-xl: 40px;
+  --paddings-btn-lg: 32px;
+
+  --padding-medium: 0 var(--paddings-btn-lg);
+  --padding-base: 0 var(--paddings-btn-xl);
+
+  @media (max-width: 1230px) {
+    --paddings-btn-xl: 34px;
+    --paddings-btn-lg: 28px;
+  }
+
+  @media (max-width: 768px) {
+    --paddings-btn-xl: 28px;
+    --paddings-btn-lg: 24px;
+  }
 }

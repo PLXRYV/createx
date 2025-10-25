@@ -3,7 +3,8 @@
 }
 
 .main__content {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
 }
 
 .main__play_video {
@@ -30,7 +31,6 @@
 }
 
 .main__content-text {
-    padding: 0 160px 60px 0;
     font-size: var(--size-display-2);
     font-weight: var(--weight-big-black);
     line-height: var(--height-display-1);
@@ -38,34 +38,12 @@
 }
 
 .main__content-btn {
-    display: flex;
-    gap: 24px;
+  display: flex;
+  gap: 24px;
+  margin-top: 60px;
 }
 
-.main__button {
-    padding: var(--padding-base);
-    background: linear-gradient(to top right,var(--colors-primary), var(--colors-orange));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border: 1px solid var(--colors-orange);
-    font-size: var(--size-h6);
-    font-weight: var(--weight-base-bold);
-    line-height: var(--height-base-btn);
-    transition: all .6s;
-    transform: translateY(-25%);
-}
-
-.main__button:hover {
-    color: var(--colors-white);
-    background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-text-fill-color: initial;
-    border: none;
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
+.main__button {}
 
 .main__button-box {
     padding: var(--padding-base);
@@ -92,7 +70,7 @@
     }
 
     .main__content-btn {
-        gap: 20px;
+      gap: 20px;
     }
 
     .main__button,

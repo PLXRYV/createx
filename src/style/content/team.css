@@ -104,8 +104,16 @@
 }
 
 .team__navigation_item-images:hover .team__social-link {
-    opacity: 1;
+    opacity: 0.6;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.team__navigation_item-images:hover .team__social-link .team__social {
+  color: #acacac;
+}
+
+.team__navigation_item-images:hover .team__social-link:hover .team__social {
+  color: white;
 }
 
 .team__navigation_item-images:hover .team__social-link:nth-child(2) {

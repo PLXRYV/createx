@@ -16,6 +16,7 @@ body {
 .container {
     max-width: 1230px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 button {
@@ -26,8 +27,37 @@ button {
     cursor: pointer;
 }
 
-@media (max-width: 1230px) {
-    .container {
-        max-width: 80%;
-    }
+.button-primary {
+  transform: translateY(-25%);
+  padding: var(--padding-base);
+  background: linear-gradient(to top right,var(--colors-primary), var(--colors-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid var(--colors-orange);
+  font-size: var(--size-h6);
+  font-weight: var(--weight-base-bold);
+  line-height: var(--height-base-btn);
+  transition: all .6s;
+}
+
+.button-primary:active {
+  color: var(--colors-white);
+  background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-text-fill-color: initial;
+  border: none;
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.button-primary:hover {
+  color: var(--colors-white);
+  background: var(--colors-orange);
+  -webkit-text-fill-color: unset;
+}
+
+a {
+  color: var(--colors-gray-900);
 }
