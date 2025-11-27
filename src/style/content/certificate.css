@@ -1,0 +1,212 @@
+.certificate {
+  padding-top: var(--padding-large);
+}
+
+.certificate__container {
+  display: flex;
+  gap: var(--spacings-container-certificate);
+}
+
+.certificate__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate__header {
+  padding-bottom: var(--padding-certificate);
+}
+
+.certificate__header-text {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-h1);
+  font-weight: var(--weight-big-black);
+  line-height: var(--height-display-1);
+  letter-spacing: var(--letter-spacing-base);
+}
+
+.certificate__header-text span {
+  padding-bottom: var(--padding-s);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--size-h6);
+  font-weight: var(--weight-base-bold);
+  line-height: var(--height-large-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+
+.certificate__description {
+  padding-bottom: var(--padding-certificate);
+  gap: var(--spacings-2m);
+}
+
+.certificate__description-text {
+  padding-bottom: var(--padding-2xxm);
+  color: var(--colors-gray-800);
+  font-size: var(--size-h6);
+  font-weight: var(--weight-base-regular);
+  line-height: var(--height-base-regular);
+  letter-spacing: var(--letter-spacing-regular);
+}
+
+.certificate__description-images {
+  display: flex;
+  padding-bottom: var(--padding-large);
+  gap: var(--spacings-2xl);
+}
+
+.certificate__createx {
+  z-index: 1000;
+  height: auto;
+}
+
+@media (max-width: 1230px) {
+  .certificate__container {
+    gap: var(--spacings-large);
+  }
+
+  .certificate__header {
+    padding-bottom: var(--padding-xxl);
+  }
+
+  .certificate__description {
+    padding-bottom: var(--padding-xxl);
+  }
+
+  .certificate__createx {z-index: 1000;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 994px) {
+  .certificate {
+    padding-top: var(--padding-2xxl);
+  }
+
+  .certificate__container {
+    gap: var(--spacings-4xl);
+    flex-direction: column;
+  }
+
+  .certificate__header {
+    padding-bottom: var(--padding-2xxm);
+  }
+
+  .certificate__description {
+    padding-bottom: var(--padding-2xxm);
+  }
+
+  .certificate__description-images {
+    gap: var( --spacings-2m);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificate__container {
+    gap: var(--spacings-3xl);
+  }
+
+  .certificate__header {
+    padding-bottom: var(--padding-2xm);
+  }
+
+  .certificate__header-text {
+    font-size: var(--size-h1);
+    line-height: var(--height-large-regular);
+  }
+
+  .certificate__header-text span {
+    font-size: var(--size-h6);
+  }
+
+  .certificate__description {
+    padding-bottom: var(--padding-2xm);
+  }
+
+  .certificate__description-text {
+    font-size: var(--size-h6);
+  }
+
+  .certificate__description-images {
+    gap: var(--spacings-lm);
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .certificate {
+    padding-top: var(--padding-xxm);
+  }
+
+  .certificate__container {
+    gap: var(--spacings-2xl);
+  }
+
+  .certificate__header {
+    padding-bottom: var(--padding-xm);
+  }
+
+  .certificate__header-text {
+    font-size: var(--size-h1);
+    line-height: var(--height-base-regular);
+  }
+
+  .certificate__header-text span {
+    font-size: var(--size-h6);
+    padding-bottom: var(--padding-xs);
+  }
+
+  .certificate__description {
+    padding-bottom: var(--padding-xm);
+  }
+
+  .certificate__description-text {
+    font-size: var(--size-h6);
+    line-height: var(--height-display-1);
+  }
+
+  .certificate__description-images {
+    gap: var(--spacings-m);
+  }
+}
+
+@media (max-width: 375px) {
+  .certificate__container {
+    gap: var(--spacings-2m);
+  }
+
+  .certificate__header {
+    padding-bottom: var(--padding-md);
+  }
+
+  .certificate__header-text {
+    font-size: var(--size-h1);
+    line-height: var(--height-display-1);
+  }
+
+  .certificate__header-text span {
+    font-size: var(--size-h6);
+    padding-bottom: var(--padding-2xs);
+  }
+
+  .certificate__description {
+    padding-bottom: var(--padding-md);
+  }
+
+  .certificate__description-text {
+    font-size: var(--size-h6);
+  }
+
+  .certificate__description-images {
+    gap: var(--spacings-sm);
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificate__createx {
+    max-width: 90%;
+  }
+}

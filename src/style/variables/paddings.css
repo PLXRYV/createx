@@ -1,0 +1,72 @@
+:root {
+  --paddings-xxs: 2px;
+  --padding-2xs: 4px;
+  --padding-xs: 6px;
+  --padding-s: 8px;
+  --padding-sm: 10px;
+  --padding-m: 12px;
+  --padding-msd: 15px;
+  --padding-md: 16px;
+  --padding-xmd: 18px;
+  --padding-xm: 20px;
+  --padding-2xm: 25px;
+  --padding-xxm: 30px;
+  --padding-2xxm: 32px;
+  --padding-card: 32px;
+  --padding-badge: 1px 8px;
+  --padding-xl: 35px;
+  --padding-xxl: 40px;
+  --padding-certificate: 48px;
+  --padding-1xxl: 50px;
+  --padding-2xxl: 60px;
+  --padding-3xxl: 70px;
+  --padding-xxxl: 80px;
+  --padding-m-large: 100px;
+  --padding-large: 120px;
+  --padding-section-main: 128px;
+  --padding-benefits-box: 135px;
+  --padding-sections: 180px;
+  --padding-main__content-text: 0 160px 60px 0;
+  --padding-section-stats: 142px 0 80px 0;
+  --margin-section-events: 120px;
+  @media (max-width: 1440px) {
+    --padding-card: 28px;
+  }
+  @media (max-width: 1230px){
+    --padding-main__content-text: 0 120px 50px 0;
+    --padding-ellipse: 50px;
+    --padding-section-stats: 120px 0 70px 0;
+    --padding-benefits-box: 80px;
+  }
+  @media (max-width: 994px){
+    --padding-section-main: 64px;
+    --padding-header: 15px;
+    --padding-main__content-text: 0 80px 40px 0;
+    --padding-ellipse: 40px;
+    --padding-section-stats: 100px 0 60px 0;
+    --padding-sections: 90px;
+    --padding-benefits-box: 40px;
+    --margin-section-events: 80px;
+  }
+  @media (max-width: 768px){
+    --padding-header: 12px;
+    --padding-main__content-text: 0 40px 30px 0;
+    --padding-section-stats: 80px 0 50px 0;
+  }
+  @media (max-width: 640px){
+    --padding-section-main: 32px;
+    --padding-header: 10px;
+    --padding-main__content-text: 0 20px 25px 0;
+    --padding-section-stats: 60px 0 40px 0;
+    --padding-sections: 45px;
+    --margin-section-events: 40px;
+  }
+  @media (max-width: 375px){
+    --padding-main-button: 14px;
+    --padding-base: 20px;
+    --padding-header: 8px;
+    --padding-main__content-text: 0 0 25px 0;
+    --padding-section-stats: 50px 0 30px 0;
+  }
+}
+

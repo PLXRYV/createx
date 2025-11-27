@@ -1,0 +1,10 @@
+/* Media Queries */
+/* 375 640 768 994 1230 1440 */
+:root {
+  --breakpoint-375: 375px;
+  --breakpoint-640: 640px;
+  --breakpoint-768: 768px;
+  --breakpoint-994: 994px;
+  --breakpoint-1170: 1230px;
+  --breakpoint-1440: 1440px;
+}
