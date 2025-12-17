@@ -1,6 +1,6 @@
 body {
   font-family: "Lato", sans-serif;
-  color: var(--var(--colors-gray-900));
+  color: var(--colors-gray-900);
   background-color: var(--colors-white);
   font-size: 14px;
   line-height: 160%;
@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: var(--var(--colors-gray-900));
+  color: var(--colors-gray-900);
 }
 
 button {

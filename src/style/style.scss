@@ -1,6 +1,6 @@
-	@import "reset.css";
-	@import 'variables/index.css';
-	@import "global.css";
-	@import "header.scss";
-	@import "content/index.css";
-	@import "footer.css";
+	@use "reset.scss" as *;
+	@use "variables/index.scss" as *;
+	@use "global.scss" as *;
+	@use "header.scss" as *;
+	@use "content/index.css" as *;
+	@use "footer.scss" as *;
