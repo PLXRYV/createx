@@ -18,5 +18,5 @@
   --colors-success: #03CEA4;
   --colors-info: #5A87FC;
   --colors-pink: #F52F6E;
-  --colors-gradient: linear-gradient(to top right,var(--colors-primary), var(--colors-orange));
+  --colors-gradient: linear-gradient(to top right,var(--colors-primary)), var(--colors-orange);
 }

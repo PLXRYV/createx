@@ -1,7 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
-  color: var(--colors-gray-900);
-  background-color: var(--colors-white);
+  color: $colors-gray-900;
+  background-color: $colors-white;
   font-size: 14px;
   line-height: 160%;
   font-weight: bold;
@@ -20,11 +20,11 @@ body {
 }
 
 a {
-  color: var(--colors-gray-900);
+  color: $colors-gray-900;
 }
 
 button {
-  color: var(--colors-white);
+  color: $colors-white;
   letter-spacing: var(--letter-spacing-small);
   border-radius: 4px;
   cursor: pointer;
