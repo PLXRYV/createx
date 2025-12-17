@@ -1,38 +1,38 @@
 :root {
-	$size-h1: 46px;
-	$size-h2: 32px;
-	$size-h3: 28px;
-	$size-h4: 24px;
-	$size-h5: 20px;
-	$size-h6: 16px;
-	$size-display-1: 72px;
-	$size-display-2: 64px;
-	$size-display-3: 56px;
-	$size-display-4: 48px;
-	$size-speaker: 18px;
-	$size-badge: 14px;
-	$size-extra-small: 12px;
-	$size-extraextra-small: 10px;
-	$weight-base-bold: bold;
-	$weight-big-black: 900;
-	$weight-base-regular: 400;
-	$height-smallbase-btn: 44px;
-	$height-base-btn: 52px;
-	$height-display-1: 130%;
-	$height-large-regular: 150%;
-	$height-base-regular: 160%;
-	$letter-spacing-regular: 0;
-	$letter-spacing-small: 0.5px;
-	$letter-spacing-base: 1px;
+  --size-h1: 46px;
+  --size-h2: 32px;
+  --size-h3: 28px;
+  --size-h4: 24px;
+  --size-h5: 20px;
+  --size-h6: 16px;
+  --size-display-1: 72px;
+  --size-display-2: 64px;
+  --size-display-3: 56px;
+  --size-display-4: 48px;
+  --size-speaker: 18px;
+  --size-badge: 14px;
+  --size-extra-small: 12px;
+  --size-extraextra-small: 10px;
+  --weight-base-bold: bold;
+  --weight-big-black: 900;
+  --weight-base-regular: 400;
+  --height-smallbase-btn: 44px;
+  --height-base-btn: 52px;
+  --height-display-1: 130%;
+  --height-large-regular: 150%;
+  --height-base-regular: 160%;
+  --letter-spacing-regular: 0;
+  --letter-spacing-small: 0.5px;
+  --letter-spacing-base: 1px;
 }
-	@media (max-width: 1230px) {
-		$size-h1: 36px;
-	}
-	@media (max-width: 375px) {
-		$size-h1: 32px;
-		$size-h6: 10px;
-	}
-	@media (max-width: 320px) {
-		$size-h1: 24px;
-		$size-h6: 8px;
-	}
+  @media (max-width: 1230px) {
+    --size-h1: 36px;
+  }
+  @media (max-width: 375px) {
+    --size-h1: 32px;
+    --size-h6: 10px;
+  }
+  @media (max-width: 320px) {
+    --size-h1: 24px;
+    --size-h6: 8px;
+  }

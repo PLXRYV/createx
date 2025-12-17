@@ -1,6 +1,6 @@
 .footer {
   padding: var(--padding-xxxl) 0 var(--padding-2xxl);
-  background-color: var(--colors-gray-900);
+  background-color: $var(--colors-gray-900);
 }
 
 .footer__container {

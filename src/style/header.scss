@@ -16,14 +16,13 @@
   display: flex;
   gap: var(--spacings-2xl);
   align-items: center;
-}
-
-.header__nav a {
-  transition: all .4s;
+	a {
+		transition: all .4s;
+	}
 }
 
 .header__nav a:hover {
-  transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .header__login {
@@ -43,12 +42,13 @@
   line-height: var(--height-base-btn);
   margin-right: var(--spacings-btn-margin);
   transition: all .4s;
+	&:hover {
+		transform: scale(0.95);
+		box-shadow: 0 3px 4px var(--colors-orange);
+	}
 }
 
-.header__button:hover {
-  transform: scale(0.95);
-  box-shadow: 0 3px 4px var(--colors-orange);
-}
+
 
 .navbar__buttons {
   border:none;
@@ -59,10 +59,9 @@
   line-height: var(--height-base-regular);
   letter-spacing: var(--letter-spacing-regular);
   transition: all .4s;
-}
-
-.navbar__buttons:hover {
-  transform: scale(1.1);
+	&:hover {
+		transform: scale(1.1);
+	}
 }
 
 @media (max-width: 1230px) {

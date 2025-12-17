@@ -1,5 +1,5 @@
 .subscribe {
-  background: url('/src/images/subscribe/subscribe_background.jpg') center center no-repeat;
+  background: url("/src/images/subscribe/subscribe_background.jpg") center center no-repeat;
   background-size: cover;
 }
 

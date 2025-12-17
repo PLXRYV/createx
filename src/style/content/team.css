@@ -1,5 +1,5 @@
 .team__and-testimonials {
-  background: url('/src/images/team/team_background.jpg') center center no-repeat;
+  background: url("/src/images/team/team_background.jpg") center center no-repeat;
   transform: translateY(-50px);
   z-index: 1;
 }
@@ -182,7 +182,7 @@
 
 @media (max-width: 1230px) {
   .team__and-testimonials {
-    background: url('/src/images/team/team_background.jpg') center center no-repeat;
+    background: url("/src/images/team/team_background.jpg") center center no-repeat;
     transform: translateY(0px);
   }
 

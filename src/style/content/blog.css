@@ -121,7 +121,7 @@
   padding-bottom: var(--padding-s);
   display: flex;
   flex-direction: column;
-  color: var(--colors-gray-900);
+  color: $var(--colors-gray-900);
   font-size: var(--size-h5);
   font-weight: var(--weight-base-bold);
   line-height: var(--height-large-regular);
@@ -144,7 +144,7 @@
 
 .post__footer-text {
   padding-right: var(--padding-sm);
-  color: var(--colors-gray-900);
+  color: $var(--colors-gray-900);
   font-size: var(--size-h6);
   font-weight: var(--weight-base-bold);
   line-height: var(--height-base-regular);
