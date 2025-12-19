@@ -1,0 +1,31 @@
+.dots__image {
+  position: absolute;
+  transform: translateY(100px);
+  left:0;
+  z-index: -1;
+  animation: pulse-slow 2s infinite;
+}
+
+.circles__image {
+  position: absolute;
+  transform: translateY(-300px);
+  right: 0;
+  z-index: -1;
+  animation: pulse-slow 3s infinite;
+}
+
+@media (max-width: 1230px) {
+  .dots__image {
+    transform: translateY(80px);
+    width: 120px;
+  }
+
+  .circles__image {
+    transform: translateY(-250px);
+    width: 150px;
+  }
+
+  .about__img {
+    display: none;
+  }
+}
