@@ -80,10 +80,9 @@
 
   .header__nav {
     gap: var(--spacings-2xl);
-  }
-
-  .header__nav a {
-    font-size: var(--size-h6);
+    a {
+      font-size: var(--size-h6);
+    }
   }
 
   .header__button {
@@ -114,15 +113,15 @@
     height: 20px;
     position: relative;
     cursor: pointer;
-  }
 
-  .header__burger span {
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: var(--colors-white);
-    left: 0;
-    transition: all 0.3s;
+    span {
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: var(--colors-white);
+      left: 0;
+      transition: all 0.3s;
+    }
   }
 
   .header__burger span:nth-child(1) { top: 0; }
@@ -212,12 +211,13 @@
   border-bottom: 1px solid var(--colors-gray-200);
   color: var(--colors-gray-800);
   font-size: var(--size-h6);
+  &:hover {
+    transform: none;
+    color: var(--colors-primary);
+  }
+
 }
 
-.header__nav--mobile a:hover {
-  transform: none;
-  color: var(--colors-primary);
-}
 .header__burger {
   display: none;
 }
