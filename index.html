@@ -14,23 +14,41 @@
 	<div class="header__bg">
 		<header id="header" class="header">
 			<div class="container">
-				<div class="header__box">
-					<nav class="header__nav">
-						<img class="header__logo-img" src="src/images/header/logo.svg" alt="Logo of site">
-						<a href="#" class="navbar__link" >About Us</a>
-						<a href="#" class="navbar__link">Courses</a>
-						<a href="#" class="navbar__link">Events</a>
-						<a href="#" class="navbar__link">Blog</a>
-						<a href="#" class="navbar__link">Contacts</a>
-					</nav>
-						<div class="header__nav-button">
-						<button class="header__button">Get consultation</button>
+				<div class="header__inner">
+					<div class="header__menu">
+						<a href="#" class="header__menu--logo">
+							<img class="logo__img" src="src/images/header/logo.svg" data-svg-fill="false" alt="Logo of site">
+						</a>
+						<nav class="nav">
+								<ul class="nav__menu">
+									<li class="nav__menu-item">
+										<a href="#" class="nav__menu-item__link" >About Us</a>
+									</li>
+									<li class="nav__menu-item">
+										<a href="#" class="nav__menu-item__link">Courses</a>
+									</li>
+									<li class="nav__menu-item">
+										<a href="#" class="nav__menu-item__link">Events</a>
+									</li>
+									<li class="nav__menu-item">
+										<a href="#" class="nav__menu-item__link">Blog</a>
+									</li>
+									<li class="nav__menu-item">
+										<a href="#" class="nav__menu-item__link">Contacts</a>
+									</li>
+								</ul>
+						</nav>
+					</div>
+
+					<div class="header__actions">
+						<button class="header__button header__button--consultation">Get consultation</button>
+						<div class="header__auth">
+							<button class="header__auth-btn header__auth-btn--signin">
+							<img class="header__auth-icon" src="src/images/header/Profile.svg" alt="Profile">
+							Sign in</button>
+							<span class="header__auth-separator">/</span>
+							<button class="header__auth-btn header__auth-btn--signup">Sign up</button>
 						</div>
-					<div class="header__login">
-						<img class="header__login-profile_img" src="src/images/header/Profile.svg" alt="Profile image">
-						<button class="navbar__buttons">Sign in</button>
-						<div class="header__signup">/</div>
-						<button class="navbar__buttons">Sign up</button>
 					</div>
 					<!-- mobile devices-->
 					<div class="header__burger">
@@ -39,8 +57,8 @@
 						<span></span>
 					</div>
 					<div class="header__nav--mobile">
-						<nav class="header__nav">
-							<img class="header__logo-img" src="src/images/header/logo.svg" alt="Logo of site">
+						<nav class="nav">
+							<img class="logo__img" src="src/images/header/logo.svg" alt="Logo of site">
 							<a href="#" class="navbar__link" >About Us</a>
 							<a href="#" class="navbar__link">Courses</a>
 							<a href="#" class="navbar__link">Events</a>
@@ -48,7 +66,6 @@
 							<a href="#" class="navbar__link">Contacts</a>
 						</nav>
 					</div>
-					<!--mobile devices-->
 				</div>
 			</div>
 		</header>
@@ -72,7 +89,7 @@
 						</div>
 					</div>
 					<div>
-						<img src="src/images/main/illustration-main.svg" alt="Courses image">
+						<img src="src/images/main/illustration-main.svg" data-svg-fill="false" alt="Courses image">
 					</div>
 				</div>
 				<!--in_main_stats-->
