@@ -95,7 +95,7 @@
   padding: 0 0 var(--padding-2xs);
   display: flex;
   flex-direction: column;
-  color: $var(--colors-gray-900);
+  color: var(--colors-gray-900);
   font-size: var(--size-h5);
   font-weight: var(--weight-base-bold);
   line-height: var(--height-large-regular);
@@ -123,7 +123,7 @@
 }
 
 .events__info span {
-  color: $var(--colors-gray-900);
+  color: var(--colors-gray-900);
   padding-bottom: var(--padding-2xs);
   font-size: var(--size-h5);
   font-weight: var(--weight-base-bold);

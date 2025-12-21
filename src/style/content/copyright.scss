@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $var(--colors-gray-900);
+  background-color: var(--colors-gray-900);
   opacity: 0.9;
   z-index: -1;
 }
