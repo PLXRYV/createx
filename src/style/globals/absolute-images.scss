@@ -14,6 +14,22 @@
   animation: pulse-slow 3s infinite;
 }
 
+.events__dots {
+	position: absolute;
+	transform: translateY(660px);
+	left:0;
+	z-index: 1000;
+	animation: pulse-slow 2s infinite;
+}
+
+.events__circles {
+	position: absolute;
+	transform: translateY(-150px);
+	right: 0;
+	z-index: 1000;
+	animation: pulse-slow 3s infinite;
+}
+
 @media (max-width: 1230px) {
   .dots__image {
     transform: translateY(80px);
@@ -28,4 +44,14 @@
   .about__img {
     display: none;
   }
+	.events__dots {
+		transform: translateY(550px);
+		scale: 0.8;
+	}
+
+	.events__circles {
+		transform: translateY(-120px);
+		scale: 0.8;
+	}
 }
+
