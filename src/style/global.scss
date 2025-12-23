@@ -1,5 +1,5 @@
 @use './globals/index';
-
+@use "mixins" as *;
 body {
   font-family: "Lato", sans-serif;
   color: var(--colors-gray-900);
@@ -30,4 +30,42 @@ button {
   letter-spacing: var(--letter-spacing-small);
   border-radius: 4px;
   cursor: pointer;
+}
+
+.button__primary {
+	padding: 0 var(--padding-xxl);
+	color: var(--colors-white);
+	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+	border: none;
+	font-size: var(--size-h6);
+	font-weight: var(--weight-base-bold);
+	line-height: var(--height-base-btn);
+	@include transition;
+		&:hover {
+			transform: scale(0.95);
+			box-shadow: 0 3px 4px var(--colors-orange);
+		}
+}
+
+.button__secondary {
+	padding: 0 var(--padding-2xxm);
+	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	border: 1px solid var(--colors-orange);
+	font-size: var(--size-h6);
+	font-weight: var(--weight-base-bold);
+	line-height: var(--height-base-btn);
+	transition: all 0.6s;
+	&:hover {
+		color: var(--colors-white);
+		background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+		-webkit-background-clip: border-box;
+		background-clip: border-box;
+		-webkit-text-fill-color: initial;
+		border: none;
+		transform: scale(0.95);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
 }

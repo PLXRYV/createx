@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .header__bg {
 	background: url("../images/header/background_head.jpg") center center no-repeat;
 	background-size: cover;
@@ -14,11 +16,7 @@
 	&__menu {
 		display: flex;
 		align-items: center;
-
-		&--logo {
-			padding-right: var(--padding-2xxl);
-			justify-content: center;
-		}
+		gap: var(--padding-2xxl);
 	}
 
 	.nav {
@@ -36,13 +34,20 @@
 				transform: scale(1.2);
 			}
 		}
+		&-item__link {
+			font-size: var(--size-h6);
+			font-weight: var(--weight-base-bold);
+			line-height: var(--height-base-regular);
+			letter-spacing: var(--letter-spacing-regular);
+		}
 	}
 
-	&__actions {
+	&__info-actions {
 		display: flex;
 	}
 
 	&__auth {
+		padding-left: var(--padding-xxl);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -50,15 +55,12 @@
 		cursor: pointer;
 
 		&-btn {
-			border: none;
-			background-color: transparent;
 			color: var(--colors-gray-800);
 			font-size: var(--size-h6);
 			font-weight: var(--weight-base-bold);
 			line-height: var(--height-base-regular);
 			letter-spacing: var(--letter-spacing-regular);
-			transition: all 0.4s;
-
+			@include transition;
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -69,26 +71,7 @@
 		}
 	}
 
-	&__button {
-		&--consultation {
-			padding: 0 var(--padding-xm);
-			color: var(--colors-white);
-			background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-			border: none;
-			font-size: var(--size-h6);
-			font-weight: var(--weight-base-bold);
-			line-height: var(--height-base-btn);
-			margin-right: var(--spacings-btn-margin);
-			transition: all 0.4s;
-
-			&:hover {
-				transform: scale(0.95);
-				box-shadow: 0 3px 4px var(--colors-orange);
-			}
-		}
-	}
-
-	&__burger {
+	.burger {
 		display: none;
 		width: 30px;
 		height: 20px;
@@ -174,12 +157,7 @@
 	}
 }
 
-// Media Queries
 @media (max-width: 1230px) {
-	.nav {
-		gap: var(--spacings-2xl);
-	}
-
 	.header__button {
 		margin-right: var(--spacings-btn-margin);
 		padding: 0 var(--padding-xm);
@@ -192,11 +170,7 @@
 	}
 
 	.nav {
-		gap: var(--spacings-2xl);
-
-		a {
-			font-size: var(--size-h6);
-		}
+		display: none;
 	}
 
 	.header__button {
@@ -218,11 +192,6 @@
 		&__burger {
 			display: block;
 		}
-	}
-
-	.nav {
-		gap: var(--spacings-m);
-		display: none;
 	}
 
 	.header__button {
