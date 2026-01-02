@@ -1,3 +1,47 @@
+@use 'variables/breakpoints' as *;
+
 @mixin transition($property : all, $time : 0.4s, $duration : easy-out ) {
 	transition: $property $time;
+}
+
+@mixin mob-sm {
+	@media (max-width: $mob-sm) {
+		@content;
+	}
+}
+
+@mixin mob-m {
+	@media (max-width: $mob-m) {
+		@content;
+	}
+}
+
+@mixin tab-sm {
+	@media (max-width: $tab-sm) {
+		@content;
+	}
+}
+
+@mixin tab-m {
+	@media (max-width: $tab-m) {
+		@content;
+	}
+}
+
+@mixin tab-md {
+	@media (max-width: $tab-md) {
+		@content;
+	}
+}
+
+@mixin desk-sm {
+	@media (max-width: $desk-sm) {
+		@content;
+	}
+}
+
+@mixin desk-m {
+	@media (max-width: $desk-m) {
+		@content;
+	}
 }

@@ -157,14 +157,14 @@
 	}
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.header__button {
 		margin-right: var(--spacings-btn-margin);
 		padding: 0 var(--padding-xm);
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.header {
 		padding-top: var(--padding-xm);
 	}

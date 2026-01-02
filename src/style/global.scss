@@ -1,5 +1,6 @@
 @use './globals/index';
 @use "mixins" as *;
+
 body {
   font-family: "Lato", sans-serif;
   color: var(--colors-gray-900);
