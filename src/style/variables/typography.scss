@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 :root {
   --size-h1: 46px;
   --size-h2: 32px;
@@ -25,14 +27,28 @@
   --letter-spacing-small: 0.5px;
   --letter-spacing-base: 1px;
 
-  @media (max-width: 1230px) {
+  @include desk-sm {
     --size-h1: 36px;
   }
-  @media (max-width: 375px) {
-    --size-h1: 32px;
+
+  @include tab-md {
+    --size-display-2: 48px;
     --size-h6: 10px;
   }
-  @media (max-width: 320px) {
+
+  @include tab-m {
+    --size-display-2: 40px;
+  }
+
+  @include tab-sm {
+    --size-display-2: 32px;
+    --size-h1: 24px;
+  }
+
+  @include mob-m {
+    --size-h1: 18px;
+  }
+  @include mob-sm {
     --size-h1: 24px;
     --size-h6: 8px;
   }

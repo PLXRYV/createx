@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .footer {
 	padding: var(--padding-xxxl) 0 var(--padding-2xxl);
 	background-color: var(--colors-gray-900);
@@ -150,7 +152,7 @@
 	color: var(--colors-gray-100);
 }
 
-@media (max-width: 1440px) {
+@include desk-m {
 	.footer {
 		padding: var(--padding-2xxl) 0 var(--padding-xxl);
 
@@ -187,7 +189,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.footer {
 		padding: var(--padding-1xxl) 0 var(--padding-xxm);
 
@@ -242,7 +244,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.footer {
 		padding: var(--padding-xxl) 0 var(--padding-2xm);
 
@@ -292,7 +294,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.footer {
 		padding: var(--padding-xxm) 0 var(--padding-xm);
 

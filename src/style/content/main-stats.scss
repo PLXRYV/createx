@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .stats {
 	padding: var(--padding-section-stats);
 	display: flex;
@@ -54,7 +56,7 @@
   100% { transform: scale(1); }
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.stats {
 		padding: var(--padding-section-stats);
 	}
@@ -74,7 +76,7 @@
 }
 
 
-@media (max-width: 994px) {
+@include tab-md {
 	.stats {
 		padding: var(--padding-section-stats);
 		&__items {
@@ -97,7 +99,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.stats {
 		padding: var(--padding-section-stats);
 		flex-wrap: wrap;
@@ -120,7 +122,7 @@
 	}
 	}
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.stats {
 		padding: var(--padding-section-stats);
 		gap: var(--spacings-xlm);
@@ -147,7 +149,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.stats {
 		padding: var(--padding-section-stats);
 		gap: var(--spacings-lm);
@@ -190,7 +192,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.stats {
 		padding: 40px 0 25px 0;
 		gap: var(--spacings-m);

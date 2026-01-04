@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 :root {
   --spacings-2xs: 2px;
   --spacings-xs: 4px;
@@ -15,26 +17,26 @@
   --spacings-about-box: 135px;
   --spacings-container-certificate: 130px;
 
-  @media (max-width: 1230px) {
+  @include desk-sm {
     --spacings-2xl: 30px;
     --spacings-btn-margin: 25px;
     --spacings-xm: 20px;
     --spacings-about-box: 100px;
   }
-  @media (max-width: 994px) {
+  @include tab-md {
     --spacings-2xl: 20px;
     --spacings-btn-margin: 20px;
     --spacings-xm: 18px;
     --spacings-about-box: 70px;
   }
-  @media (max-width: 768px) {
+  @include tab-m {
     --spacings-btn-margin: 15px;
     --spacings-about-box: 50px;
   }
-  @media (max-width: 640px) {
+  @include tab-sm {
     --spacings-btn-margin: 10px;
   }
-  @media (max-width: 375px) {
+  @include mob-m {
     --spacings-btn-margin: 8px;
   }
 }

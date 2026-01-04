@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .subscribe {
 	background: url("/src/images/subscribe/subscribe_background.jpg") center center no-repeat;
 	background-size: cover;
@@ -101,7 +103,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.subscribe {
 		&__header-text {
 			padding: 0 var(--padding-md) var(--padding-2xxl);
@@ -152,6 +154,13 @@
 			font-weight: var(--weight-base-bold);
 			line-height: var(--height-base-btn);
 			transition: all 0.4s;
+		}
+		&__image-1 {
+			display: none;
+		}
+
+		&__image-2 {
+			display: none;
 		}
 	}
 }

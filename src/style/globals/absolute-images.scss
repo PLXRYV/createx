@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .dots__image {
   position: absolute;
   transform: translateY(100px);
@@ -30,7 +32,7 @@
 	animation: pulse-slow 3s infinite;
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
   .dots__image {
     transform: translateY(80px);
     width: 120px;

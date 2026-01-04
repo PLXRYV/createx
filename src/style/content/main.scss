@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .main {
 	padding-top: var(--padding-section-main);
 
@@ -35,7 +37,7 @@
 	}
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.main {
 		&__title {
 			font-size: var(--size-display-4);
@@ -46,15 +48,11 @@
 
 		&__content {
 			gap: var(--spacings-2m);
-
-			img {
-				max-width: 90%;
-			}
 		}
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.main {
 		padding-top: var(--padding-section-main);
 
@@ -102,7 +100,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.main {
 		&__content {
 			gap: var(--spacings-2m);
@@ -147,7 +145,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.main {
 		padding-top: var(--padding-section-main);
 
@@ -195,7 +193,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.main {
 		&__content {
 			gap: var(--spacings-lm);
@@ -213,8 +211,7 @@
 		}
 
 		&__info-video {
-			width: 50px;
-			height: 50px;
+			max-width: 80%;
 		}
 
 		&__info-actions {
@@ -245,7 +242,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.main {
 		&__title {
 			font-size: var(--size-display-2);
@@ -261,5 +258,3 @@
 		}
 	}
 }
-
-// медиазапросы в миксин, миксин на повторяющиеся

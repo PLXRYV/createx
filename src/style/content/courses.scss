@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .courses {
 	padding-top: var(--padding-sections);
 
@@ -150,7 +152,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.courses {
 		padding-top: var(--padding-sections);
 
@@ -188,7 +190,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.courses {
 		&__contain-header {
 			padding-bottom: var(--padding-xl);
@@ -243,7 +245,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.courses {
 		padding-top: var(--padding-sections);
 
@@ -303,7 +305,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.courses {
 		padding-top: var(--padding-sections);
 
@@ -373,7 +375,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.courses {
 		&__header-text {
 			font-size: var(--size-h1);

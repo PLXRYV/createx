@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .events {
 	margin-top: var(--margin-section-events);
 	background: url("/src/images/events/events_background.jpg") center center no-repeat;
@@ -146,7 +148,7 @@
 		letter-spacing: var(--letter-spacing-regular);
 	}
 }
-@media (max-width: 1230px) {
+@include desk-sm {
 	.events {
 		&__button {
 			white-space: nowrap;
@@ -162,7 +164,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.events {
 		margin-top: var(--margin-section-events);
 
@@ -213,7 +215,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.events {
 		&__header {
 			padding-top: var(--padding-1xxl);
@@ -270,7 +272,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.events {
 		margin-top: var(--margin-section-events);
 
@@ -349,7 +351,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.events {
 		&__header {
 			padding-top: var(--padding-xxm);
@@ -418,7 +420,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.events {
 		&__link {
 			padding: var(--padding-md) var(--padding-m);
@@ -434,37 +436,39 @@
 	}
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-	.events {
-		&__header {
-			padding-top: var(--padding-xxm);
-		}
+@include tab-m {
+	@media (orientation: landscape) {
+		.events {
+			&__header {
+				padding-top: var(--padding-xxm);
+			}
 
-		&__navigation {
-			gap: var(--spacings-sm);
-		}
+			&__navigation {
+				gap: var(--spacings-sm);
+			}
 
-		&__link {
-			padding: var(--padding-md) var(--padding-xm);
-			flex-direction: row;
-			flex-wrap: wrap;
-		}
+			&__link {
+				padding: var(--padding-md) var(--padding-xm);
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
 
-		&__link-date {
-			flex: 0 0 auto;
-		}
+			&__link-date {
+				flex: 0 0 auto;
+			}
 
-		&__link_month-time {
-			flex: 1;
-		}
+			&__link_month-time {
+				flex: 1;
+			}
 
-		&__info {
-			flex: 1 1 60%;
-		}
+			&__info {
+				flex: 1 1 60%;
+			}
 
-		&__button {
-			flex: 0 0 auto;
-			align-self: center;
+			&__button {
+				flex: 0 0 auto;
+				align-self: center;
+			}
 		}
 	}
 }

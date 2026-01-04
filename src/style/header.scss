@@ -19,11 +19,6 @@
 		gap: var(--padding-2xxl);
 	}
 
-	.nav {
-		display: flex;
-		align-items: center;
-	}
-
 	.nav__menu {
 		display: flex;
 		gap: var(--spacings-2xl);
@@ -173,19 +168,13 @@
 		display: none;
 	}
 
-	.header__button {
-		margin-right: var(--spacings-btn-margin);
-		padding: 0 var(--padding-xm);
-		font-size: var(--size-extra-small);
-		font-weight: var(--weight-base-regular);
-	}
-
 	.header__auth {
-		font-size: var(--size-h6);
+		display: flex;
+		text-align: center;
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.header {
 		padding-top: var(--padding-xm);
 
@@ -205,7 +194,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.header {
 		padding-top: var(--padding-xm);
 
@@ -219,19 +208,12 @@
 		}
 	}
 
-	.header__button {
-		margin-right: var(--spacings-btn-margin);
-		padding: 0 var(--padding-xm);
-		font-size: var(--size-h6);
-	}
-
-	.header__auth {
-		font-size: var(--size-h6);
-		gap: var(--spacings-2xs);
+	.button__consultation {
+		display: none;
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.header {
 		padding-top: var(--padding-xm);
 

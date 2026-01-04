@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .testimonials {
 	&__container {
 		padding: var(--padding-sections) 0;
@@ -141,7 +143,7 @@
 	clip-path: polygon(90% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 40%);
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.slider {
 		&__container {
 			max-width: 900px;
@@ -154,7 +156,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.testimonials {
 		&__container {
 			padding-bottom: var(--padding-large);
@@ -192,7 +194,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.testimonials {
 		&__container {
 			padding-bottom: var(--padding-1xxl);
@@ -258,7 +260,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.testimonials {
 		&__container {
 			padding-bottom: var(--padding-xxm);
@@ -314,7 +316,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.testimonials {
 		&__container {
 			padding-bottom: var(--padding-xxm);
@@ -376,7 +378,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.slider {
 		&__content-box {
 			padding: var(--padding-xm) var(--padding-md);
@@ -399,7 +401,8 @@
 	}
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
+@include tab-m {
+@media (orientation: landscape) {
 	.testimonials {
 		&__container {
 			padding-bottom: var(--padding-2xxl);
@@ -435,6 +438,7 @@
 		&__box {
 			padding-right: var(--padding-xm);
 			justify-content: flex-start;
+			}
 		}
 	}
 }

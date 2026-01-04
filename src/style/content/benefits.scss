@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .benefits {
 	padding-top: var(--padding-sections);
 
@@ -115,7 +117,7 @@
 	}
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.benefits {
 		&__content {
 			flex-direction: column;
@@ -132,7 +134,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.benefits {
 		padding-top: var(--padding-sections);
 
@@ -168,7 +170,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.benefits {
 		&__header-text {
 			padding-bottom: var(--padding-xxm);
@@ -215,7 +217,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.benefits {
 		padding-top: var(--padding-sections);
 
@@ -270,7 +272,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.benefits {
 		padding-top: var(--padding-sections);
 
@@ -320,7 +322,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.benefits {
 		&__navigation-link {
 			font-size: var(--size-h6);

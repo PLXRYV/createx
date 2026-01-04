@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .team__and-testimonials {
 	background: url("/src/images/team/team_background.jpg") center center no-repeat;
 	transform: translateY(-50px);
@@ -173,7 +175,7 @@
 	}
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.team__and-testimonials {
 		background: url("/src/images/team/team_background.jpg") center center no-repeat;
 		transform: translateY(0px);
@@ -190,7 +192,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.team__and-testimonials {
 		background: none;
 	}
@@ -239,7 +241,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.team {
 		&__header {
 			padding-bottom: var(--padding-xxl);
@@ -286,7 +288,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.team {
 		&__header {
 			padding-bottom: var(--padding-xl);
@@ -340,7 +342,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.team {
 		&__header {
 			padding-bottom: var(--padding-xxm);
@@ -403,7 +405,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.team {
 		&__navigation_item {
 			max-width: 240px;
@@ -420,7 +422,8 @@
 	}
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
+@include tab-m {
+@media (orientation: landscape) {
 	.team {
 		&__navigation_list {
 			flex-direction: row;
@@ -434,6 +437,7 @@
 
 		&__navigation {
 			padding-bottom: var(--padding-2xxl);
+			}
 		}
 	}
 }

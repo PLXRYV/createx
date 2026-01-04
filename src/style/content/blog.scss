@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .blog {
 	padding: var(--padding-large) 0 var(--padding-sections);
 
@@ -134,7 +136,7 @@
 	}
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
 	.blog {
 		&__container {
 			padding-bottom: var(--padding-1xxl);
@@ -146,7 +148,7 @@
 	}
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.blog {
 		padding-bottom: var(--padding-xxxl);
 
@@ -178,7 +180,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.blog {
 		padding-top: var(--padding-2xxl);
 
@@ -223,7 +225,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.blog {
 		padding-top: var(--padding-xxm);
 
@@ -264,7 +266,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.blog {
 		&__container {
 			padding-bottom: var(--padding-xm);

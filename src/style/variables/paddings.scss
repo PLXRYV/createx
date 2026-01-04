@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 :root {
   --paddings-xxs: 2px;
   --padding-2xs: 4px;
@@ -34,13 +36,13 @@
   @media (max-width: 1440px) {
     --padding-card: 28px;
   }
-  @media (max-width: 1230px) {
+  @include desk-sm {
     --padding-main__content-text: 0 120px 50px 0;
     --padding-ellipse: 50px;
     --padding-section-stats: 120px 0 70px 0;
     --padding-benefits-box: 80px;
   }
-  @media (max-width: 994px) {
+  @include tab-md {
     --padding-section-main: 64px;
     --padding-header: 15px;
     --padding-main__content-text: 0 80px 40px 0;
@@ -50,12 +52,12 @@
     --padding-benefits-box: 40px;
     --margin-section-events: 80px;
   }
-  @media (max-width: 768px) {
+  @include tab-m {
     --padding-header: 12px;
     --padding-main__content-text: 0 40px 30px 0;
     --padding-section-stats: 80px 0 50px 0;
   }
-  @media (max-width: 640px) {
+  @include tab-sm {
     --padding-section-main: 32px;
     --padding-header: 10px;
     --padding-main__content-text: 0 20px 25px 0;
@@ -63,7 +65,7 @@
     --padding-sections: 45px;
     --margin-section-events: 40px;
   }
-  @media (max-width: 375px) {
+  @include mob-m {
     --padding-main-button: 14px;
     --padding-base: 20px;
     --padding-header: 8px;

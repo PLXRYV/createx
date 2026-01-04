@@ -1,3 +1,5 @@
+@use "../mixins" as *;
+
 .about {
   padding-top: var(--padding-sections);
 
@@ -71,7 +73,7 @@
   }
 }
 
-@media (max-width: 1230px) {
+@include desk-sm {
   .about__box {
     gap: var(--spacings-about-box);
   }
@@ -93,7 +95,7 @@
   }
 }
 
-@media (max-width: 994px) {
+@include tab-md {
 	.about {
 		padding-top: var(--padding-sections);
 
@@ -157,7 +159,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@include tab-m {
 	.about {
 		&__box {
 			gap: var(--spacings-about-box);
@@ -213,7 +215,7 @@
 	}
 }
 
-@media (max-width: 640px) {
+@include tab-sm {
 	.about {
 		padding-top: var(--padding-sections);
 
@@ -269,7 +271,7 @@
 	}
 }
 
-@media (max-width: 375px) {
+@include mob-m {
 	.about {
 		&__box {
 			gap: var(--spacings-2m);
@@ -318,7 +320,7 @@
 	}
 }
 
-@media (max-width: 320px) {
+@include mob-sm {
 	.about {
 		&__inner-title {
 			font-size: var(--size-h1);
