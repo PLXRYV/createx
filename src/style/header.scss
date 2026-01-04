@@ -50,6 +50,8 @@
 		cursor: pointer;
 
 		&-btn {
+			display: flex;
+			align-items: center;
 			color: var(--colors-gray-800);
 			font-size: var(--size-h6);
 			font-weight: var(--weight-base-bold);
@@ -95,7 +97,7 @@
 		}
 	}
 
-	&__nav--mobile {
+	&__btn-action {
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -177,10 +179,12 @@
 @include tab-m {
 	.header {
 		padding-top: var(--padding-xm);
+	}
 
-		&__burger {
-			display: block;
-		}
+	.header .burger {
+		display: block;
+		width: 25px;
+		height: 18px;
 	}
 
 	.header__button {
@@ -202,9 +206,8 @@
 			align-items: center;
 		}
 
-		&__burger {
-			width: 25px;
-			height: 18px;
+		&__auth {
+			padding-right: var(--padding-xxxl);
 		}
 	}
 
