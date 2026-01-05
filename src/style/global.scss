@@ -9,6 +9,9 @@ body {
   line-height: 160%;
   font-weight: bold;
   overflow-x: hidden;
+	&.lock {
+		overflow: hidden;
+	}
 }
 
 .wrapper {
@@ -46,6 +49,18 @@ button {
 			transform: scale(0.95);
 			box-shadow: 0 3px 4px var(--colors-orange);
 		}
+
+	&-mobile {
+		display: none;
+	}
+	@include tab-m {
+		&-mobile {
+			display: block;
+		}
+		&-consultation {
+		display:none;
+		}
+	}
 }
 
 .button__secondary {
