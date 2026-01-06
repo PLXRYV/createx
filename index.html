@@ -43,14 +43,72 @@
 					<div class="header__info-actions">
 						<button class="button button__primary button__primary-consultation">Get consultation</button>
 						<div class="header__auth">
-							<button class="header__auth-btn header__auth-btn--signin">
+							<button id="#signIn" class="header__auth-btn header__auth-btn--signin">
 							<img class="header__auth-icon" src="src/images/header/Profile.svg" alt="Profile">
 							Sign in</button>
 							<span class="header__auth-separator">/</span>
-							<button class="header__auth-btn header__auth-btn--signup">Sign up</button>
+							<button id="#signup" class="header__auth-btn header__auth-btn--signup">Sign up</button>
 						</div>
 					</div>
-					<!-- mobile devices-->
+					<!--modal window-->
+					<div id="#windowModalSignIn" class="modal">
+						<div class="modal__wrapper">
+							<div class="modal__header">
+								<button id="closeModalSignIn" class="modal__close">
+									<img class="modal__close-icon" data-svg-fill="false" src="src/images/icons/cross.svg" alt="Close modal">
+								</button>
+							</div>
+							<div class="modal__content">
+								<h2 class="modal__title">Sign In</h2>
+								<p class="modal__subtitle">Sign in to your account using email and password provided during registration.</p>
+								<form class="form">
+									<div class="form__field">
+										<label class="form__label">Email</label>
+										<input class="form__input" type="email" placeholder="Your working email">
+									</div>
+									<div class="form__field">
+										<label class="form__label">Password</label>
+											<input class="form__input" type="password" placeholder="Enter your password" required />
+												<button type="button" class="form__toggle-password" aria-label="Show password">
+													<img class="modal__close-icon" src="src/images/icons/eyepass.svg" alt="Show password">
+												</button>
+									</div>
+									<div class="form-options">
+										<label class="remember-checkbox">
+											<input type="checkbox" id="remember-me">
+											<span class="checkmark"></span>
+											<span class="checkbox-text">Keep me signed in</span>
+										</label>
+										<a href="#" class="forgot-password">Forgot password?</a>
+									</div>
+										<button class="form__submit" type="submit">Sign In</button>
+									<div class="form__register">
+										<p class="form__register-text">Don't have an account?</p>
+										<a class="form__register-link" href="#">Sign up</a>
+									</div>
+								</form>
+							</div>
+							<div class="horizon__divider"></div>
+							<div class="modal__footer">
+								<p class="modal__footer-text">Or sign in with</p>
+								<div class="modal__footer-social">
+									<a class="modal__footer-link" href="#"> <!--data-icon="Facebook"-->
+										<img class="modal__social-link-img" src="src/images/modal_icons/Facebook.svg" alt="Facebook">
+									</a>
+									<a class="modal__footer-link" href="#"> <!--data-icon="Google"-->
+										<img class="modal__social-link-img" src="src/images/modal_icons/Google.svg" alt="Google">
+									</a>
+									<a class="modal__footer-link" href="#"> <!--data-icon="Twitter"-->
+										<img class="modal__social-link-img" src="src/images/modal_icons/Twitter.svg" alt="Twitter">
+									</a>
+									<a class="modal__footer-link" href="#"> <!--data-icon="Linked-In"-->
+										<img class="modal__social-link-img"  src="src/images/modal_icons/Linked-In.svg" alt="Linked-In">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--burger menu icon-->
 					<div class="burger">
 						<div class="burger__btn-action">
 							<span></span>
@@ -938,7 +996,9 @@
 		</div>
 	</section>
 </div>
+
 	<script src="src/js/burgerMenu.js"></script>
+    <script src="src/js/modalSignIn.js"></script>
 	<script src="src/js/main.js"></script>
 </body>
 </html>
