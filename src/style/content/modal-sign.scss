@@ -113,6 +113,22 @@
         display: none;
       }
     }
+    &-confirm {
+      justify-content: flex-end;
+      position: absolute;
+      right: 60px;
+      top: 62%;
+      transform: translateY(-120%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--colors-gray-800);
+      @include transition;
+      &:focus {
+        outline: none;
+        color: var(--colors-primary);
+      }
+    }
   }
 
 .form-options {
