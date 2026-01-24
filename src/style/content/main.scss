@@ -35,226 +35,60 @@
 		display: flex;
 		gap: var(--spacings-xlm);
 	}
-}
 
-@include desk-sm {
-	.main {
-		&__title {
-			font-size: var(--size-display-4);
-		}
-		&__info-actions {
-			gap: var(--spacings-xlm);
-		}
+	@include tab-md {
+		.main {
+			&__content {
+				flex-direction: column;
+				text-align: center;
+				gap: var(--spacings-2xl);
 
-		&__content {
-			gap: var(--spacings-2m);
-		}
-	}
-}
-
-@include tab-md {
-	.main {
-		padding-top: var(--padding-section-main);
-
-		&__content {
-			flex-direction: column;
-			text-align: center;
-			gap: var(--spacings-2xl);
-
-			img {
-				max-width: 80%;
-				margin: 0 auto;
+				img {
+					max-width: 80%;
+					margin: 0 auto;
+				}
 			}
-		}
 
-		&__info-title {
-			padding: var(--padding-main__content-text);
-			font-size: var(--size-display-2);
-			line-height: var(--height-display-1);
-		}
-
-		&__info-video {
-			justify-content: center;
-
-			&-button {
-				width: 80px;
-				height: 80px;
+			&__info-video {
+				justify-content: center;
 			}
-		}
 
-		&__info-actions {
-			gap: var(--spacings-xlm);
-			justify-content: center;
-		}
-
-
-	}
-
-	.button {
-		&--transparent,
-		&--accent {
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-			transform: translateY(0);
-		}
-	}
-}
-
-@include tab-m {
-	.main {
-		&__content {
-			gap: var(--spacings-2m);
-
-			img {
-				max-width: 70%;
-			}
-		}
-
-		&__info {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		&__title {
-			padding: var(--padding-main__content-text);
-			font-size: var(--size-display-2);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-		}
-
-		&__info-video {
-			display: flex;
-			width: 70px;
-			height: 70px;
-		}
-
-		&__info-actions {
-			gap: var(--spacings-m);
-			flex-wrap: wrap;
-		}
-	}
-
-	.button {
-		&--transparent,
-		&--accent {
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-			min-width: 140px;
-		}
-	}
-}
-
-@include tab-sm {
-	.main {
-		padding-top: var(--padding-section-main);
-
-		&__content {
-			gap: var(--spacings-xlm);
-
-			img {
-				max-width: 85%;
-			}
-		}
-
-		&__title {
-			padding: var(--padding-main__content-text);
-			font-size: var(--size-display-4);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-		}
-
-		&__info-video {
-			width: 60px;
-			height: 60px;
-		}
-
-		&__info-actions {
-			gap: var(--spacings-sm);
-			flex-direction: column;
-			align-items: center;
-			width: 100%;
-		}
-	}
-
-	.button {
-		&--transparent,
-		&--accent {
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-			width: 100%;
-			max-width: 280px;
-			text-align: center;
-
-			&:hover {
-				transform: scale(0.98);
+			&__info-actions {
+				justify-content: center;
 			}
 		}
 	}
-}
 
-@include mob-m {
-	.main {
-		&__content {
-			gap: var(--spacings-lm);
+	@include tab-m {
+		.main {
+			&__content {
+				gap: var(--spacings-2m);
 
-			img {
-				max-width: 95%;
+				img {
+					max-width: 70%;
+				}
+			}
+
+			&__info {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&__info-video {
+				width: 70px;
+				height: 70px;
+			}
+
+			&__info-actions {
+				gap: var(--spacings-m);
 			}
 		}
-
-		&__title {
-			padding: var(--padding-main__content-text);
-			font-size: var(--size-h2);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-		}
-
-		&__info-video {
-			max-width: 80%;
-		}
-
-		&__info-actions {
-			gap: 10px;
-		}
 	}
-
-	@keyframes pulse-play {
-		0% {
-			transform: scale(1);
+	@include tab-sm {
+		.main__info-actions {
+				flex-direction: column;
+				align-items: center;
+			}
 		}
-		50% {
-			transform: scale(1.1);
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
-
-	.button {
-		&--transparent,
-		&--accent {
-			padding: var(--padding-main-button);
-			font-size: var(--size-h6);
-			max-width: 250px;
-			line-height: var(--height-base-btn);
-		}
-	}
-}
-
-@include mob-sm {
-	.main {
-		&__title {
-			font-size: var(--size-display-2);
-			line-height: var(--height-display-1);
-		}
-	}
-
-	.button {
-		&--transparent,
-		&--accent {
-			max-width: 220px;
-			font-size: var(--size-h6);
-		}
-	}
 }

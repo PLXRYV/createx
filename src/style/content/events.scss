@@ -147,328 +147,67 @@
 		line-height: var(--height-large-regular);
 		letter-spacing: var(--letter-spacing-regular);
 	}
-}
-@include desk-sm {
-	.events {
-		&__button {
-			white-space: nowrap;
-		}
 
-		&__link_month-time {
-			padding-bottom: var(--padding-xxm);
-		}
-
-		&__info {
-			padding-bottom: var(--padding-xxm);
-		}
+	@include desk-sm {
+			&__button {
+				white-space: nowrap;
+			}
 	}
-}
 
-@include tab-md {
-	.events {
-		margin-top: var(--margin-section-events);
-
-		&__header {
-			padding-top: var(--padding-2xxl);
-		}
-
-		&__header-text {
-			padding-bottom: var(--padding-xxl);
-			font-size: var(--size-h1);
-		}
-
-		&__link {
-			padding: var(--padding-2xm) var(--padding-xxm);
-			flex-wrap: wrap;
-			gap: var(--spacings-lm);
-		}
-
-		&__link-date {
-			flex: 0 0 auto;
-		}
-
-		&__link_month-time {
-			padding-right: var(--padding-xm);
-			flex: 1;
-		}
-
-		&__info {
-			padding: 0;
-			flex: 1 1 100%;
-			order: 3;
-		}
-
-		&__button {
-			align-self: flex-start;
-		}
-
-		&__more {
-			padding: var(--padding-1xxl) 0 var(--padding-3xxl);
-			flex-direction: column;
-			gap: var(--spacings-lm);
-			text-align: center;
-		}
-
-		&__more-text {
-			padding: 0;
-		}
-	}
-}
-
-@include tab-m {
-	.events {
-		&__header {
-			padding-top: var(--padding-1xxl);
-		}
-
-		&__header-text {
-			padding-bottom: var(--padding-xl);
-			font-size: var(--size-h1);
-			line-height: var(--height-large-regular);
-			text-align: center;
-
-			span {
-				font-size: var(--size-h6);
-			}
-		}
-
-		&__navigation {
-			gap: var(--spacings-lm);
-		}
-
-		&__link {
-			padding: var(--padding-xm) var(--padding-2xm);
-			gap: var(--spacings-m);
-		}
-
-		&__link-date {
-			font-size: var(--size-display-4);
-			gap: var(--spacings-m);
-		}
-
-		&__link_month-time {
-			font-size: var(--size-h6);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__info {
-			font-size: var(--size-h6);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__more {
-			padding: var(--padding-xxl) 0 var(--padding-2xxl);
-		}
-
-		&__more-text {
-			font-size: var(--size-h3);
-		}
-	}
-}
-
-@include tab-sm {
-	.events {
-		margin-top: var(--margin-section-events);
-
-		&__header {
-			padding-top: var(--padding-xxl);
-		}
-
-		&__header-text {
-			padding-bottom: var(--padding-xxm);
-			font-size: var(--size-h1);
-
-			span {
-				font-size: var(--size-h6);
-				text-align: center;
-			}
-		}
-
-		&__navigation {
-			gap: var(--spacings-m);
-		}
-
-		&__navigation_list {
-			&:hover {
-				transform: scale(1.02);
-			}
-		}
-
-		&__link {
-			padding: var(--padding-md) var(--padding-xm);
-			flex-direction: column;
-			gap: var(--spacings-m);
-		}
-
-		&__link-date {
-			justify-content: flex-start;
-			font-size: var(--size-display-4);
-		}
-
-		&__link_month-time {
-			padding: 0;
-			font-size: var(--size-h6);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__info {
-			order: 2;
-			font-size: var(--size-h6);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__button {
-			align-self: center;
-			order: 3;
-			width: 100%;
-			text-align: center;
-		}
-
-		&__more {
-			padding: var(--padding-xl) 0 var(--padding-1xxl);
-		}
-
-		&__more-text {
-			font-size: var(--size-h3);
-		}
-
-		&__more-button {
-			width: 100%;
-			max-width: 200px;
-		}
-	}
-}
-
-@include mob-m {
-	.events {
-		&__header {
-			padding-top: var(--padding-xxm);
-		}
-
-		&__header-text {
-			padding-bottom: var(--padding-2xm);
-			font-size: var(--size-h1);
-			line-height: var(--height-large-regular);
-
-			span {
-				font-size: var(--size-h6);
-				padding-bottom: var(--padding-xs);
-			}
-		}
-
-		&__navigation {
-			gap: var(--spacings-sm);
-		}
-
-		&__link {
-			padding: var(--padding-md);
-			gap: var(--spacings-sm);
-		}
-
-		&__link-date {
-			font-size: var(--size-display-4);
-			gap: var(--spacings-sm);
-		}
-
-		&__link_month-time {
-			font-size: var(--size-h6);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__info {
-			font-size: var(--size-h6);
-			line-height: var(--height-display-1);
-
-			span {
-				font-size: var(--size-h5);
-			}
-		}
-
-		&__button {
-			padding: 0 var(--padding-2xxm);
-			font-size: var(--size-h6);
-		}
-
-		&__more {
-			padding: var(--padding-xxm) 0 var(--padding-xxl);
-			gap: var(--spacings-m);
-		}
-
-		&__more-text {
-			font-size: var(--size-h3);
-		}
-
-		&__more-button {
-			padding: 0 var(--padding-2xxm);
-			font-size: var(--size-h6);
-		}
-	}
-}
-
-@include mob-sm {
-	.events {
-		&__link {
-			padding: var(--padding-md) var(--padding-m);
-		}
-
-		&__link-date {
-			font-size: var(--size-display-4);
-		}
-
-		&__more-button {
-			width: 100%;
-		}
-	}
-}
-
-@include tab-m {
-	@media (orientation: landscape) {
-		.events {
-			&__header {
-				padding-top: var(--padding-xxm);
-			}
-
-			&__navigation {
-				gap: var(--spacings-sm);
-			}
-
+	@include tab-md {
 			&__link {
-				padding: var(--padding-md) var(--padding-xm);
-				flex-direction: row;
+				padding: var(--padding-2xm) var(--padding-xxm);
 				flex-wrap: wrap;
-			}
-
-			&__link-date {
-				flex: 0 0 auto;
-			}
-
-			&__link_month-time {
-				flex: 1;
+				gap: var(--spacings-lm);
 			}
 
 			&__info {
-				flex: 1 1 60%;
+				padding: 0;
+				flex: 1 1 100%;
+				order: 3;
+			}
+
+			&__more {
+				padding: var(--padding-1xxl) 0 var(--padding-3xxl);
+				flex-direction: column;
+				gap: var(--spacings-lm);
+				text-align: center;
+			}
+
+			&__more-text {
+				padding: 0;
+			}
+	}
+
+	@include tab-sm {
+			&__link {
+				flex-direction: column;
+			}
+
+			&__link-date {
+				justify-content: flex-start;
+				font-size: var(--size-display-4);
 			}
 
 			&__button {
-				flex: 0 0 auto;
 				align-self: center;
+				order: 3;
+				width: 100%;
+				text-align: center;
 			}
-		}
+	}
+
+	@include mob-m {
+			&__header-text {
+				font-size: var(--size-h4);
+			}
+
+			&__link-date {
+				gap: var(--spacings-sm);
+			}
+
+			&__more-text {
+				font-size: var(--size-h4);
+			}
 	}
 }

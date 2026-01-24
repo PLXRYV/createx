@@ -17,7 +17,21 @@
 		display: flex;
 		align-items: center;
 		gap: var(--spacings-3xl);
+		@include tab-m {
+			.header {
+				padding-top: var(--padding-xm);
+			}
+		}
+		@include tab-sm {
+			&__inner {
+				align-items: center;
+			}
+			.button__consultation {
+				display: none;
+			}
+		}
 	}
+
 	.nav {
 		@include tab-m {
 			position: absolute;
@@ -157,6 +171,11 @@
 				}
 			}
 		}
+		@include tab-m {
+				display: block;
+				width: 25px;
+				height: 18px;
+		}
 	}
 
 	&__btn-action {
@@ -183,100 +202,6 @@
 			&:hover {
 				transform: none;
 				color: var(--colors-primary);
-			}
-		}
-	}
-}
-//посмотреть что это за nav
-.nav {
-	display: flex;
-	align-items: center;
-
-	&__menu {
-		display: flex;
-		gap: var(--spacings-2xl);
-		align-items: center;
-
-		&-item {
-			transition: all 0.4s;
-
-			&:hover {
-				transform: scale(1.2);
-			}
-
-			&__link {
-				color: var(--colors-gray-800);
-				font-size: var(--size-h6);
-				font-weight: var(--weight-base-regular);
-				line-height: var(--height-base-regular);
-				letter-spacing: var(--letter-spacing-regular);
-				text-decoration: none;
-			}
-		}
-	}
-}
-
-@include desk-sm {
-	.header__button {
-		margin-right: var(--spacings-btn-margin);
-		padding: 0 var(--padding-xm);
-	}
-}
-
-@include tab-md {
-	.header {
-		padding-top: var(--padding-xm);
-	}
-
-	.header__auth {
-		display: flex;
-		text-align: center;
-	}
-}
-
-@include tab-m {
-	.header {
-		padding-top: var(--padding-xm);
-	}
-
-	.header .burger {
-		display: block;
-		width: 25px;
-		height: 18px;
-	}
-
-}
-
-@include tab-sm {
-	.header {
-		padding-top: var(--padding-xm);
-
-		&__inner {
-			align-items: center;
-		}
-	}
-
-	.button__consultation {
-		display: none;
-	}
-}
-
-@include mob-m {
-	.header {
-		padding-top: var(--padding-xm);
-
-		&__burger {
-			width: 22px;
-			height: 16px;
-
-			span {
-				&:nth-child(2) {
-					top: 7px;
-				}
-
-				&:nth-child(3) {
-					top: 14px;
-				}
 			}
 		}
 	}

@@ -1,216 +1,273 @@
 @use "../mixins" as *;
 
 .modal {
-  display: none;
-  z-index: 100;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: var(--padding-xxm);
-  overflow: auto;
-  &.active {
-    display: flex;
-    @include transition;
-  }
-  &__wrapper {
-    position: relative;
-    max-width: 480px;
-    background-color: var(--colors-white);
-    text-align: center;
-    margin: auto;
-    border-radius: var(--roundings-s);
-  }
-  &__header {
-    display: flex;
-    justify-content: right;
-    margin: var(--padding-xxm) var(--padding-xxm) 0 0;
-  }
-  &__content{
-    padding: var(--padding-2xm) var(--padding-certificate);
-  }
-  &__title {
-    font-size: var(--size-h3);
-    font-weight: var(--weight-base-bold);
-    line-height: var(--height-large-regular);
-    letter-spacing: var(--letter-spacing-regular);
-  }
-  &__subtitle {
-    font-size: var(--size-badge);
-    font-weight: var(--weight-base-regular);
-    line-height: var(--height-large-regular);
-    letter-spacing: var(--letter-spacing-regular);
-    color: var(--colors-gray-700);
-    padding-top: var(--padding-2xm);
-  }
+	display: none;
+	z-index: 100;
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: var(--padding-xxm);
+	overflow: auto;
+
+	&.active {
+		display: flex;
+		@include transition;
+	}
+
+	&__wrapper {
+		position: relative;
+		max-width: 480px;
+		max-height: 90vh;
+		background-color: var(--colors-white);
+		text-align: center;
+		margin: auto;
+		border-radius: var(--roundings-s);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: right;
+		margin: var(--padding-xxm) var(--padding-xxm) 0 0;
+		flex-shrink: 0;
+	}
+
+	&__content {
+		padding: var(--padding-2xm) var(--padding-certificate);
+		overflow-y: auto;
+		flex: 1;
+		min-height: 0;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+			border-radius: 3px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--colors-gray-300);
+			border-radius: 3px;
+
+			&:hover {
+				background: var(--colors-gray-400);
+			}
+		}
+
+		scrollbar-width: thin;
+		scrollbar-color: var(--colors-gray-300) transparent;
+	}
+
+	&__title {
+		font-size: var(--size-h3);
+		font-weight: var(--weight-base-bold);
+		line-height: var(--height-large-regular);
+		letter-spacing: var(--letter-spacing-regular);
+	}
+
+	&__subtitle {
+		font-size: var(--size-badge);
+		font-weight: var(--weight-base-regular);
+		line-height: var(--height-large-regular);
+		letter-spacing: var(--letter-spacing-regular);
+		color: var(--colors-gray-700);
+		padding-top: var(--padding-2xm);
+	}
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacings-lm);
-  padding-top: var(--padding-2xm);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacings-lm);
+	padding-top: var(--padding-2xm);
 
-  &__field {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: var(--spacings-s);
-  }
+	&__field {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		gap: var(--spacings-s);
+		position: relative;
+	}
 
-  &__label {
-    font-size: var(--size-badge);
-    font-weight: var(--weight-base-regular);
-    line-height: var(--height-large-regular);
-    letter-spacing: var(--letter-spacing-regular);
-    color: var(--colors-gray-800);
-  }
+	&__label {
+		font-size: var(--size-badge);
+		font-weight: var(--weight-base-regular);
+		line-height: var(--height-large-regular);
+		letter-spacing: var(--letter-spacing-regular);
+		color: var(--colors-gray-800);
+	}
 
-  &__input {
-    background-color: var(--colors-white);
-    border-radius: var(--roundings-s);
-    padding: var(--padding-m) var(--padding-md);
-    border: 1px solid var(--colors-gray-400);
-    color: var(--colors-gray-900);
-    font-size: var(--size-body);
-    transition: border-color 0.3s;
+	&__input {
+		background-color: var(--colors-white);
+		border-radius: var(--roundings-s);
+		padding: var(--padding-m) var(--padding-md);
+		border: 1px solid var(--colors-gray-400);
+		color: var(--colors-gray-900);
+		font-size: var(--size-body);
+		transition: border-color 0.3s;
 
-    &::placeholder {
-      color: var(--colors-gray-400);
-      opacity: 1;
-    }
+		&::placeholder {
+			color: var(--colors-gray-400);
+			opacity: 1;
+		}
 
-    &:focus {
-      outline: none;
-      border-color: var(--colors-primary);
-      color: var(--colors-gray-900);
-    }
-  }
+		&:focus {
+			outline: none;
+			border-color: var(--colors-primary);
+			color: var(--colors-gray-900);
+		}
+	}
 }
 
-  .form__toggle-password {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    right: 60px;
-    top: 51%;
-    transform: translateY(-100%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--colors-gray-800);
-    @include transition;
+.form__toggle-password {
+	display: flex;
+	position: absolute;
+	right: 17px;
+	top: 80%;
+	transform: translateY(-100%);
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--colors-gray-800);
+	@include transition;
 
-    &:focus {
-      outline: none;
-      color: var(--colors-primary);
-    }
-    &__toggle-icon {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
+	&:focus {
+		outline: none;
+		color: var(--colors-primary);
+	}
 
-      &--hide {
-        display: none;
-      }
-    }
-    &-confirm {
-      justify-content: flex-end;
-      position: absolute;
-      right: 60px;
-      top: 62%;
-      transform: translateY(-120%);
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--colors-gray-800);
-      @include transition;
-      &:focus {
-        outline: none;
-        color: var(--colors-primary);
-      }
-    }
-  }
+	&__toggle-icon {
+		width: 20px;
+		height: 20px;
+		fill: currentColor;
+
+		&--hide {
+			display: none;
+		}
+	}
+
+	&-confirm {
+		justify-content: flex-end;
+		position: absolute;
+		right: 17px;
+		top: 90%;
+		transform: translateY(-120%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		color: var(--colors-gray-800);
+		@include transition;
+
+		&:focus {
+			outline: none;
+			color: var(--colors-primary);
+		}
+	}
+}
 
 .form-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: var(--padding-2xs);
-  gap: var(--spacings-xs);
-  font-size: var(--size-badge);
-  font-weight: var(--weight-base-regular);
-  line-height: var(--height-large-regular);
-  letter-spacing: var(--letter-spacing-regular);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: var(--padding-2xs);
+	gap: var(--spacings-xs);
+	font-size: var(--size-badge);
+	font-weight: var(--weight-base-regular);
+	line-height: var(--height-large-regular);
+	letter-spacing: var(--letter-spacing-regular);
 }
 
 .forgot-password {
-  font-size: var(--size-badge);
-  font-weight: var(--weight-base-regular);
-  line-height: var(--height-large-regular);
-  letter-spacing: var(--letter-spacing-regular);
-  color: var(--colors-primary);
+	font-size: var(--size-badge);
+	font-weight: var(--weight-base-regular);
+	line-height: var(--height-large-regular);
+	letter-spacing: var(--letter-spacing-regular);
+	color: var(--colors-primary);
 }
 
 .form__submit {
-  width: 100%;
-  color: var(--colors-white);
-  background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-  border: none;
-  font-size: var(--size-h6);
-  font-weight: var(--weight-base-bold);
-  line-height: var(--height-base-btn);
-  @include transition;
-  &:hover {
-    transform: scale(0.95);
-    box-shadow: 0 3px 4px var(--colors-orange);
-  }
+	width: 100%;
+	color: var(--colors-white);
+	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+	border: none;
+	font-size: var(--size-h6);
+	font-weight: var(--weight-base-bold);
+	line-height: var(--height-base-btn);
+	@include transition;
+
+	&:hover {
+		transform: scale(0.95);
+		box-shadow: 0 3px 4px var(--colors-orange);
+	}
 }
 
 .form__register {
-  display: flex;
-  gap: var(--spacings-xs);
-  font-size: var(--size-badge);
-  font-weight: var(--weight-base-regular);
-  line-height: var(--height-large-regular);
-  letter-spacing: var(--letter-spacing-regular);
-  color: var(--colors-gray-800);
-  padding: var(--padding-2xs) 0 ;
-  &-link {
-    color: var(--colors-primary);
-  }
+	display: flex;
+	gap: var(--spacings-xs);
+	font-size: var(--size-badge);
+	font-weight: var(--weight-base-regular);
+	line-height: var(--height-large-regular);
+	letter-spacing: var(--letter-spacing-regular);
+	color: var(--colors-gray-800);
+	padding: var(--padding-2xs) 0;
+
+	&-link {
+		color: var(--colors-primary);
+	}
 }
 
 .horizon__divider {
-  width: 100%;
-  height: 1px;
-  background-color: var(--colors-gray-300);
+	width: 100%;
+	height: 1px;
+	background-color: var(--colors-gray-300);
 }
 
 .modal__footer {
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-2xm) 0 var(--padding-1xxl);
-  gap: var(--spacings-m);
-  &-text {
-    font-size: var(--size-badge);
-    font-weight: var(--weight-base-regular);
-    line-height: var(--height-large-regular);
-    letter-spacing: var(--letter-spacing-regular);
-    color: var(--colors-gray-700);
-  }
-  &-social {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacings-sm);
-  }
-  &-link {
-    color: var(--colors-gray-700);
-    @include transition;
-    &:hover{
-      color: var(--colors-primary);
-    }
-    }
-  }
+	display: flex;
+	flex-direction: column;
+	padding: var(--padding-2xm) 0 var(--padding-1xxl);
+	gap: var(--spacings-m);
+	flex-shrink: 0;
+
+	&-text {
+		font-size: var(--size-badge);
+		font-weight: var(--weight-base-regular);
+		line-height: var(--height-large-regular);
+		letter-spacing: var(--letter-spacing-regular);
+		color: var(--colors-gray-700);
+	}
+
+	&-social {
+		display: flex;
+		justify-content: center;
+		gap: var(--spacings-sm);
+	}
+
+	&-link {
+		color: var(--colors-gray-700);
+		@include transition;
+
+		&:hover {
+			color: var(--colors-primary);
+		}
+	}
+}
+
+@media (max-height: 600px) {
+	.modal {
+		padding: 0;
+
+		&__wrapper {
+			max-height: 100vh;
+			border-radius: 0;
+			width: 100%;
+		}
+	}
+}
 
 
 

@@ -21,7 +21,6 @@ if (closeModalBtnSignUp) {
     })
 }
 
-
 if (openModalBtn) {
     openModalBtn.addEventListener('click', () => {
         WindowModalSignIn.classList.toggle('active');

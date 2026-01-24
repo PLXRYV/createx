@@ -101,66 +101,66 @@
 		right: 0;
 		z-index: 1;
 	}
-}
 
-@include tab-m {
-	.subscribe {
-		&__header-text {
-			padding: 0 var(--padding-md) var(--padding-2xxl);
-			font-size: var(--size-h1);
-			font-weight: var(--weight-big-black);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--weight-base-regular);
-		}
+	@include tab-m {
 
-		&__form {
-			display: flex;
-			align-items: center;
-			gap: var(--spacings-xlm);
-			width: 350px;
-			max-width: 100%;
-			z-index: 3;
+			&__header-text {
+				padding: 0 var(--padding-md) var(--padding-2xxl);
+				font-size: var(--size-h1);
+				font-weight: var(--weight-big-black);
+				line-height: var(--height-display-1);
+				letter-spacing: var(--weight-base-regular);
+			}
 
-			form {
-				flex: 1;
-				background-color: var(--colors-white);
-				border-radius: var(--roundings-s);
-				padding: var(--padding-m) var(--padding-md);
-				border: 1px solid var(--colors-gray-400);
-				color: var(--colors-gray-400);
-				transition: color 0.3s;
+			&__form {
+				display: flex;
+				align-items: center;
+				gap: var(--spacings-xlm);
+				width: 350px;
+				max-width: 100%;
+				z-index: 3;
 
-				&:focus-within {
+				form {
+					flex: 1;
+					background-color: var(--colors-white);
+					border-radius: var(--roundings-s);
+					padding: var(--padding-m) var(--padding-md);
+					border: 1px solid var(--colors-gray-400);
 					color: var(--colors-gray-400);
-					border-color: var(--colors-primary);
+					transition: color 0.3s;
+
+					&:focus-within {
+						color: var(--colors-gray-400);
+						border-color: var(--colors-primary);
+					}
+				}
+
+				input {
+					width: 100%;
+					border: none;
+					outline: none;
+					background: transparent;
+					font-size: var(--size-extra-small);
 				}
 			}
 
-			input {
-				width: 100%;
+			&__button {
+				padding: 0 var(--padding-xm);
+				color: var(--colors-white);
+				background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
 				border: none;
-				outline: none;
-				background: transparent;
-				font-size: var(--size-extra-small);
+				font-size: var(--size-h6);
+				font-weight: var(--weight-base-bold);
+				line-height: var(--height-base-btn);
+				transition: all 0.4s;
 			}
-		}
+			&__image-1 {
+				display: none;
+			}
 
-		&__button {
-			padding: 0 var(--padding-xm);
-			color: var(--colors-white);
-			background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-			border: none;
-			font-size: var(--size-h6);
-			font-weight: var(--weight-base-bold);
-			line-height: var(--height-base-btn);
-			transition: all 0.4s;
-		}
-		&__image-1 {
-			display: none;
-		}
-
-		&__image-2 {
-			display: none;
-		}
+			&__image-2 {
+				display: none;
+			}
 	}
 }
+

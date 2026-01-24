@@ -111,6 +111,35 @@
 		line-height: var(--height-large-regular);
 		letter-spacing: var(--letter-spacing-regular);
 	}
+
+	@include desk-m {
+			&__content {
+				grid-template-columns: 1fr;
+				gap: var(--spacings-lm);
+			}
+	}
+
+	@include tab-md {
+			&__contain-header {
+				flex-direction: column;
+				gap: var(--spacings-2m);
+				text-align: center;
+			}
+	}
+
+	@include tab-sm {
+
+			&__container-card {
+				flex-direction: column;
+			}
+	}
+
+	@include mob-m {
+			&__header-text {
+				display: flex;
+				flex-direction: column;
+			}
+	}
 }
 
 .contain__divider {
@@ -123,279 +152,4 @@
 	width: 1px;
 	background-color: var(--colors-gray-700);
 	height: 100%;
-}
-@media (max-width: 1440px) {
-	.courses {
-		padding-bottom: 150px;
-
-		&__content {
-			grid-template-columns: 1fr;
-			gap: var(--spacings-lm);
-		}
-
-		&__contain-header {
-			padding-bottom: var(--padding-1xxl);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-
-			span {
-				font-size: var(--size-h6);
-			}
-		}
-
-		&__content-card {
-			padding: var(--padding-card);
-		}
-	}
-}
-
-@include tab-md {
-	.courses {
-		padding-top: var(--padding-sections);
-
-		&__contain-header {
-			padding-bottom: var(--padding-xxl);
-			flex-direction: column;
-			gap: var(--spacings-2m);
-			text-align: center;
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-
-			span {
-				font-size: var(--size-h6);
-				align-items: center;
-			}
-		}
-
-		&__header-button {
-			transform: translateY(0);
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-		}
-
-		&__content-card {
-			padding: var(--padding-2xm);
-		}
-
-		&__card-tag {
-			padding: var(--padding-md) 0;
-			font-size: var(--size-h5);
-		}
-	}
-}
-
-@include tab-m {
-	.courses {
-		&__contain-header {
-			padding-bottom: var(--padding-xl);
-			gap: var(--spacings-xlm);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-
-			span {
-				font-size: var(--size-h6);
-			}
-		}
-
-		&__header-button {
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-			width: 100%;
-			max-width: 300px;
-		}
-
-		&__content {
-			gap: var(--spacings-lm);
-		}
-
-		&__content-card {
-			padding: var(--padding-xm);
-		}
-
-		&__card-tag {
-			padding: var(--padding-m) 0;
-			font-size: var(--size-h5);
-			line-height: var(--height-large-regular);
-		}
-
-		&__card-info {
-			flex-wrap: wrap;
-			gap: var(--spacings-s);
-		}
-
-		&__container-card {
-			&:hover {
-				transform: scale(1.02);
-			}
-		}
-	}
-
-	.contain__divider {
-		padding: 0 var(--padding-xs);
-	}
-}
-
-@include tab-sm {
-	.courses {
-		padding-top: var(--padding-sections);
-
-		&__contain-header {
-			padding-bottom: var(--padding-xxm);
-			gap: var(--spacings-lm);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-
-			span {
-				font-size: var(--size-h6);
-				padding-bottom: var(--padding-xs);
-			}
-		}
-
-		&__header-button {
-			padding: 0 var(--padding-xm);
-			font-size: var(--size-h6);
-			max-width: 280px;
-		}
-
-		&__content {
-			gap: var(--spacings-m);
-		}
-
-		&__container-card {
-			flex-direction: column;
-		}
-
-		&__content-card {
-			padding: var(--padding-md);
-		}
-
-		&__card-tag {
-			padding: var(--padding-sm) 0;
-			font-size: var(--size-h5);
-		}
-
-		&__card-price,
-		&__card-speaker {
-			font-size: var(--size-speaker);
-		}
-
-		&__card-badge {
-			font-size: var(--size-badge);
-			padding: 1px var(--padding-xs);
-		}
-	}
-
-	.vertical-divider,
-	.contain__divider {
-		display: none;
-	}
-}
-
-@include mob-m {
-	.courses {
-		padding-top: var(--padding-sections);
-
-		&__contain-header {
-			padding-bottom: var(--padding-2xm);
-			gap: var(--spacings-m);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-			letter-spacing: var(--letter-spacing-base);
-
-			span {
-				font-size: var(--size-h6);
-				padding-bottom: var(--padding-2xs);
-				display: inline;
-			}
-		}
-
-		&__header-button {
-			padding: var(--padding-base);
-			font-size: var(--size-h6);
-			max-width: 250px;
-			line-height: var(--height-base-btn);
-		}
-
-		&__content {
-			gap: var(--spacings-sm);
-		}
-
-		&__content-card {
-			padding: var(--padding-md);
-		}
-
-		&__card-tag {
-			padding: var(--padding-s) 0;
-			font-size: var(--size-h5);
-			line-height: var(--height-large-regular);
-
-			span {
-				display: inline;
-			}
-		}
-
-		&__card-price,
-		&__card-speaker {
-			font-size: var(--size-speaker);
-		}
-
-		&__card-badge {
-			font-size: var(--size-badge);
-			padding: 1px var(--padding-2xs);
-		}
-
-		&__card-info {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: var(--spacings-xs);
-		}
-
-		&__container-card {
-			&:hover {
-				transform: scale(1.01);
-			}
-		}
-	}
-}
-
-@include mob-sm {
-	.courses {
-		&__header-text {
-			font-size: var(--size-h1);
-
-			span {
-				font-size: var(--size-h6);
-			}
-		}
-
-		&__header-button {
-			max-width: 220px;
-			font-size: var(--size-h6);
-		}
-
-		&__content-card {
-			padding: var(--padding-md);
-		}
-
-		&__card-tag {
-			font-size: var(--size-h5);
-		}
-	}
 }

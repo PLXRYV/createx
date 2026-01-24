@@ -8,18 +8,11 @@
 		gap: var(--spacings-container-certificate);
 	}
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-	}
-
 	&__header {
 		padding-bottom: var(--padding-certificate);
 	}
 
 	&__header-text {
-		display: flex;
-		flex-direction: column;
 		font-size: var(--size-h1);
 		font-weight: var(--weight-big-black);
 		line-height: var(--height-display-1);
@@ -36,18 +29,11 @@
 		}
 	}
 
-	&__description {
-		padding-bottom: var(--padding-certificate);
-		gap: var(--spacings-2m);
-	}
-
 	&__description-text {
 		padding-bottom: var(--padding-2xxm);
 		color: var(--colors-gray-800);
 		font-size: var(--size-h6);
 		font-weight: var(--weight-base-regular);
-		line-height: var(--height-base-regular);
-		letter-spacing: var(--letter-spacing-regular);
 	}
 
 	&__description-images {
@@ -58,165 +44,58 @@
 
 	&__createx {
 		position: relative;
-		z-index: 1000;
+		z-index: 1;
 		height: auto;
+		transform: translateY(40px);
 	}
-}
 
-@include desk-sm {
-	.certificate {
-		&__container {
-			gap: var(--spacings-large);
-		}
-
-		&__header {
-			padding-bottom: var(--padding-xxl);
-		}
-
-		&__description {
-			padding-bottom: var(--padding-xxl);
-		}
-
-		&__createx {
-			z-index: 1000;
-			max-width: 100%;
-			width: 100%;
-			height: auto;
-		}
-	}
-}
-
-@include tab-md {
-	.certificate {
-		padding-top: var(--padding-2xxl);
-
-		&__container {
-			gap: var(--spacings-4xl);
-			flex-direction: column;
-		}
-
-		&__header {
-			padding-bottom: var(--padding-2xxm);
-		}
-
-		&__description {
-			padding-bottom: var(--padding-2xxm);
-		}
-
-		&__description-images {
-			gap: var(--spacings-2m);
-			justify-content: center;
-		}
-	}
-}
-
-@include tab-m {
-	.certificate {
-		&__container {
-			gap: var(--spacings-3xl);
-		}
-
-		&__header {
-			padding-bottom: var(--padding-2xm);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-large-regular);
-
-			span {
-				font-size: var(--size-h6);
+	@include desk-sm {
+			&__createx {
+				max-width: 100%;
+				width: 100%;
 			}
-		}
-
-		&__description {
-			padding-bottom: var(--padding-2xm);
-		}
-
-		&__description-text {
-			font-size: var(--size-h6);
-		}
-
-		&__description-images {
-			gap: var(--spacings-lm);
-			flex-wrap: wrap;
-		}
 	}
-}
 
-@include tab-sm {
-	.certificate {
-		padding-top: var(--padding-xxm);
-
-		&__container {
-			gap: var(--spacings-2xl);
-		}
-
-		&__header {
-			padding-bottom: var(--padding-xm);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-base-regular);
-
-			span {
-				font-size: var(--size-h6);
-				padding-bottom: var(--padding-xs);
+	@include tab-md {
+			&__container {
+				gap: var(--spacings-4xl);
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
 			}
-		}
 
-		&__description {
-			padding-bottom: var(--padding-xm);
-		}
+			&__header {
+				padding-bottom: var(--padding-2xxm);
+			}
 
-		&__description-text {
-			font-size: var(--size-h6);
-			line-height: var(--height-display-1);
-		}
-
-		&__description-images {
-			gap: var(--spacings-m);
-		}
+			&__description-images {
+				padding-bottom: var(--padding-2xxm);
+				gap: var(--spacings-2m);
+				justify-content: center;
+			}
 	}
-}
 
-@include mob-m {
-	.certificate {
-		&__container {
-			gap: var(--spacings-2m);
-		}
-
-		&__header {
-			padding-bottom: var(--padding-md);
-		}
-
-		&__header-text {
-			font-size: var(--size-h1);
-			line-height: var(--height-display-1);
-
-			span {
-				font-size: var(--size-h6);
-				padding-bottom: var(--padding-2xs);
+	@include mob-m {
+			&__container {
+				gap: var(--spacings-2m);
 			}
-		}
 
-		&__description {
-			padding-bottom: var(--padding-md);
-		}
+			&__header {
+				padding-bottom: var(--padding-md);
+			}
 
-		&__description-text {
-			font-size: var(--size-h6);
-		}
+			&__description {
+				padding-bottom: var(--padding-md);
+			}
 
-		&__description-images {
-			gap: var(--spacings-sm);
-			flex-direction: column;
-			align-items: center;
-		}
+			&__description-images {
+				display: block;
+				gap: var(--spacings-sm);
 
-		&__createx {
-			max-width: 90%;
-		}
+			}
+
+			&__createx {
+				max-width: 90%;
+			}
 	}
 }
