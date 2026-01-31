@@ -253,7 +253,7 @@
 		}
 
 		&__item-text {
-			font-size: var(--size-h5);
+			font-size: var(--size-h6);
 			line-height: var(--height-base-regular);
 			text-align: center;
 		}
@@ -295,19 +295,23 @@
 		}
 
 		&__item-text {
-			font-size: var(--size-h1);
+			font-size: var(--size-h6);
 			line-height: var(--height-display-1);
 		}
 
 		&__profile-name {
-			font-size: var(--size-badge);
+			font-size: var(--size-h6);
 			line-height: var(--height-display-1);
 			padding-top: var(--padding-m);
 
 			span {
-				font-size: var(--size-badge);
+				font-size: var(--size-h6);
 				line-height: var(--height-display-1);
 			}
+		}
+		&__item-profile {
+			height: 50%;
+			width: 50%;
 		}
 	}
 
@@ -331,7 +335,7 @@
 		}
 
 		&__item-text {
-			font-size: var(--size-h5);
+			font-size: var(--size-h6);
 		}
 	}
 

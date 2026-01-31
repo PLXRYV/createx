@@ -198,12 +198,13 @@
 		}
 
 		&__header {
+			margin-top: var(--padding-xxl);
 			justify-content: center;
 			flex-direction: column;
 		}
 
 		&__arrows {
-			display: flex;
+			display: none;
 			justify-content: center;
 			transform: translateY(0px);
 		}
@@ -225,11 +226,12 @@
 			gap: var(--spacings-lm);
 			flex-wrap: wrap;
 			justify-content: center;
+
 		}
 
 		&__navigation_item {
 			flex: 0 1 calc(50% - 20px);
-			max-width: 280px;
+			max-width: 150px;
 		}
 
 		&__image {
