@@ -1,32 +1,22 @@
-const menu = document.querySelector('.nav');
-const menuAuth = document.querySelector('.header__auth');
-const menuBtn = document.querySelector('.burger');
+document.addEventListener('click', (event) => {
+    const btnBurgerElement = event.target.closest('.burger')
+    const burgerMenu = document.querySelector('.nav')
+    const bodyElement = document.body
 
-const body = document.body;
+    if (btnBurgerElement) {
+        burgerMenu.classList.toggle('active')
+        btnBurgerElement.classList.toggle('active')
+        bodyElement.classList.toggle('no-scroll')
+        return
+    }
 
-if (menuBtn && menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        menuAuth.classList.toggle('active');
-        menuBtn.classList.toggle('active');
-        body.classList.toggle('lock');
-    })
+    if (!event.target.closest('.nav__menu') && burgerMenu.classList.contains('active')) {
+        burgerMenu.classList.remove('active')
 
-    menu.addEventListener('click', event => {
-        if (event.target.classList.contains('nav')) {
-            menu.classList.remove('active');
-            menuAuth.classList.remove('active');
-            menuBtn.classList.remove('active');
-            body.classList.remove('lock');
+        const activeBurger = document.querySelector('.burger.active')
+        if (activeBurger) {
+            activeBurger.classList.remove('active')
         }
-    })
-
-    menu.querySelectorAll('.nav__menu-item__link').forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('active');
-            menuAuth.classList.remove('active');
-            menuBtn.classList.remove('active');
-            body.classList.remove('lock');
-        })
-    })
-}
+        bodyElement.classList.remove('no-scroll')
+    }
+})

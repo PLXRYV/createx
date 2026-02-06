@@ -1,36 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const navButtons = document.querySelectorAll('.benefits__navigation-link');
-    const contentBlocks = document.querySelectorAll('.benefits__content');
+document.addEventListener('click', (event) => {
+    const buttonBenefitsElement = event.target.closest('.benefits__navigation-link')
 
-    function activateBlock(target) {
-        contentBlocks.forEach(block => {
-            block.style.display = 'none';
-        });
+    if (buttonBenefitsElement) {
+        const target = buttonBenefitsElement.getAttribute('data-target')
+        if (!target) return
 
-        navButtons.forEach(button => {
-            button.classList.remove('active');
-        });
+        document.querySelectorAll('.benefits__navigation-link').forEach(btn => {
+            btn.classList.remove('active')
+        })
 
-        const targetBlock = document.querySelector(`.benefits__content-${target}`);
+        document.querySelectorAll('.benefits__content').forEach(block => {
+            block.style.display = 'none'
+        })
+
+        const targetBlock = document.querySelector(`.benefits__content-${target}`)
         if (targetBlock) {
-            targetBlock.style.display = 'flex';
+            targetBlock.style.display = 'flex'
         }
 
-        const activeButton = document.querySelector(`[data-target="${target}"]`);
-        if (activeButton) {
-            activeButton.classList.add('active');
-        }
+        buttonBenefitsElement.classList.add('active')
+    }
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navbarBtns = document.querySelector('.benefits__navigation-bar');
+
+    function activateBlock(event) {
+        const target = event.target;
+
+        const btnTarget = target.closest('.benefits__navigation-link');
+        if (!btnTarget || btnTarget.classList.contains('benefits__navigation-link--active')) return;
+
+        navbarBtns.querySelector('.benefits__navigation-link--active').classList.remove('benefits__navigation-link--active');
+        btnTarget.classList.add('benefits__navigation-link--active');
+
+        const targetDataAttribute = btnTarget.getAttribute('data-target');
+
+        document.querySelector('.benefits__content--active').classList.remove('benefits__content--active');
+        document.querySelector(`.benefits__content-${targetDataAttribute}`).classList.add('benefits__content--active');
     }
 
-    navButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const target = this.getAttribute('data-target');
-            activateBlock(target);// делегирование событий
-        });
-    });
-
-    if (navButtons.length > 0) {
-        const firstTarget = navButtons[0].getAttribute('data-target');
-        activateBlock(firstTarget);
-    }
+    navbarBtns.addEventListener('click', activateBlock);
 });

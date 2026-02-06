@@ -307,3 +307,43 @@
 		}
 	}
 }
+
+.team__navigation {
+	overflow: hidden;
+	position: relative;
+}
+
+.team__navigation_list {
+	display: flex;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform;
+	gap: 20px;
+}
+
+.team__navigation_item {
+	flex: 0 0 auto;
+	min-width: 0;
+}
+
+.team__arrow-left,
+.team__arrow-right {
+	transition: all 0.3s ease;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.team__arrow-left:hover:not(:disabled),
+.team__arrow-right:hover:not(:disabled) {
+	transform: scale(1.1);
+}
+
+.team__arrow-left:disabled svg path,
+.team__arrow-right:disabled svg path {
+	fill: #ccc;
+}
+
+.team__navigation_list {
+	touch-action: pan-y;
+}
