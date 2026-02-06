@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.team__arrow-left');
     const nextBtn = document.querySelector('.team__arrow-right');
 
-
     let itemsPerView = 4;
     let currentIndex = 0;
     let totalItems = sliderItems.length;

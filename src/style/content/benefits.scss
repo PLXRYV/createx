@@ -60,12 +60,25 @@
 			border: 1px solid var(--colors-primary);
 			border-radius: var(--roundings-s);
 		}
+
+    &.benefits__navigation-link--active {
+      color: var(--colors-primary);
+      border: 1px solid var(--colors-primary);
+      border-radius: var(--roundings-s);
+
+      @include transition;
+    }
 	}
 
 	&__content {
-		display: flex;
+    display: none;
 		text-align: left;
 		align-items: center;
+
+    &.benefits__content--active {
+      display: flex;
+      opacity: 1;
+    }
 	}
 
 	&__content-text {
@@ -177,20 +190,4 @@
 	margin-right: 8px;
 	width: 16px;
 	height: 16px;
-}
-//slider-animation
-.benefits__content {
-	display: none;
-}
-
-.benefits__content.active {
-	display: flex;
-	opacity: 1;
-}
-
-.benefits__navigation-link.active {
-	color: var(--colors-primary);
-	border: 1px solid var(--colors-primary);
-	border-radius: var(--roundings-s);
-	@include transition;
 }
