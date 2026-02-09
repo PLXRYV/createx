@@ -1,1 +1,7 @@
 @use './absolute-images' as *;
+@use "/src/style/globals/header.scss" as *;
+@use "/src/style/globals/modal-sign.scss" as *;
+@use "/src/style/globals/reset.scss" as *;
+@use "/src/style/globals/footer.scss" as *;
+@use "/src/style/globals/subscribe.scss" as *;
+@use "/src/style/globals/copyright.scss" as *;

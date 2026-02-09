@@ -48,3 +48,24 @@ WindowModalSignUp.addEventListener('click', event => {
         mainBody.classList.remove('lock');
     }
 })
+
+// document.addEventListener('click', (event) => {
+//     const modalSignInBtn = document.querySelector('.header__auth-btn--signin')
+//     const modalSignUpBtn = document.querySelector('.header__auth-btn--signup')
+//     const modalCloseBtn = document.querySelector('.modal__close-icon')
+//     const modalSignInWindow = document.querySelector('.modal')
+//     const modalSignUpWindow = document.querySelector('.modal__register')
+//     const body = document.querySelector('body')
+//     const modalElement = document.querySelector('.modal__content')
+//
+//     if (modalSignInBtn) {
+//         modalSignInWindow.classList.add('active')
+//         body.classList.add('no-scroll')
+//         return
+//     }
+//
+//     if (modalCloseBtn) {
+//         modalSignUpWindow.classList.remove('active')
+//         modalSignInWindow.classList.remove('active')}
+//         body.classList.remove('no-scroll')
+// })

@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Events</title>
+	<link rel="stylesheet" href="/src/style/globals/index.scss">
 	<link rel="stylesheet" href="/src/style/pages/events/style.scss">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,18 +199,34 @@
 				</div>
 
 
-				<div class="events__category">
-					<div class="events__category-item">
-						<p class="events__category-title">
+				<div class="events__sort">
+					<div class="events__sort-item">
+						<p class="events__sort-title">
 							Event category
 						</p>
-						<select name="select" class="events__category-select">
+						<select name="select" class="events__sort-select">
 							<option value="" disabled selected>all themes</option>
 							<option value="lecture">online lecture</option>
 							<option value="workshop">online workshop</option>
 							<option value="master-class">online master-class</option>
 						</select>
 					</div>
+
+					<div class="events__sort-item">
+						<p class="events__sort-title">
+							Sort by
+						</p>
+						<select name="select" class="events__sort-select">
+							<option value="" disabled selected>newest</option>
+							<option value="old">oldest</option>
+						</select>
+					</div>
+
+					<div class="events__sort-item">
+						<p class="events__sort-title">Show</p>
+
+					</div>
+
 				</div>
 
 				<!--first date-->

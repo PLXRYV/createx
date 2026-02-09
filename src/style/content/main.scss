@@ -29,6 +29,10 @@
 		font-weight: var(--weight-big-black);
 		line-height: var(--height-display-1);
 		letter-spacing: var(--letter-spacing-base);
+
+		@include tab-m {
+			padding-right: 0;
+		}
 	}
 
 	&__info-actions {

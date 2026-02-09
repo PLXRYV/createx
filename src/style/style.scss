@@ -1,5 +1,5 @@
 @use "variables/index.scss" as *;
 @use "mixins" as *;
-@use "content/index" as *;
-@use "/src/style/layout/index.scss" as *;
+@use "/src/style/content/index.scss" as *;
+@use "/src/style/globals/index.scss" as *;
 @use "/src/style/global.scss" as *;
