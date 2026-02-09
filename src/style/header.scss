@@ -11,15 +11,24 @@
 	&__inner {
 		display: flex;
 		justify-content: space-between;
-		@include tab-sm {
-			align-items: center;
-		}
 	}
 
 	&__menu {
 		display: flex;
 		align-items: center;
 		gap: var(--spacings-3xl);
+		@include tab-m {
+			.header {
+				padding-top: var(--padding-xm);
+			}
+		}
+		@include tab-sm {
+			&__inner {
+				align-items: center;
+			}
+			.button__consultation {
+				display: none;
+			}
 		}
 	}
 
@@ -63,16 +72,15 @@
 				font-weight: var(--weight-base-bold);
 				line-height: var(--height-base-regular);
 				letter-spacing: var(--letter-spacing-regular);
-
 				@include tab-m {
 					font-size: var(--size-h4);
 					line-height: var(--height-base-regular);
 					color: var(--colors-white);
 				}
 			}
+
 		}
 	}
-
 	&__info-actions {
 		display: flex;
 	}
@@ -106,20 +114,16 @@
 			letter-spacing: var(--letter-spacing-regular);
 			cursor: pointer;
 			@include transition;
-
 			&:hover {
 				transform: scale(1.1);
 			}
-
 			@include tab-m {
 				font-size: var(--size-h5);
 				color: var(--colors-white);
 			}
 		}
-
 		&-separator {
 			color: var(--colors-gray-800);
-
 			@include tab-m {
 				font-size: var(--size-h5);
 				color: var(--colors-white);
@@ -151,7 +155,7 @@
 				top: auto;
 				bottom: 0;
 			}
-			}
+		}
 		&.active {
 			span {
 				transform: scale(0);
@@ -168,9 +172,9 @@
 			}
 		}
 		@include tab-m {
-				display: block;
-				width: 25px;
-				height: 18px;
+			display: block;
+			width: 25px;
+			height: 18px;
 		}
 	}
 
@@ -202,8 +206,3 @@
 		}
 	}
 }
-
-@include tab-sm {
-	.button__consultation {
-		display: none;
-	}
