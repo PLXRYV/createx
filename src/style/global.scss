@@ -1,5 +1,5 @@
-@use "./globals/index" as *;
-@use "mixins" as *;
+@use "/src/style/globals/index" as *;
+@use "/src/style/mixins" as *;
 
 body {
   font-family: "Lato", sans-serif;

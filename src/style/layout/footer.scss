@@ -1,4 +1,4 @@
-@use "mixins" as *;
+@use "/src/style/mixins" as *;
 
 .footer {
 	padding: var(--padding-xxxl) 0 var(--padding-2xxl);
