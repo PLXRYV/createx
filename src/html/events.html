@@ -223,8 +223,33 @@
 					</div>
 
 					<div class="events__sort-item">
-						<p class="events__sort-title">Show</p>
+						<span class="events__sort-title">Show</span>
+						<div class="events__sort-value">
+							<span class="value">9</span>
+							<div class="events__sort-btn">
+							<button class="events__sort-btn-plus"><img src="/src/images/events/buttonTriangleUp.svg" data-fill="false"></button>
+							<button class="events__sort-btn-min"><img src="/src/images/events/buttonTriangleDown.svg" data-fill="false"></button>
+							</div>
+						</div>
+						<span class="events__sort-description">events per page</span>
+					</div>
 
+					<div class="events__sort-search">
+						<form class="events__sort-search-form" role="search">
+							<input class="events__sort-search-input" aria-label="Search event..." type="search" placeholder="Search event...">
+							<button class="events__sort-search-btn" type="submit">
+								<img src="/src/images/events/buttonSearch.svg" alt="Search image" data-fill="false">
+							</button>
+						</form>
+					</div>
+
+					<div class="events__sort-visual">
+						<button class="events__sort-visual-btn active" data-target="btnList">
+							<img src="/src/images/events/visualListBtn.svg" alt="Button visual image" data-fill="false">
+						</button>
+						<button class="events__sort-visual-btn" data-target="btnGrid">
+							<img src="/src/images/events/visualGridBtn.svg" alt="Button visual image" data-fill="false">
+						</button>
 					</div>
 
 				</div>
@@ -297,7 +322,7 @@
 						</div>
 					</div>
 
-					<!-- fouth date-->
+					<!-- fourth date-->
 					<div class="events__navigation_list">
 						<div class="events__link">
 							<div class="events__link-date">
@@ -389,7 +414,7 @@
 						</div>
 					</div>
 
-					<!-- eigth date -->
+					<!-- eighth date -->
 					<div class="events__navigation_list">
 						<div class="events__link">
 							<div class="events__link-date">
@@ -412,7 +437,7 @@
 						</div>
 					</div>
 
-					<!-- nineth date -->
+					<!-- ninth date -->
 					<div class="events__navigation_list">
 						<div class="events__link">
 							<div class="events__link-date">
@@ -436,10 +461,17 @@
 					</div>
 
 				</div>
-				<!--events bottom-->
-				<div class="events__more">
-
-				</div></div>
+				<!--events pagination-->
+				<div class="events__pagination">
+					<button class="events__pagination-page active">1</button>
+					<button class="events__pagination-page">2</button>
+					<button class="events__pagination-page">3</button>
+					<button class="events__pagination-page">4</button>
+					<button class="events__pagination-page">
+						<img src="/src/images/events/buttonArrowRight.svg" alt="button next" data-fill="false">
+					</button>
+				</div>
+			</div>
 		</div>
 	</section>
 
