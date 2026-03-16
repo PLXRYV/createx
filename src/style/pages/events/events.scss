@@ -1,6 +1,12 @@
 @use "/src/style/content/events" as *;
 @use "/src/style/mixins" as *;
 
+.nav__menu-item__link {
+	&.active {
+			color: var(--colors-primary);
+	}
+}
+
 .events {
 	background: none;
 
@@ -10,6 +16,11 @@
 		&:hover {
 			transform: none;
 			box-shadow: 0 80px 80px color-mix(in srgb, var(--colors-primary) 10%, transparent);
+		}
+	}
+	&__header-text {
+		@include tab-sm {
+			text-align: center;
 		}
 	}
 }
@@ -36,6 +47,12 @@
 		}
 	}
 
+	&-description {
+		@include tab-sm {
+			font-size: var(--size-extraextra-small);
+		}
+	}
+
 	&-select {
 		padding: var(--padding-m);
 		border: 1px solid var(--colors-gray-400);
@@ -49,7 +66,7 @@
 	}
 
 	@include tab-sm {
-		justify-content: space-between;
+		justify-content: center;
 	}
 }
 
@@ -176,5 +193,105 @@
 			color: var(--colors-primary);
 		}
 	}
+}
 
+
+	.events__navigation {
+		&.active {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			width: 100%;
+		}
+	}
+
+	.events__link {
+		&.active {
+			flex-direction: column;
+			align-items: flex-start;
+			text-align: start;
+			max-width: 390px;
+			width: 100%;
+			height: 320px;
+			padding: var(--padding-2xm);
+		}
+	}
+
+		.events__link-date {
+			&.active {
+				gap: var(--spacings-s);
+				align-items: inherit;
+				font-size: var(--size-h3);
+			}
+		}
+
+		.events__link-date-box {
+			display: flex;
+			&.active {
+				display: block;
+			}
+		}
+
+		.events__link_month-time {
+			&.active {
+				display: flex;
+				flex-direction: column;
+				padding: 0;
+				transform: translateX(-40px);
+			}
+		}
+
+		.events__link_month-time-span {
+			&.active {
+				font-size: var(--size-h3);
+				color: var(--colors-primary);
+				transform: translate(35px, -4px);
+			}
+
+		}
+
+		.events__link-button {
+			&.active {
+				display: flex;
+				margin: 0 auto;
+				padding: 0;
+			}
+		}
+
+
+	.events__info {
+		&.active {
+			padding-top: var(--padding-xm);
+		}
+	}
+
+	.events__info-span {
+		&.active {
+			font-size: var(--size-speaker);
+		}
+	}
+
+	.events__button {
+		&.active {
+			white-space: nowrap;
+			padding: 0 var(--padding-large);
+		}
+	}
+
+.events__navigation {
+	&.active {
+		opacity: 1;
+		transition: opacity 0.15s ease;
+	}
+}
+
+.events__navigation.rendering {
+	&.active {
+		opacity: 0.3;
+	}
+}
+
+.events__navigation_list {
+	&.active {
+		transition: all 0.2s ease;
+	}
 }

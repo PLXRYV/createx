@@ -28,7 +28,7 @@
 									<a href="#courses" class="nav__menu-item__link">Courses</a>
 								</li>
 								<li class="nav__menu-item">
-									<a href="#events" class="nav__menu-item__link">Events</a>
+									<a href="#events" class="nav__menu-item__link active">Events</a>
 								</li>
 								<li class="nav__menu-item">
 									<a href="#blog" class="nav__menu-item__link">Blog</a>
@@ -204,11 +204,11 @@
 						<p class="events__sort-title">
 							Event category
 						</p>
-						<select name="select" class="events__sort-select">
-							<option value="" disabled selected>all themes</option>
-							<option value="lecture">online lecture</option>
-							<option value="workshop">online workshop</option>
-							<option value="master-class">online master-class</option>
+						<select id="sortCategory" name="select" class="events__sort-select">
+							<option value="all" >all themes</option>
+							<option value="Online lecture">online lecture</option>
+							<option value="Online workshop">online workshop</option>
+							<option value="Online master-class">online master-class</option>
 						</select>
 					</div>
 
@@ -216,9 +216,9 @@
 						<p class="events__sort-title">
 							Sort by
 						</p>
-						<select name="select" class="events__sort-select">
-							<option value="" disabled selected>newest</option>
-							<option value="old">oldest</option>
+						<select id="sortOrder" name="select" class="events__sort-select">
+							<option value="asc" >newest</option>
+							<option value="desc">oldest</option>
 						</select>
 					</div>
 
@@ -236,7 +236,7 @@
 
 					<div class="events__sort-search">
 						<form class="events__sort-search-form" role="search">
-							<input class="events__sort-search-input" aria-label="Search event..." type="search" placeholder="Search event...">
+							<input class="events__sort-search-input" aria-label="Search event..." id="filterInput" type="search" placeholder="Search event...">
 							<button class="events__sort-search-btn" type="submit">
 								<img src="/src/images/events/buttonSearch.svg" alt="Search image" data-fill="false">
 							</button>
@@ -244,223 +244,17 @@
 					</div>
 
 					<div class="events__sort-visual">
-						<button class="events__sort-visual-btn active" data-target="btnList">
+						<button class="events__sort-visual-btn active" data-view="list">
 							<img src="/src/images/events/visualListBtn.svg" alt="Button visual image" data-fill="false">
 						</button>
-						<button class="events__sort-visual-btn" data-target="btnGrid">
+						<button class="events__sort-visual-btn" data-view="grid">
 							<img src="/src/images/events/visualGridBtn.svg" alt="Button visual image" data-fill="false">
 						</button>
 					</div>
 
 				</div>
-
-				<!--first date-->
-				<div class="events__navigation">
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-08-05">05</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-08-05T11:00 - 14:00"><span>August</span>11:00 - 14:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										Formation of the organizational structure of the company in the face of uncertainty.
-									</span>
-								Online master-class
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-					<!--second date-->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-07-24">24</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-07-24T11:00 - 12:30"><span>July</span>11:00 - 12:30</time>
-								</div>
-							</div>
-							<div class="events__info events__info--left">
-									<span>
-										Building a customer service department. Best Practices.
-									</span>
-								Online lecture
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-					<!--third date-->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-07-16">16</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-07-16T10:00 - 13:00"><span>July</span>10:00 - 13:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										How to apply methods of speculative design in practice. Worldbuilding prototyping.
-									</span>
-								Online workshop
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- fourth date-->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-07-10">10</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-07-10T9:00 - 14:00"><span>July</span>9:00 - 14:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										Find and evaluate: search and assessment tools for candidates.
-									</span>
-								Online workshop
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- fifth date -->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-06-27">27</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-06-27T15:00 - 19:00"><span>June</span>15:00 - 19:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										Connection to Microsoft Excel and Google Sheets, Data Visualization in Power BI.
-									</span>
-								Online master-class
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- sixth date -->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-06-15">15</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-06-15T10:00 - 12:00"><span>June</span>10:00 - 12:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										Marketing or growth hacking: main differences and what business needs.
-									</span>
-								Online lecture
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- seventh date-->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-06-02">02</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-06-02T11:00 - 13:00"><span>June</span>11:00 - 13:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										How to brief a client and present your design to approve it from the first show.
-									</span>
-								Online lecture
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- eighth date -->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-05-29">29</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-05-29T11:00 - 12:00"><span>May</span>11:00 - 12:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										Who is a project manager and do I want to be PM?
-									</span>
-								Online lecture
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<!-- ninth date -->
-					<div class="events__navigation_list">
-						<div class="events__link">
-							<div class="events__link-date">
-								<time datatime="2025-05-18">18</time>
-								<div class="events__link_month-time">
-									<time datatime="2025-05-18T10:00 - 12:00"><span>May</span>10:00 - 12:00</time>
-								</div>
-							</div>
-							<div class="events__info">
-									<span>
-										The company's business page as an additional tool to support the announcement of vacancies.
-									</span>
-								Online lecture
-							</div>
-							<div class="events__link-button">
-								<button class="events__button">
-									View More
-								</button>
-							</div>
-						</div>
-					</div>
-
-				</div>
+				<ul class="events__navigation">
+				</ul>
 				<!--events pagination-->
 				<div class="events__pagination">
 					<button class="events__pagination-page active">1</button>
@@ -621,5 +415,10 @@
 		<script src="/src/js/main.js"></script>
 		<script src="/src/js/burgerMenu.js"></script>
 		<script src="/src/js/modalSign.js"></script>
+		<script src="/src/js/pages/model.js" type="module"></script>
+		<script src="/src/js/pages/view.js" type="module"></script>
+		<script src="/src/js/pages/controller.js" type="module"></script>
+		<script src="/src/js/pages/view-toggle.js" type="module"></script>
+		<script src="/src/js/pages/view-restore.js" type="module"></script>
 </body>
 </html>
