@@ -38,33 +38,6 @@ button {
   cursor: pointer;
 }
 
-.button__primary {
-	padding: 0 var(--padding-xxl);
-	color: var(--colors-white);
-	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-	border: none;
-	font-size: var(--size-h6);
-	font-weight: var(--weight-base-bold);
-	line-height: var(--height-base-btn);
-	@include transition;
-		&:hover {
-			transform: scale(0.95);
-			box-shadow: 0 3px 4px var(--colors-orange);
-		}
-
-	&-mobile {
-		display: none;
-	}
-	@include tab-m {
-		&-mobile {
-			display: block;
-		}
-		&-consultation {
-		display:none;
-		}
-	}
-}
-
 .button__secondary {
 	padding: 0 var(--padding-2xxm);
 	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));

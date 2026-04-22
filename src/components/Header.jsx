@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ button }) => {
     return (
         <div className="Header">
             <header id="header" className="header">
@@ -31,8 +31,7 @@ const Header = () => {
                         </div>
 
                         <div className="header__info-actions">
-                            <button className="button button__primary button__primary-consultation">Get consultation
-                            </button>
+                            {button}
                             <div className="header__auth">
                                 <button id="#signIn" className="header__auth-btn header__auth-btn--signin">
                                     <img className="header__auth-icon" src="src/images/header/Profile.svg"
