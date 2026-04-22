@@ -1,0 +1,1 @@
+import "/src/components/ButtonPrimary/ButtonPrimary.module.scss";
