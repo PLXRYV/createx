@@ -1,6 +1,6 @@
 import Header from "/src/components/Header"
 import ButtonPrimary from "./src/components/ButtonPrimary/ButtonPrimary";
-import buttonPrimaryStyle from "./src/components/ButtonPrimary/ButtonPrimary.module.scss";
+import ButtonStyles from "/src/components/ButtonPrimary/ButtonPrimary.module.scss";
 import "/src/style/index.js"
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
         <Header
             button={
                 <ButtonPrimary
-                    className={buttonStyles.buttonPrimary} // имя класса из SCSS
+                    className={ButtonStyles.buttonPrimary}
                     onClick={handleClick}
                 >
-                    Войти в аккаунт
+                    Get consultation
                 </ButtonPrimary>
             }
         />
