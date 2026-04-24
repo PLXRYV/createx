@@ -1,6 +1,4 @@
-import Header from "/src/components/Header"
-import ButtonPrimary from "./src/components/ButtonPrimary/ButtonPrimary";
-import ButtonStyles from "/src/components/ButtonPrimary/ButtonPrimary.module.scss";
+import WrapperMain from "/src/components/WrapperMain";
 import "/src/style/index.js"
 
 function App() {
@@ -9,16 +7,10 @@ function App() {
     };
 
     return (
-        <Header
-            button={
-                <ButtonPrimary
-                    className={ButtonStyles.buttonPrimary}
-                    onClick={handleClick}
-                >
-                    Get consultation
-                </ButtonPrimary>
-            }
-        />
+        <div>
+            <WrapperMain/>
+        </div>
+
     )
 }
 
