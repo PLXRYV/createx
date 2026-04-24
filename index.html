@@ -11,196 +11,147 @@
 </head>
 <body>
 <div class="wrapper">
-	<div class="header__bg">
 		<div id="root"></div>
 		<script type="module" src="./main.jsx"></script>
 					<!--modal window sign in-->
-					<div class="modal">
-						<div class="modal__wrapper">
-							<div class="modal__header">
-								<button class="modal__close">
-									<img class="modal__close-icon" data-svg-fill="false" src="src/images/icons/cross.svg" alt="Close modal">
-								</button>
-							</div>
-							<div class="modal__content">
-								<h2 class="modal__title">Sign In</h2>
-								<p class="modal__subtitle">Sign in to your account using email and password provided during registration.</p>
-								<form class="form">
-									<div class="form__field">
-										<label class="form__label">Email</label>
-										<input class="form__input" type="email" placeholder="Your working email">
-									</div>
-									<div class="form__field">
-										<label class="form__label">Password</label>
-											<input class="form__input" type="password" placeholder="Enter your password" required />
-												<button type="button" class="form__toggle-password" aria-label="Show password">
-													<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">
-												</button>
-									</div>
-									<div class="form-options">
-										<label class="remember-checkbox">
-											<input type="checkbox">
-											<span class="checkmark"></span>
-											<span class="checkbox-text">Keep me signed in</span>
-										</label>
-										<a href="#" class="forgot-password">Forgot password?</a>
-									</div>
-										<button class="form__submit" type="submit">Sign In</button>
-									<div class="form__register">
-										<p class="form__register-text">Don't have an account?</p>
-										<a class="form__register-link" href="#signUp">Sign up</a>
-									</div>
-								</form>
-							</div>
-							<div class="horizon__divider"></div>
-							<div class="modal__footer">
-								<p class="modal__footer-text">Or sign in with</p>
-								<div class="modal__footer-social">
-									<a class="modal__footer-link" href="#"> <!--data-icon="Facebook"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Facebook.svg" alt="Facebook">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Google"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Google.svg" alt="Google">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Twitter"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Twitter.svg" alt="Twitter">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Linked-In"-->
-										<img class="modal__social-link-img"  src="src/images/modal_icons/Linked-In.svg" alt="Linked-In">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-                    <!--modal window sign up-->
-					<div class="modal modal__register">
-						<div class="modal__wrapper">
-							<div class="modal__header">
-								<button class="modal__close modal__close-signup">
-									<img class="modal__close-icon" data-svg-fill="false" src="src/images/icons/cross.svg" alt="Close modal">
-								</button>
-							</div>
-							<div class="modal__content">
-								<h2 class="modal__title">Sign Up</h2>
-								<p class="modal__subtitle">Registration takes less than a minute but gives you full control over your studying.</p>
-								<form class="form">
-									<div class="form__field">
-										<label class="form__label">Full name</label>
-										<input class="form__input" type="email" placeholder="Your full name">
-									</div>
-									<div class="form__field">
-										<label class="form__label">Email</label>
-										<input class="form__input" type="email" placeholder="Your working email">
-									</div>
-									<div class="form__field">
-										<label class="form__label">Password</label>
-										<input class="form__input" type="password" placeholder="Enter your password" required />
-										<button type="button" class="form__toggle-password" aria-label="Show password">
-											<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">
-										</button>
-									</div>
-									<div class="form__field">
-										<label class="form__label">Confirm password</label>
-										<input class="form__input" type="password" placeholder="Confirm your password" required />
-										<button type="button" class="form__toggle-password-confirm" aria-label="Show password">
-											<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">
-										</button>
-									</div>
-									<div class="form-options">
-										<label class="remember-checkbox">
-											<input type="checkbox" >
-											<span class="checkmark"></span>
-											<span class="checkbox-text">Remember me</span>
-										</label>
-									</div>
-									<button class="form__submit" type="submit">Sign up</button>
-									<div class="form__register">
-										<p class="form__register-text">Already have an account?</p>
-										<a class="form__register-link" href="#signIn">Sign in</a>
-									</div>
-								</form>
-							</div>
-							<div class="horizon__divider"></div>
-							<div class="modal__footer">
-								<p class="modal__footer-text">Or sign in with</p>
-								<div class="modal__footer-social">
-									<a class="modal__footer-link" href="#"> <!--data-icon="Facebook"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Facebook.svg" alt="Facebook">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Google"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Google.svg" alt="Google">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Twitter"-->
-										<img class="modal__social-link-img" src="src/images/modal_icons/Twitter.svg" alt="Twitter">
-									</a>
-									<a class="modal__footer-link" href="#"> <!--data-icon="Linked-In"-->
-										<img class="modal__social-link-img"  src="src/images/modal_icons/Linked-In.svg" alt="Linked-In">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--burger menu icon-->
-					<div class="burger">
-						<div class="burger__btn-action">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</div>
-				</div>
-			</div>
+<!--					<div class="modal">-->
+<!--						<div class="modal__wrapper">-->
+<!--							<div class="modal__header">-->
+<!--								<button class="modal__close">-->
+<!--									<img class="modal__close-icon" data-svg-fill="false" src="src/images/icons/cross.svg" alt="Close modal">-->
+<!--								</button>-->
+<!--							</div>-->
+<!--							<div class="modal__content">-->
+<!--								<h2 class="modal__title">Sign In</h2>-->
+<!--								<p class="modal__subtitle">Sign in to your account using email and password provided during registration.</p>-->
+<!--								<form class="form">-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Email</label>-->
+<!--										<input class="form__input" type="email" placeholder="Your working email">-->
+<!--									</div>-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Password</label>-->
+<!--											<input class="form__input" type="password" placeholder="Enter your password" required />-->
+<!--												<button type="button" class="form__toggle-password" aria-label="Show password">-->
+<!--													<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">-->
+<!--												</button>-->
+<!--									</div>-->
+<!--									<div class="form-options">-->
+<!--										<label class="remember-checkbox">-->
+<!--											<input type="checkbox">-->
+<!--											<span class="checkmark"></span>-->
+<!--											<span class="checkbox-text">Keep me signed in</span>-->
+<!--										</label>-->
+<!--										<a href="#" class="forgot-password">Forgot password?</a>-->
+<!--									</div>-->
+<!--										<button class="form__submit" type="submit">Sign In</button>-->
+<!--									<div class="form__register">-->
+<!--										<p class="form__register-text">Don't have an account?</p>-->
+<!--										<a class="form__register-link" href="#signUp">Sign up</a>-->
+<!--									</div>-->
+<!--								</form>-->
+<!--							</div>-->
+<!--							<div class="horizon__divider"></div>-->
+<!--							<div class="modal__footer">-->
+<!--								<p class="modal__footer-text">Or sign in with</p>-->
+<!--								<div class="modal__footer-social">-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Facebook"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Facebook.svg" alt="Facebook">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Google"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Google.svg" alt="Google">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Twitter"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Twitter.svg" alt="Twitter">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Linked-In"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img"  src="src/images/modal_icons/Linked-In.svg" alt="Linked-In">-->
+<!--									</a>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--                    &lt;!&ndash;modal window sign up&ndash;&gt;-->
+<!--					<div class="modal modal__register">-->
+<!--						<div class="modal__wrapper">-->
+<!--							<div class="modal__header">-->
+<!--								<button class="modal__close modal__close-signup">-->
+<!--									<img class="modal__close-icon" data-svg-fill="false" src="src/images/icons/cross.svg" alt="Close modal">-->
+<!--								</button>-->
+<!--							</div>-->
+<!--							<div class="modal__content">-->
+<!--								<h2 class="modal__title">Sign Up</h2>-->
+<!--								<p class="modal__subtitle">Registration takes less than a minute but gives you full control over your studying.</p>-->
+<!--								<form class="form">-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Full name</label>-->
+<!--										<input class="form__input" type="email" placeholder="Your full name">-->
+<!--									</div>-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Email</label>-->
+<!--										<input class="form__input" type="email" placeholder="Your working email">-->
+<!--									</div>-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Password</label>-->
+<!--										<input class="form__input" type="password" placeholder="Enter your password" required />-->
+<!--										<button type="button" class="form__toggle-password" aria-label="Show password">-->
+<!--											<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">-->
+<!--										</button>-->
+<!--									</div>-->
+<!--									<div class="form__field">-->
+<!--										<label class="form__label">Confirm password</label>-->
+<!--										<input class="form__input" type="password" placeholder="Confirm your password" required />-->
+<!--										<button type="button" class="form__toggle-password-confirm" aria-label="Show password">-->
+<!--											<img class="modal__close-icon" src="src/images/modal_icons/eyepass.svg" alt="Show password">-->
+<!--										</button>-->
+<!--									</div>-->
+<!--									<div class="form-options">-->
+<!--										<label class="remember-checkbox">-->
+<!--											<input type="checkbox" >-->
+<!--											<span class="checkmark"></span>-->
+<!--											<span class="checkbox-text">Remember me</span>-->
+<!--										</label>-->
+<!--									</div>-->
+<!--									<button class="form__submit" type="submit">Sign up</button>-->
+<!--									<div class="form__register">-->
+<!--										<p class="form__register-text">Already have an account?</p>-->
+<!--										<a class="form__register-link" href="#signIn">Sign in</a>-->
+<!--									</div>-->
+<!--								</form>-->
+<!--							</div>-->
+<!--							<div class="horizon__divider"></div>-->
+<!--							<div class="modal__footer">-->
+<!--								<p class="modal__footer-text">Or sign in with</p>-->
+<!--								<div class="modal__footer-social">-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Facebook"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Facebook.svg" alt="Facebook">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Google"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Google.svg" alt="Google">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Twitter"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img" src="src/images/modal_icons/Twitter.svg" alt="Twitter">-->
+<!--									</a>-->
+<!--									<a class="modal__footer-link" href="#"> &lt;!&ndash;data-icon="Linked-In"&ndash;&gt;-->
+<!--										<img class="modal__social-link-img"  src="src/images/modal_icons/Linked-In.svg" alt="Linked-In">-->
+<!--									</a>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					&lt;!&ndash;burger menu icon&ndash;&gt;-->
+<!--					<div class="burger">-->
+<!--						<div class="burger__btn-action">-->
+<!--							<span></span>-->
+<!--							<span></span>-->
+<!--							<span></span>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
 		<!--main-->
-		<main class="main">
-			<div class="container">
-				<div class="main__content">
-					<div class="main__info">
-						<div class="main__info-video">
-							<button type="button" class="main__video-button">
-								<img src="src/images/main/main_play_video.svg" alt="play">
-							</button>
-								<p class="main__video-text">Play showreel</p>
-							</div>
-							<h1 class="main__info-title">
-								Enjoy studying with Createx Online Courses
-							</h1>
-							<div class="main__info-actions">
-								<button class="button button__primary button__primary-mobile">Get Consultation</button>
-								<button class="button button__secondary">About Us</button>
-								<button class="button button__primary">Explore Courses</button>
-							</div>
-						</div>
-					<div>
-						<img src="src/images/main/illustration-main.svg" data-svg-fill="false" alt="Courses image">
-					</div>
-				</div>
-				<!--in_main_stats-->
-				<div class="stats">
-					<div class="stats__items">
-						<a href="#" class="stats__item">
-							<span class="stats__item-number">1200</span>
-							<span class="stats__item-text">Students graduated</span>
-						</a>
-						<div class="stats__item--circle"></div>
-						<a href="#" class="stats__item">
-							<span class="stats__item-number">84</span>
-							<span class="stats__item-text">Completed Courses</span>
-						</a>
-						<div class="stats__item--circle"></div>
-						<a href="#" class="stats__item">
-							<span class="stats__item-number">16</span>
-							<span class="stats__item-text">Qualified tutors</span>
-						</a>
-						<div class="stats__item--circle"></div>
-						<a href="#" class="stats__item">
-							<span class="stats__item-number">5</span>
-							<span class="stats__item-text">Years of experience</span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</main>
-	</div>
+
+<!--	</div>-->
 	<!--about-->
 	<section id="about" class="about">
 		<img class="dots__image" src="src/images/about/dots.svg" data-svg-fill="false" alt="dots image">
