@@ -26,3 +26,13 @@
 		}
 	}
 }
+
+.button__primary-mobile {
+	display: none;
+}
+
+@include tab-m {
+	.button__primary-mobile {
+		display: block;
+	}
+}

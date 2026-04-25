@@ -12,16 +12,16 @@ const ButtonPrimary = ({
         className
     ].filter(Boolean).join(' ');
 
-    return (
-        <button
-            className={combinedClassName}
-            type={type}
-            onClick={onClick}
-            {...rest}
-        >
-            {children}
-        </button>
-    );
+        return (
+            <button
+                className={combinedClassName}
+                type={type}
+                onClick={onClick}
+                {...rest}
+            >
+                {children}
+            </button>
+        );
 };
 
 export default ButtonPrimary;
