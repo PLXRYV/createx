@@ -17,7 +17,7 @@ const Main = ({ button }) => {
                             Enjoy studying with Createx Online Courses
                         </h1>
                         <div className="main__info-actions">
-                            <button className="button button__primary button__primary-mobile">Get Consultation</button>
+                            {button}
                             <button className="button button__secondary">About Us</button>
                             {button}
                         </div>

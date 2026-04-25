@@ -3,6 +3,7 @@ import ButtonPrimary from "/src/components/ButtonPrimary/ButtonPrimary";
 import Main from "/src/components/Main/Main";
 import buttonStyles from "/src/components/ButtonPrimary/ButtonPrimary.module.scss";
 import "/src/components/Main/main.scss"
+import ButtonPrimaryMobile from "./ButtonPrimary/ButtonPrimaryMobile.jsx";
 
 
 const WrapperMain = () => {
@@ -23,6 +24,15 @@ const WrapperMain = () => {
                 }
             />
             <Main
+                button={
+                <ButtonPrimaryMobile
+                    className='ButtonPrimaryMobile'
+                    onClick={handleClick}
+                >
+                Get consultation
+                </ButtonPrimaryMobile>
+                }
+
                 button={
                     <ButtonPrimary
                         className={buttonStyles.buttonPrimary}
