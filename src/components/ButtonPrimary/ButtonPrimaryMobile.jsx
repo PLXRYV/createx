@@ -1,5 +1,4 @@
 import styles from "./ButtonPrimary.module.scss";
-import ButtonPrimary from "./ButtonPrimary.jsx";
 
 const ButtonPrimaryMobile = ({
     className = 'ButtonPrimaryMobile',
