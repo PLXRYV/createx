@@ -1,7 +1,9 @@
 import "/src/components/Main/main.scss";
 import "/src/components/Main/main-stats.scss"
+import buttonPrimaryMobile from "../ButtonPrimary/ButtonPrimaryMobile.jsx";
+import buttonPrimary from "../ButtonPrimary/ButtonPrimary.jsx";
 
-const Main = ({ button }) => {
+const Main = ({ button, buttonPrimaryMobile, buttonPrimary }) => {
     return (
         <main className="main">
             <div className="container">
@@ -17,7 +19,7 @@ const Main = ({ button }) => {
                             Enjoy studying with Createx Online Courses
                         </h1>
                         <div className="main__info-actions">
-                            {button}
+                            {/*{buttonPrimaryMobile}*/}
                             <button className="button button__secondary">About Us</button>
                             {button}
                         </div>

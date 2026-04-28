@@ -24,7 +24,7 @@ const WrapperMain = () => {
                 }
             />
             <Main
-                button={
+                buttonPrimaryMobile={
                 <ButtonPrimaryMobile
                     className='ButtonPrimaryMobile'
                     onClick={handleClick}
