@@ -1,4 +1,4 @@
-@use "../mixins" as *;
+@use "/src/style/mixins" as *;
 
 .blog {
 	padding: var(--padding-large) 0 var(--padding-sections);

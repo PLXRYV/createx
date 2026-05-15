@@ -1,4 +1,4 @@
-import Header from "/src/components/Header";
+import Header from "/src/components/Header/Header";
 import ButtonPrimary from "/src/components/ButtonPrimary/ButtonPrimary";
 import Main from "/src/components/Main/Main";
 import buttonStyles from "/src/components/ButtonPrimary/ButtonPrimary.module.scss";

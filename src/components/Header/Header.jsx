@@ -1,3 +1,5 @@
+import './header.scss'
+
 const Header = ({ button }) => {
     return (
         <div className="Header">
@@ -34,7 +36,7 @@ const Header = ({ button }) => {
                             {button}
                             <div className="header__auth">
                                 <button id="#signIn" className="header__auth-btn header__auth-btn--signin">
-                                    <img className="header__auth-icon" src="src/images/header/Profile.svg"
+                                    <img className="header__auth-icon" src="/src/images/header/Profile.svg"
                                             alt="Profile"/>
                                     Sign in
                                 </button>
