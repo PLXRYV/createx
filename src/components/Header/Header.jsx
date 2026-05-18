@@ -1,4 +1,9 @@
 import './header.scss'
+import { Link } from 'react-router-dom';
+import ButtonPrimary from '/src/components/ButtonPrimary/ButtonPrimary';
+import BurgerMenu from "/src/components/BurgerMenu/BurgerMenu";
+import ModalSignIn from "/src/components/ModalSignIn/ModalSignIn.jsx";
+import ModalSignUp from "/src/components/ModalSignUp/ModalSignUp.jsx";
 
 const Header = ({ button }) => {
     return (
@@ -7,21 +12,21 @@ const Header = ({ button }) => {
                 <div className="container">
                     <div className="header__inner">
                         <div className="header__menu">
-                            <a href="/index.html" className="logo">
+                            <Link to="/" className="logo">
                                 <img className="logo__img" src="/src/images/header/logo.svg" data-svg-fill="false"
                                         alt="Logo of site"/>
-                            </a>
+                            </Link>
                             <nav className="nav">
                                 <ul className="nav__menu">
                                     <li className="nav__menu-item">
                                         <a href="#about" className="nav__menu-item__link">About Us</a>
                                     </li>
-                                    <li className="nav__menu-item">
-                                        <a href="#courses" className="nav__menu-item__link">Courses</a>
-                                    </li>
-                                    <li className="nav__menu-item">
-                                        <a href="/src/html/events.html" className="nav__menu-item__link">Events</a>
-                                    </li>
+                                    <Link to="/courses" className="nav__menu-item">
+                                        <a className="nav__menu-item__link">Courses</a>
+                                    </Link>
+                                    <Link to="/events" className="nav__menu-item">
+                                        <a className="nav__menu-item__link">Events</a>
+                                    </Link>
                                     <li className="nav__menu-item">
                                         <a href="#blog" className="nav__menu-item__link">Blog</a>
                                     </li>
@@ -35,13 +40,13 @@ const Header = ({ button }) => {
                         <div className="header__info-actions">
                             {button}
                             <div className="header__auth">
-                                <button id="#signIn" className="header__auth-btn header__auth-btn--signin">
+                                <button onClick={ModalSignIn} id="#signIn" className="header__auth-btn header__auth-btn--signin">
                                     <img className="header__auth-icon" src="/src/images/header/Profile.svg"
                                             alt="Profile"/>
                                     Sign in
                                 </button>
                                 <span className="header__auth-separator">/</span>
-                                <button id="#signup" className="header__auth-btn header__auth-btn--signup">Sign up
+                                <button onClick={ModalSignUp} id="#signup" className="header__auth-btn header__auth-btn--signup">Sign up
                                 </button>
                             </div>
                         </div>

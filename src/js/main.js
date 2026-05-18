@@ -32,5 +32,4 @@ function inlineAllSVGs() {
     });
 }
 
-// Вызываем после загрузки DOM
 document.addEventListener('DOMContentLoaded', inlineAllSVGs);
