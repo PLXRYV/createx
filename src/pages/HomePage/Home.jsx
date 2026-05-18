@@ -1,4 +1,4 @@
-import WrapperMain from "/src/components/WrapperMain";
+import WrapperHome from "/src/components/WrapperHome";
 import About from "/src/components/About/About";
 import Courses from "/src/components/Courses/Courses";
 import Benefits from "/src/components/Benefits/Benefits";
@@ -10,16 +10,11 @@ import Blog from "/src/components/Blog/Blog";
 import Subscribe from "/src/components/Subscribe/Subscribe";
 import Footer from "/src/components/Footer/Footer";
 import Copyright from "/src/components/Copyright/Copyright";
-import "/src/style/index.js"
 
-function App() {
-    const handleClick = () => {
-        console.log("clicked");
-    };
-
+const Home = () => {
     return (
         <div>
-            <WrapperMain/>
+            <WrapperHome/>
             <About/>
             <Courses/>
             <Benefits/>
@@ -35,4 +30,4 @@ function App() {
     )
 }
 
-export default App;
+export default Home;

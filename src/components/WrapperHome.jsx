@@ -6,7 +6,7 @@ import "/src/components/Main/main.scss"
 import ButtonPrimaryMobile from "./ButtonPrimary/ButtonPrimaryMobile.jsx";
 
 
-const WrapperMain = () => {
+const WrapperHome = () => {
     const handleClick = () => {
         console.log("Get consultation button clicked");
     };
@@ -46,4 +46,4 @@ const WrapperMain = () => {
     );
 };
 
-export default WrapperMain;
+export default WrapperHome;

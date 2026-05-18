@@ -31,6 +31,13 @@ a {
 	cursor: pointer;
 }
 
+h6 {
+	font-size: var(--size-h6);
+	line-height: var(--height-large-regular);
+	font-weight: var(--weight-base-bold);
+	color: var(--colors-primary);
+}
+
 button {
   color: var(--colors-white);
   letter-spacing: var(--letter-spacing-small);
