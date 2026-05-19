@@ -1,0 +1,311 @@
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.footer {
+	padding: var(--space-7xl) 0 var(--space-5xl);
+	background-color: var(--colors-gray-900);
+
+	@include desk-m {
+		padding: var(--space-5xl) 0 var(--space-3xl);
+	}
+
+	@include tab-m {
+		padding: var(--space-5xl) 0 var(--space-2xl);
+	}
+
+	@include mob-m {
+		padding: var(--space-2xl) 0 var(--space-lg);
+	}
+
+	.footerContainer { // Наш главный флекс-контейнер
+		display: flex;
+
+		@include desk-m {
+			flex-direction: column;
+			gap: var(--space-3xl);
+		}
+
+		@include mob-m {
+			gap: var(--space-lg);
+		}
+	}
+
+	/* Блок 1: Описание и соцсети */
+	.footerBox {
+		display: flex;
+		flex-direction: column;
+
+		@include tab-m {
+			align-items: center;
+		}
+	}
+
+	.footerLogoContainer {
+		display: flex;
+		align-items: center;
+
+		img {
+			display: block;
+		}
+	}
+
+	.footerBoxText {
+		padding: var(--space-xl) var(--space-6xl) var(--space-3xl) 0;
+		color: var(--colors-white);
+		font-size: var(--font-size-xs);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		opacity: 0.5;
+		transition: all 0.6s;
+		transform: scale(1);
+
+		&:hover {
+			opacity: 1;
+			transform: scale(1.04);
+		}
+
+		@include desk-m {
+			padding-bottom: var(--space-2xl);
+			text-align: center;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		@include tab-m {
+			padding: var(--space-xl) 0 var(--space-3xl) 0;
+			font-size: var(--font-size-2xs);
+		}
+
+		@include mob-m {
+			padding-bottom: var(--space-md);
+		}
+	}
+
+	.footerSocial {
+		display: flex;
+		gap: var(--space-lg);
+		align-items: center;
+
+		@include desk-m {
+			justify-content: center;
+		}
+
+		@include mob-m {
+			gap: var(--space-sm);
+		}
+
+		// Иконки соцсетей
+		.footerInfoLink {
+			opacity: 0.5;
+			transition: all 0.6s;
+			transform: scale(1);
+			display: flex;
+			align-items: center;
+
+			&:hover {
+				opacity: 1;
+				transform: scale(1.05);
+			}
+
+			img {
+				display: block;
+				padding: 0; // Сброс старого отступа, так как здесь иконки соцсетей
+			}
+		}
+	}
+
+	/* Блок 2: Навигационные списки */
+	.footerNavigation {
+		// Контейнер навигации
+	}
+
+	.footerNavigationSite {
+		display: flex;
+		gap: var(--space-7xl);
+
+		@include desk-m {
+			justify-content: center;
+			gap: var(--space-5xl);
+			flex-wrap: wrap;
+		}
+
+		@include tab-m {
+			gap: var(--space-3xl);
+		}
+	}
+
+	.footerInfo {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-s);
+		padding: 0;
+		margin: 0;
+		list-style: none;
+
+		li {
+			white-space: nowrap;
+
+			@include tab-m {
+				white-space: normal;
+				text-align: center;
+			}
+		}
+
+		@include tab-m {
+			align-items: center;
+		}
+	}
+
+	.footerInfoTitle {
+		color: var(--colors-white);
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		white-space: nowrap;
+		padding-bottom: var(--space-m);
+
+		p {
+			margin: 0;
+		}
+
+		@include tab-m {
+			font-size: var(--font-size-sm);
+			white-space: normal;
+			text-align: center;
+		}
+
+		@include tab-sm {
+			padding-bottom: var(--space-s);
+			font-size: var(--font-size-sm);
+		}
+	}
+
+	.footerInfoLink {
+		a {
+			color: var(--colors-white);
+			text-decoration: none;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-base);
+			letter-spacing: var(--letter-spacing-none);
+			opacity: 0.5;
+			transition: all 0.3s;
+			display: inline-flex;
+			align-items: center;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			@include tab-m {
+				font-size: var(--font-size-xs);
+			}
+		}
+	}
+
+	// Общий стиль для иконок контактов внутри ссылок (Телефон, Почта)
+	.footerContactLink {
+		img {
+			padding-right: var(--space-s);
+			display: block;
+		}
+	}
+
+	/* Блок 3: Форма рассылки новостей */
+	.footerBoxForm {
+		padding-left: var(--space-7xl);
+
+		@include desk-m {
+			padding: 0;
+			text-align: center;
+		}
+	}
+
+	.footerNewsletterText {
+		padding: var(--space-m) 0 0;
+		color: var(--colors-white);
+		opacity: 0.5;
+		font-size: var(--font-size-2xs);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+
+		@include tab-m {
+			font-size: var(--font-size-xs);
+			text-align: center;
+		}
+
+		@include tab-sm {
+			padding-top: var(--space-s);
+			line-height: var(--line-height-base);
+		}
+	}
+
+	/* Стили инпута и его кнопки-стрелки */
+	.inputWrapper {
+		position: relative;
+		width: 286px;
+		height: 36px;
+		background: var(--colors-gray-800);
+		border-radius: var(--roundings-s);
+		border: 1px solid var(--colors-gray-700);
+
+		@include desk-m {
+			margin: 0 auto;
+		}
+
+		@include tab-m {
+			width: 240px;
+			height: 40px;
+		}
+
+		@include tab-sm {
+			width: 220px;
+			height: 38px;
+		}
+
+		input {
+			width: 100%;
+			height: 100%;
+			border: none;
+			outline: none;
+			background: transparent;
+			padding: var(--space-s) var(--space-3xl) var(--space-s) var(--space-m);
+			font-size: var(--font-size-xs);
+			color: var(--colors-gray-100); // Изменил цвет текста на светлый для темного фона хедера
+
+			&::placeholder {
+				color: var(--colors-gray-600);
+			}
+
+			@include tab-m {
+				font-size: var(--font-size-2xs);
+			}
+		}
+	}
+
+	.submitBtn {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 16px;
+		height: 16px;
+		border: none;
+		background: none;
+		cursor: pointer;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--colors-gray-100);
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--colors-primary);
+		}
+	}
+}

@@ -1,0 +1,308 @@
+// 1. Подключаем брейкпоинты и миксины напрямую через относительные пути
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.teamAndTestimonials { // Наш главный селектор вместо .team__and-testimonials
+	background: url("../../../assets/images/common/images/team/team_background.jpg") center center no-repeat;
+	background-size: cover;
+	transform: translateY(-50px);
+
+	@include tab-md {
+		background: none;
+	}
+
+	.teamContainer {
+		padding-top: var(--section-padding-y);
+	}
+
+	/* Шапка секции со стрелочками */
+	.teamHeader {
+		padding-bottom: var(--space-5xl);
+		display: flex;
+		justify-content: space-between;
+
+		@include tab-md {
+			margin-top: var(--space-3xl);
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		@include tab-sm {
+			padding-top: var(--space-3xl);
+		}
+
+		&TitleBox {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&Subtitle {
+			padding-bottom: var(--space-s);
+			display: flex;
+			flex-direction: column;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+
+			@include tab-md {
+				align-items: center;
+			}
+		}
+
+		&Title {
+			font-size: var(--font-size-5xl);
+			font-weight: var(--font-weight-black);
+			line-height: var(--line-height-heading);
+			letter-spacing: var(--letter-spacing-normal);
+			margin: 0;
+
+			@include tab-md {
+				font-size: var(--font-size-5xl);
+				text-align: center;
+			}
+		}
+	}
+
+	/* Стрелки управления слайдером */
+	.teamArrows {
+		transform: translateY(50px);
+		display: flex;
+
+		@include tab-md {
+			display: none;
+			justify-content: center;
+			transform: translateY(0px);
+		}
+
+		button:hover svg path {
+			fill: var(--colors-white);
+		}
+	}
+
+	.teamArrowLeft,
+	.teamArrowRight {
+		padding: var(--space-lg) var(--space-lg);
+		border-radius: var(--roundings-arrows);
+		border: none;
+		background-color: transparent;
+		width: 48px;
+		height: 48px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover:not(:disabled) {
+			background-color: var(--colors-primary);
+			transform: scale(1.1);
+		}
+
+		&:disabled svg path {
+			fill: #ccc;
+		}
+	}
+
+	/* Слайдер и Сетка карточек */
+	.teamNavigation {
+		overflow: hidden;
+		position: relative;
+
+		@include tab-md {
+			padding-bottom: var(--space-8xl);
+		}
+
+		&List {
+			display: flex;
+			transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+			will-change: transform;
+			gap: 20px;
+			touch-action: pan-y;
+
+			@include tab-md {
+				gap: var(--space-lg);
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		&Item {
+			gap: var(--space-md);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 auto;
+			min-width: 0;
+
+			@include tab-md {
+				flex: 0 1 calc(50% - 20px);
+				max-width: 150px;
+			}
+
+			@include mob-sm {
+				max-width: 240px;
+			}
+		}
+
+		/* Обертка картинки и соцсетей */
+		&ItemImages {
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+
+			// Ховер на десктопе
+			&:hover {
+				.teamImage {
+					filter: brightness(0.7);
+				}
+
+				.teamSocialOverlay {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				.teamSocialLink {
+					opacity: 1;
+					transform: translate(-50%, -50%) scale(1);
+
+					&:nth-child(1) { transition-delay: 0.1s; }
+					&:nth-child(2) { transition-delay: 0.2s; }
+					&:nth-child(3) { transition-delay: 0.3s; }
+				}
+			}
+
+			// Тап на мобильных/планшетах
+			@include tab-sm {
+				&:active {
+					.teamImage {
+						filter: brightness(0.7);
+					}
+
+					.teamSocialOverlay {
+						opacity: 1;
+						visibility: visible;
+					}
+
+					.teamSocialLink {
+						opacity: 1;
+						transform: translate(-50%, -50%) scale(1);
+					}
+				}
+			}
+		}
+	}
+
+	/* Фотография преподавателя */
+	.teamImage {
+		padding: var(--space-lg) var(--space-lg) 0;
+		background: var(--colors-secondary);
+		border-radius: var(--roundings-s);
+		width: 100%;
+		height: auto;
+		display: block;
+		transition: all 0.6s ease;
+
+		&:hover {
+			box-shadow: inset 0 -200px 200px -200px var(--colors-black);
+		}
+
+		@include tab-md {
+			padding: var(--space-md) var(--space-md) 0;
+		}
+
+		@include mob-sm {
+			padding: var(--space-s) var(--space-s) 0;
+		}
+	}
+
+	/* Новая контейнерная обертка для соцсетей (Overlay) */
+	.teamSocialOverlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease;
+	}
+
+	/* Ссылки на соцсети, позиционируемые внутри Overlay */
+	.teamSocialLink {
+		position: absolute;
+		top: 50%;
+		opacity: 0;
+		transition: all 0.3s ease;
+
+		// Распределяем Facebook, Instagram, LinkedIn по сетке (25%, 50%, 75%)
+		&:nth-child(1) {
+			left: 25%;
+			transform: translate(-50%, -50%) scale(0.8);
+		}
+
+		&:nth-child(2) {
+			left: 50%;
+			transform: translate(-50%, -50%) scale(0.8);
+		}
+
+		&:nth-child(3) {
+			left: 75%;
+			transform: translate(-50%, -50%) scale(0.8);
+		}
+
+		.teamSocial {
+			opacity: 0.5;
+			width: 40px;
+			height: 40px;
+			filter: drop-shadow(0 2px 4px var(--colors-black));
+			transition: opacity 0.3s ease, transform 0.3s ease;
+
+			@include tab-md {
+				width: 35px;
+				height: 35px;
+			}
+
+			@include tab-sm {
+				width: 36px;
+				height: 36px;
+			}
+
+			@include mob-m {
+				width: 30px;
+				height: 30px;
+			}
+
+			@include mob-sm {
+				width: 28px;
+				height: 28px;
+			}
+		}
+
+		&:hover {
+			.teamSocial {
+				opacity: 1;
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	/* Описание карточки преподавателя (Имя и должность) */
+	.teamImageCaption {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		color: var(--colors-gray-700);
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-base);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+
+		span {
+			color: var(--colors-gray-800);
+			font-size: var(--font-size-xl);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+		}
+	}
+}

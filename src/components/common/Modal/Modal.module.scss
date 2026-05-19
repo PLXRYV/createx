@@ -1,0 +1,290 @@
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.modal {
+	display: flex; // Модалка сразу флексовая, так как React сам решает, рендерить ли её
+	z-index: 100;
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: var(--space-2xl);
+	overflow: auto;
+	@include transition;
+
+	// Специфический модификатор для формы регистрации (если нужен)
+	&Register {}
+
+	.modalWrapper {
+		position: relative;
+		max-width: 480px;
+		max-height: 90vh;
+		background-color: var(--colors-white);
+		text-align: center;
+		margin: auto;
+		border-radius: var(--roundings-s);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		width: 100%;
+	}
+
+	.modalHeader {
+		display: flex;
+		justify-content: flex-end;
+		margin: var(--space-2xl) var(--space-2xl) 0 0;
+		flex-shrink: 0;
+	}
+
+	.modalClose {
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&Signup {}
+
+		&Icon {
+			display: block;
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.modalContent {
+		padding: var(--space-xl) var(--space-4xl);
+		overflow-y: auto;
+		flex: 1;
+		min-height: 0;
+
+		&::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+			border-radius: 3px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--colors-gray-300);
+			border-radius: 3px;
+
+			&:hover {
+				background: var(--colors-gray-400);
+			}
+		}
+
+		scrollbar-width: thin;
+		scrollbar-color: var(--colors-gray-300) transparent;
+	}
+
+	.modalTitle {
+		font-size: var(--font-size-3xl);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+	}
+
+	.modalSubtitle {
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		color: var(--colors-gray-700);
+		padding-top: var(--space-xl);
+		margin: 0;
+	}
+
+	/* Вложенные стили внутренней формы */
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-lg);
+		padding-top: var(--space-xl);
+
+		&Field {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			gap: var(--space-s);
+			position: relative;
+		}
+
+		&Label {
+			font-size: var(--font-size-sm);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+			color: var(--colors-gray-800);
+		}
+
+		&Input {
+			background-color: var(--colors-white);
+			border-radius: var(--roundings-s);
+			padding: var(--space-m) var(--space-md);
+			border: 1px solid var(--colors-gray-400);
+			color: var(--colors-gray-900);
+			font-size: var(--font-size-base); // Заменил некорректную переменную на рабочую
+			transition: border-color 0.3s;
+			width: 100%;
+			outline: none;
+
+			&::placeholder {
+				color: var(--colors-gray-400);
+				opacity: 1;
+			}
+
+			&:focus {
+				border-color: var(--colors-primary);
+				color: var(--colors-gray-900);
+			}
+		}
+
+		/* Кнопки-глазики показа пароля (абсолютное позиционирование) */
+		&TogglePassword,
+		&TogglePasswordConfirm {
+			display: flex;
+			position: absolute;
+			right: 17px;
+			top: 50%; // Центрируем относительно инпута
+			transform: translateY(4px); // Слегка корректируем с учетом высоты label
+			background: none;
+			border: none;
+			cursor: pointer;
+			color: var(--colors-gray-800);
+			padding: 0;
+			@include transition;
+
+			&:focus {
+				outline: none;
+				color: var(--colors-primary);
+			}
+		}
+
+		&TogglePasswordConfirm {
+			// Сохраняем вашу логику отступа для инпута подтверждения пароля, если необходимо
+		}
+
+		&Options {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-bottom: var(--space-2xs);
+			gap: var(--space-2xs);
+			font-size: var(--font-size-sm);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+		}
+
+		&Submit {
+			width: 100%;
+			color: var(--colors-white);
+			background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+			border: none;
+			border-radius: var(--roundings-s);
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--btn-height-md);
+			cursor: pointer;
+			@include transition;
+
+			&:hover {
+				transform: scale(0.95);
+				box-shadow: 0 3px 4px var(--colors-orange);
+			}
+		}
+
+		&Register {
+			display: flex;
+			justify-content: center;
+			gap: var(--space-2xs);
+			font-size: var(--font-size-sm);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+			color: var(--colors-gray-800);
+			padding: var(--space-2xs) 0;
+
+			&Text {
+				margin: 0;
+			}
+
+			&Link {
+				color: var(--colors-primary);
+				text-decoration: none;
+			}
+		}
+	}
+
+	// Общие независимые элементы внутри модалки
+	.rememberCheckbox {
+		display: flex;
+		align-items: center;
+		gap: var(--space-xs);
+		cursor: pointer;
+	}
+
+	.horizonDivider {
+		width: 100%;
+		height: 1px;
+		background-color: var(--colors-gray-300);
+		flex-shrink: 0;
+	}
+
+	/* Соцсети в подвале модалки */
+	.modalFooter {
+		display: flex;
+		flex-direction: column;
+		padding: var(--space-xl) 0 var(--space-5xl);
+		gap: var(--space-md);
+		flex-shrink: 0;
+
+		&Text {
+			font-size: var(--font-size-sm);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+			color: var(--colors-gray-700);
+			margin: 0;
+		}
+
+		&Social {
+			display: flex;
+			justify-content: center;
+			gap: var(--space-sm);
+		}
+
+		&Link {
+			color: var(--colors-gray-700);
+			display: flex;
+			align-items: center;
+			@include transition;
+
+			&:hover {
+				color: var(--colors-primary);
+			}
+		}
+
+		&SocialLinkImg {
+			display: block;
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	/* Адаптив для мобильных устройств с маленькой высотой экрана */
+	@media (max-height: 600px) {
+		padding: 0;
+
+		.modalWrapper {
+			max-height: 100vh;
+			border-radius: 0;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,183 @@
+@use "/src/assets/style/variables/breakpoints" as *;
+@use "/src/assets/style/variables/mixins" as *;
+
+.heroSection { // Наш главный класс вместо .main
+	padding-top: var(--section-main-padding);
+
+	.mainContent {
+		display: flex;
+
+		@include tab-md {
+			flex-direction: column;
+			text-align: center;
+			gap: var(--space-3xl);
+		}
+
+		@include tab-m {
+			gap: var(--space-2xl);
+		}
+	}
+
+	.mainIllustrationContainer {
+		@include tab-md {
+			img {
+				max-width: 80%;
+				margin: 0 auto;
+				display: block; // Чтобы убрать лишние отступы у инлайнового img
+			}
+		}
+
+		@include tab-m {
+			img {
+				max-width: 70%;
+			}
+		}
+	}
+
+	.mainInfo {
+		@include tab-m {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&Video {
+			display: flex;
+			align-items: center;
+
+			@include tab-md {
+				justify-content: center;
+			}
+
+			@include tab-m {
+				// Управляем размерами обертки видео, если необходимо
+				width: auto;
+				height: auto;
+			}
+		}
+
+		&Title {
+			padding: var(--main-content-text-padding);
+			font-size: var(--font-size-8xl);
+			font-weight: var(--font-weight-black);
+			line-height: var(--line-height-heading);
+			letter-spacing: var(--letter-spacing-normal);
+
+			@include tab-m {
+				padding-right: 0;
+			}
+		}
+
+		&Actions {
+			display: flex;
+			gap: var(--space-xl);
+
+			@include tab-md {
+				justify-content: center;
+			}
+
+			@include tab-m {
+				gap: var(--space-md);
+			}
+
+			@include tab-sm {
+				flex-direction: column;
+				align-items: center;
+			}
+		}
+	}
+
+	.mainVideoButton {
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		transition: all 0.4s;
+		animation: pulse-play 4s infinite;
+		cursor: pointer;
+
+		&:hover {
+			transform: scale(0.95);
+		}
+
+		// Перенесли старый стиль размеров из обертки, если это относилось к кнопке
+		@include tab-m {
+			width: 70px;
+			height: 70px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	.mainVideoText {
+		// Стили для текста рядом с кнопкой play
+	}
+}
+
+.stats {
+	padding: var(--section-stats-padding);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&Items {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		margin: 0;
+		list-style: none; // Убираем маркеры списка, так как перешли на <ul> <li>
+
+		@include tab-md {
+			gap: var(--space-lg);
+		}
+	}
+
+	&Item {
+		display: flex;
+		align-items: center;
+
+		@include tab-m {
+			flex-direction: column;
+			gap: var(--space-s);
+		}
+
+		&Number {
+			padding-right: var(--space-m);
+			font-size: var(--font-size-5xl);
+			line-height: var(--line-height-heading);
+			font-weight: var(--font-weight-black);
+		}
+
+		&Text {
+			display: flex;
+			align-items: center;
+			font-size: var(--font-size-base);
+			line-height: var(--line-height-base);
+			font-weight: var(--font-weight-regular);
+			letter-spacing: var(--letter-spacing-none);
+			transition: transform 0.4s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		// Кружочек-разделитель между элементами статистики
+		&Circle {
+			margin: 0 var(--margin-2xl);
+			width: 8px;
+			height: 8px;
+			background: radial-gradient(circle at 30% 30%, var(--colors-primary), var(--colors-orange));
+			border-radius: 50%;
+			animation: pulse-fast 2s infinite;
+			position: relative;
+			overflow: hidden;
+
+			@include tab-md {
+				display: none; // Скрываем кружочки на планшетах
+			}
+		}
+	}
+}

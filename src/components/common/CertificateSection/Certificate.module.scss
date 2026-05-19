@@ -1,0 +1,127 @@
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.certificateSection { // Наш главный селектор вместо .certificate
+	padding-top: var(--space-9xl);
+
+	.certificateContainer {
+		display: flex;
+		gap: var(--certificate-container-gap);
+
+		@include tab-md {
+			gap: var(--space-7xl);
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		@include mob-m {
+			gap: var(--space-2xl);
+		}
+	}
+
+	.certificateContent {
+		// Контейнер для левой текстовой части
+	}
+
+	.certificateHeader {
+		padding-bottom: var(--space-4xl);
+
+		@include tab-md {
+			padding-bottom: var(--space-2xl);
+		}
+
+		@include mob-m {
+			padding-bottom: var(--space-md);
+		}
+
+		&Subtitle { // Наш класс certificateHeaderSubtitle
+			padding-bottom: var(--space-s);
+			display: flex;
+			flex-direction: column;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+
+			@include tab-md {
+				align-items: center;
+			}
+		}
+
+		&Title { // Наш класс certificateHeaderTitle
+			font-size: var(--font-size-5xl);
+			font-weight: var(--font-weight-black);
+			line-height: var(--line-height-heading);
+			letter-spacing: var(--letter-spacing-normal);
+			margin: 0; // Сброс дефолтных отступов h2
+		}
+	}
+
+	.certificateDescription {
+		@include mob-m {
+			padding-bottom: var(--space-md);
+		}
+
+		&Text { // Наш класс certificateDescriptionText
+			padding-bottom: var(--space-2xl);
+			color: var(--colors-gray-800);
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-regular);
+			margin: 0;
+		}
+
+		&Images { // Наш класс certificateDescriptionImages
+			display: flex;
+			padding-bottom: var(--space-9xl);
+			gap: var(--space-3xl);
+
+			@include tab-md {
+				padding-bottom: var(--space-2xl);
+				gap: var(--space-2xl);
+				justify-content: center;
+			}
+
+			@include mob-m {
+				display: block;
+				gap: var(--space-sm);
+				padding-bottom: var(--space-md);
+			}
+		}
+
+		&Image { // Наш класс certificateDescriptionImage
+			display: block;
+			height: auto;
+
+			@include mob-m {
+				margin: 0 auto var(--space-s); // Центрируем логотипы партнеров на мобильных при дисплее block
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.certificateImageWrapper {
+		// Обертка для правого блока с картинкой
+	}
+
+	/* Большое изображение сертификата Createx */
+	.certificateCreatex {
+		position: relative;
+		z-index: 1;
+		height: auto;
+		display: block;
+		transform: translateY(40px);
+
+		@include desk-sm {
+			max-width: 100%;
+			width: 100%;
+		}
+
+		@include mob-m {
+			max-width: 90%;
+			margin: 0 auto; // Центрируем картинку на телефонах
+		}
+	}
+}

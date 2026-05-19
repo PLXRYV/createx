@@ -1,0 +1,136 @@
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.subscribeSection { // Наш главный селектор вместо .subscribe
+	background: url("../../../assets/images/common/images/subscribe/subscribe_background.jpg") center center no-repeat;
+	background-size: cover;
+	position: relative; // Нужно для абсолютного позиционирования декоративных картинок
+	width: 100%;
+
+	.subscribeContainer {
+		padding: var(--space-9xl) 0 var(--section-padding-y);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 960px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.subscribeHeader {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		&Subtitle { // Наш класс subscribeHeaderSubtitle
+			padding-bottom: var(--space-s);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+		}
+
+		&Title { // Наш класс subscribeHeaderTitle
+			padding-bottom: var(--space-5xl);
+			font-size: var(--font-size-5xl);
+			font-weight: var(--font-weight-black);
+			line-height: var(--line-height-heading);
+			letter-spacing: var(--font-weight-regular);
+			z-index: 1000;
+
+			@include tab-m {
+				padding: 0 var(--space-md) var(--space-5xl);
+				font-size: var(--font-size-5xl);
+				font-weight: var(--font-weight-black);
+				line-height: var(--line-height-heading);
+				letter-spacing: var(--font-weight-regular);
+			}
+		}
+	}
+
+	/* Блок формы подписки (изменен под новую структуру HTML/TSX) */
+	.subscribeFormBox {
+		width: 600px;
+		max-width: 100%;
+		z-index: 3;
+
+		@include tab-m {
+			width: 350px;
+		}
+	}
+
+	.subscribeForm {
+		display: flex;
+		align-items: center;
+		gap: var(--space-xl);
+		width: 100%;
+		background-color: var(--colors-white);
+		border-radius: var(--roundings-s);
+		padding: var(--space-m) var(--space-md);
+		border: 1px solid var(--colors-gray-400);
+		color: var(--colors-gray-400);
+		transition: all 0.3s;
+
+		&:focus-within {
+			color: var(--colors-gray-400);
+			border-color: var(--colors-primary);
+		}
+	}
+
+	.subscribeInput {
+		flex: 1;
+		width: 100%;
+		border: none;
+		outline: none;
+		background: transparent;
+		font-size: var(--font-size-base);
+
+		@include tab-m {
+			font-size: var(--font-size-xs);
+		}
+	}
+
+	/* Локальный стиль кнопки, если вы переопределяете UI-компонент */
+	.buttonPrimary {
+		padding: 0 var(--space-lg);
+		color: var(--colors-white);
+		background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+		border: none;
+		border-radius: var(--roundings-s); // Добавил скругление кнопке, чтобы сочеталась с формой
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--btn-height-md);
+		cursor: pointer;
+		white-space: nowrap; // Чтобы текст кнопки не переносился на узких экранах
+		transition: all 0.4s;
+
+		&:hover {
+			transform: scale(0.95);
+			box-shadow: 0 2px 4px var(--colors-black);
+		}
+	}
+
+	/* Абсолютное позиционирование узоров по бокам */
+	.subscribeImageFirst,
+	.subscribeImageSecond {
+		position: absolute;
+		transform: translateY(-245px);
+		z-index: 1;
+
+		@include tab-m {
+			display: none; // Скрываем графику на планшетах и мобильных
+		}
+	}
+
+	.subscribeImageFirst {
+		left: 0;
+	}
+
+	.subscribeImageSecond {
+		right: 0;
+	}
+}
