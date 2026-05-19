@@ -1,17 +1,18 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Home  from '/src/pages/HomePage/Home';
-import EventsPage from '/src/pages/EventsPage/EventsPage';
-import "/src/style/index.js"
-import CoursesPage from "/src/pages/CoursesPage/CoursesPage.jsx";
+import HomePage  from '/src/pages/Homepage/HomePage';
+import EventsPage from '/src/pages/Event/EventsPage';
+import CoursePage from "/src/pages/Course/CoursePage.jsx";
+
+import "/src/assets/style/style.scss";
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<HomePage/>}/>
                 <Route path="/events" element={<EventsPage/>}/>
-                <Route path="/courses" element={<CoursesPage/>}/>
+                <Route path="/courses" element={<CoursePage/>}/>
             </Routes>
         </Router>
     )

@@ -1,0 +1,38 @@
+@use "/src/style/mixins.scss" as *;
+
+.buttonPrimary {
+	padding: 0 var(--space-3xl);
+	color: var(--colors-white);
+	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+	border: none;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--btn-height-md);
+	@include transition;
+	&:hover {
+		transform: scale(0.95);
+		box-shadow: 0 3px 4px var(--colors-orange);
+	}
+
+	&-mobile {
+		display: none;
+	}
+	@include tab-m {
+		&-mobile {
+			display: block;
+		}
+		&-consultation {
+			display:none;
+		}
+	}
+}
+
+.button__primary-mobile {
+	display: none;
+}
+
+@include tab-m {
+	.button__primary-mobile {
+		display: block;
+	}
+}

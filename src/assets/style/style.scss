@@ -1,4 +1,2 @@
-@use "variables/index.scss" as *;
-@use "mixins" as *;
-@use "/src/style/globals/index.scss" as *;
-@use "/src/style/global.scss" as *;
+@forward "/src/assets/style/globals/index.scss";
+@forward "/src/assets/style/variables/index.scss";

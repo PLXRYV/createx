@@ -1,4 +1,4 @@
-@use "../mixins" as *;
+@use "/src/assets/style/variables/mixins.scss" as *;
 
 .modal {
 	display: none;
@@ -6,7 +6,7 @@
 	position: fixed;
 	inset: 0;
 	background-color: rgba(0, 0, 0, 0.5);
-	padding: var(--padding-xxm);
+	padding: var(--space-2xl);
 	overflow: auto;
 
 	&.active {
@@ -30,12 +30,12 @@
 	&__header {
 		display: flex;
 		justify-content: right;
-		margin: var(--padding-xxm) var(--padding-xxm) 0 0;
+		margin: var(--space-2xl) var(--space-2xl) 0 0;
 		flex-shrink: 0;
 	}
 
 	&__content {
-		padding: var(--padding-2xm) var(--padding-certificate);
+		padding: var(--space-xl) var(--space-4xl);
 		overflow-y: auto;
 		flex: 1;
 		min-height: 0;
@@ -63,48 +63,48 @@
 	}
 
 	&__title {
-		font-size: var(--size-h3);
-		font-weight: var(--weight-base-bold);
-		line-height: var(--height-large-regular);
-		letter-spacing: var(--letter-spacing-regular);
+		font-size: var(--font-size-3xl);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
 	}
 
 	&__subtitle {
-		font-size: var(--size-badge);
-		font-weight: var(--weight-base-regular);
-		line-height: var(--height-large-regular);
-		letter-spacing: var(--letter-spacing-regular);
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
 		color: var(--colors-gray-700);
-		padding-top: var(--padding-2xm);
+		padding-top: var(--space-xl);
 	}
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacings-lm);
-	padding-top: var(--padding-2xm);
+	gap: var(--space-lg);
+	padding-top: var(--space-xl);
 
 	&__field {
 		display: flex;
 		flex-direction: column;
 		text-align: left;
-		gap: var(--spacings-s);
+		gap: var(--space-s);
 		position: relative;
 	}
 
 	&__label {
-		font-size: var(--size-badge);
-		font-weight: var(--weight-base-regular);
-		line-height: var(--height-large-regular);
-		letter-spacing: var(--letter-spacing-regular);
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
 		color: var(--colors-gray-800);
 	}
 
 	&__input {
 		background-color: var(--colors-white);
 		border-radius: var(--roundings-s);
-		padding: var(--padding-m) var(--padding-md);
+		padding: var(--space-m) var(--space-md);
 		border: 1px solid var(--colors-gray-400);
 		color: var(--colors-gray-900);
 		font-size: var(--size-body);
@@ -173,19 +173,19 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-bottom: var(--padding-2xs);
-	gap: var(--spacings-xs);
-	font-size: var(--size-badge);
-	font-weight: var(--weight-base-regular);
-	line-height: var(--height-large-regular);
-	letter-spacing: var(--letter-spacing-regular);
+	padding-bottom: var(--space-2xs);
+	gap: var(--space-2xs);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
 }
 
 .forgot-password {
-	font-size: var(--size-badge);
-	font-weight: var(--weight-base-regular);
-	line-height: var(--height-large-regular);
-	letter-spacing: var(--letter-spacing-regular);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
 	color: var(--colors-primary);
 }
 
@@ -194,9 +194,9 @@
 	color: var(--colors-white);
 	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
 	border: none;
-	font-size: var(--size-h6);
-	font-weight: var(--weight-base-bold);
-	line-height: var(--height-base-btn);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--btn-height-md);
 	@include transition;
 
 	&:hover {
@@ -207,13 +207,13 @@
 
 .form__register {
 	display: flex;
-	gap: var(--spacings-xs);
-	font-size: var(--size-badge);
-	font-weight: var(--weight-base-regular);
-	line-height: var(--height-large-regular);
-	letter-spacing: var(--letter-spacing-regular);
+	gap: var(--space-2xs);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
 	color: var(--colors-gray-800);
-	padding: var(--padding-2xs) 0;
+	padding: var(--space-2xs) 0;
 
 	&-link {
 		color: var(--colors-primary);
@@ -229,22 +229,22 @@
 .modal__footer {
 	display: flex;
 	flex-direction: column;
-	padding: var(--padding-2xm) 0 var(--padding-1xxl);
-	gap: var(--spacings-m);
+	padding: var(--space-xl) 0 var(--space-5xl);
+	gap: var(--space-md);
 	flex-shrink: 0;
 
 	&-text {
-		font-size: var(--size-badge);
-		font-weight: var(--weight-base-regular);
-		line-height: var(--height-large-regular);
-		letter-spacing: var(--letter-spacing-regular);
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
 		color: var(--colors-gray-700);
 	}
 
 	&-social {
 		display: flex;
 		justify-content: center;
-		gap: var(--spacings-sm);
+		gap: var(--space-sm);
 	}
 
 	&-link {
