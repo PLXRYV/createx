@@ -1,0 +1,352 @@
+@use "/src/style/mixins" as *;
+
+.testimonials {
+	&__container {
+		padding: var(--section-padding-y) 0;
+	}
+
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__header-text {
+		padding-bottom: var(--space-5xl);
+		font-size: var(--font-size-5xl);
+		font-weight: var(--font-weight-black);
+		line-height: var(--line-height-heading);
+		letter-spacing: var(--font-weight-regular);
+
+		span {
+			padding-bottom: var(--space-s);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		button:hover svg path {
+			fill: var(--colors-white);
+		}
+	}
+
+	&__rectangles {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: var(--space-sm);
+		padding-top: var(--space-5xl);
+	}
+
+	@include tab-md {
+		&__container {
+			padding-bottom: var(--space-9xl);
+		}
+
+		&__header-text {
+			padding-bottom: var(--space-5xl);
+			font-size: var(--font-size-5xl);
+			text-align: center;
+
+			span {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.testimonials__arrow-left,
+.testimonials__arrow-right {
+	padding: var(--space-lg) var(--space-lg);
+	border-radius: var(--roundings-arrows);
+	border: none;
+	background-color: transparent;
+	width: 48px;
+	height: 48px;
+	transition: all 0.6s ease;
+
+	&:hover {
+		background-color: var(--colors-primary);
+	}
+}
+
+.slider {
+	&__container {
+		background-color: var(--colors-white);
+		max-width: 1020px;
+		margin: 0 auto;
+		border-radius: var(--roundings-s);
+	}
+
+	&__content-box {
+		display: flex;
+		padding: var(--space-5xl) var(--space-8xl);
+	}
+
+	&__item-text-container {
+		padding-bottom: var(--space-xl);
+	}
+
+	&__item-text {
+		color: var(--colors-gray-800);
+		font-size: var(--font-size-xl);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+	}
+
+	&__item-profile {
+		display: flex;
+		align-items: center;
+	}
+
+	&__profile-name {
+		padding-left: var(--space-lg);
+		color: var(--colors-gray-700);
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+
+		span {
+			display: flex;
+			flex-direction: column;
+			padding-bottom: var(--space-2xs);
+			color: var(--colors-gray-900);
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-base);
+			letter-spacing: var(--letter-spacing-none);
+		}
+	}
+
+	@include tab-md {
+		.slider {
+			&__container {
+				max-width: 700px;
+			}
+
+			&__content-box {
+				padding: var(--space-5xl) var(--space-5xl);
+			}
+
+			&__item-text {
+				font-size: var(--font-size-xl);
+			}
+		}
+
+		.rectangle {
+			&__box {
+				padding-right: var(--space-xl);
+			}
+		}
+	}
+
+	@include tab-m {
+		.slider {
+			&__container {
+				max-width: 600px;
+				margin: 0 20px;
+			}
+
+			&__content-box {
+				padding: var(--space-3xl) var(--space-5xl);
+				flex-direction: column;
+			}
+
+			&__item-text {
+				text-align: center;
+			}
+
+			&__item-profile {
+				justify-content: center;
+				flex-direction: column;
+				text-align: center;
+			}
+
+			&__profile-name {
+				padding: var(--space-md) 0 0;
+
+				span {
+					align-items: center;
+				}
+			}
+		}
+
+		.rectangle {
+			&__box {
+				padding-bottom: var(--space-lg);
+			}
+		}
+
+		.rectangle {
+			width: 8px;
+			height: 16px;
+		}
+	}
+}
+
+.rectangle {
+	display: flex;
+	width: 10px;
+	height: 20px;
+	background-color: var(--colors-primary);
+	clip-path: polygon(90% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 40%);
+
+	&__box {
+		display: flex;
+		padding-right: var(--space-2xl);
+		gap: var(--space-s);
+	}
+
+	&__horizon {
+		background-color: var(--colors-gray-800);
+		width: 30px;
+		height: 3px;
+		border-radius: var(--roundings-rect-horizon);
+		opacity: 0.3;
+
+		&--modification {
+			opacity: 1;
+		}
+	}
+}
+
+@include tab-sm {
+	.testimonials {
+		&__container {
+			padding-bottom: var(--space-2xl);
+		}
+
+		&__header-text {
+			padding-bottom: var(--space-3xl);
+			font-size: var(--font-size-5xl);
+
+			span {
+				font-size: var(--font-size-base);
+			}
+		}
+	}
+
+	.slider {
+		&__container {
+			max-width: 500px;
+			margin: 0 15px;
+		}
+
+		&__content-box {
+			padding: var(--space-3xl) var(--space-2xl);
+		}
+
+		&__item-text-container {
+			padding-bottom: var(--space-md);
+		}
+
+		&__item-text {
+			font-size: var(--font-size-base);
+			line-height: var(--line-height-base);
+			text-align: center;
+		}
+
+		&__profile-name {
+			font-size: var(--font-size-sm);
+
+			span {
+				font-size: var(--font-size-base);
+			}
+		}
+	}
+
+	.rectangle {
+		&__box {
+			padding: 0 0 var(--space-md);
+		}
+	}
+
+	.rectangle {
+		width: 6px;
+		height: 14px;
+	}
+}
+
+@include mob-m {
+	.slider {
+		&__container {
+			margin: 0 10px;
+			border-radius: var(--roundings-s);
+		}
+
+		&__content-box {
+			padding: var(--space-xl) var(--space-lg);
+		}
+
+		&__item-text-container {
+			padding-bottom: var(--space-md);
+		}
+
+		&__item-text {
+			font-size: var(--font-size-base);
+			line-height: var(--line-height-heading);
+		}
+
+		&__profile-name {
+			font-size: var(--font-size-base);
+			line-height: var(--line-height-heading);
+			padding-top: var(--space-m);
+
+			span {
+				font-size: var(--font-size-base);
+				line-height: var(--line-height-heading);
+			}
+		}
+		&__item-profile {
+			height: 50%;
+			width: 50%;
+		}
+	}
+
+	.rectangle {
+		&__box {
+			padding-bottom: var(--space-m);
+			gap: var(--space-s);
+		}
+	}
+
+	.rectangle {
+		width: 5px;
+		height: 12px;
+	}
+}
+
+@include mob-sm {
+	.slider {
+		&__content-box {
+			padding: var(--space-lg) var(--space-md);
+		}
+
+		&__item-text {
+			font-size: var(--font-size-base);
+		}
+	}
+
+	.rectangle {
+		&__box {
+			gap: var(--space-2xs);
+		}
+	}
+
+	.rectangle {
+		width: 4px;
+		height: 10px;
+	}
+}

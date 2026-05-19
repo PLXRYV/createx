@@ -1,42 +1,97 @@
-@use "../mixins" as *;
+@use "mixins.scss" as *;
 
 :root {
-  --spacings-2xs: 2px;
-  --spacings-xs: 4px;
-  --spacings-s: 8px;
-  --spacings-sm: 12px;
-  --spacings-m: 15px;
-  --spacings-lm: 20px;
-  --spacings-xlm: 24px;
-  --spacings-2m: 30px;
-  --spacings-2xl: 40px;
-  --spacings-3xl: 60px;
-  --spacings-4xl: 80px;
-  --spacings-large: 100px;
-  --spacings-btn-margin: 36px;
-  --spacings-about-box: 135px;
-  --spacings-container-certificate: 130px;
+//Spacing Scale
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 6px;
+  --space-s: 8px;
+  --space-sm: 10px;
+  --space-m: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+  --space-4xl: 48px;
+  --space-5xl: 60px;
+  --space-6xl: 70px;
+  --space-7xl: 80px;
+  --space-8xl: 100px;
+  --space-9xl: 120px;
 
+//Cards, badges, btns
+	--card-padding: var(--space-2xl);
+	--badge-padding: var(--space-3xs) var(--space-s);
+	--button-main-padding:  var(--space-md);
+
+//Sections
+	--section-padding-y: 180px;
+	--section-main-padding: 128px;
+	--section-stats-padding: 142px 0 80px 0;
+
+//Margins
+	--section-events-margin: var(--space-9xl);
+	--margin-2xl: var(--space-5xl);
+	--btn-margin: var(--space-5xl);
+
+//Specific
+  --benefits-box-padding: 135px;
+  --main-content-text-padding: 0 160px 60px 0;
+	--ellipse-padding: var(--space-4xl);
+
+	--about-box-gap: 135px;
+	--certificate-container-gap: 130px;
+
+//Media Quares
+  @media (max-width: 1440px) {
+    --card-padding: 28px;
+  }
   @include desk-sm {
-    --spacings-2xl: 30px;
-    --spacings-btn-margin: 25px;
-    --spacings-xm: 20px;
-    --spacings-about-box: 100px;
+    --main-content-text-padding: 0 var(--space-9xl) var(--space-4xl) 0;
+    --ellipse-padding: var(--space-1xxl, 50px);
+    --section-stats-padding: var(--space-9xl) 0 var(--space-6xl) 0;
+    --benefits-box-padding: var(--space-7xl);
+	  --btn-margin:    var(--space-xl);
+	  --about-box-gap: var(--space-12xl);
   }
   @include tab-md {
-    --spacings-2xl: 20px;
-    --spacings-btn-margin: 20px;
-    --spacings-xm: 18px;
-    --spacings-about-box: 70px;
+    --section-main-padding: var(--space-5xl);
+    --header-padding: var(--space-md);
+    --main-content-text-padding: 0 var(--space-7xl) var(--space-3xl) 0;
+    --ellipse-padding: var(--space-3xl);
+    --section-stats-padding: var(--space-8xl) 0 var(--space-5xl) 0;
+    --section-padding-y: var(--space-7xl);
+    --benefits-box-padding: var(--space-3xl);
+    --section-events-margin: var(--space-7xl);
+	  --btn-margin: var(--space-xl);
+	  --about-box-gap: var(--space-6xl);
   }
   @include tab-m {
-    --spacings-btn-margin: 15px;
-    --spacings-about-box: 50px;
+    --header-padding: var(--space-m);
+    --main-content-text-padding: 0 var(--space-3xl) var(--space-2xl) 0;;
+    --section-stats-padding: var(--space-7xl) 0 var(--space-4xl) 0;
+	  --btn-margin: var(--space-md);
+	  --about-box-gap: var(--space-4xl);
   }
   @include tab-sm {
-    --spacings-btn-margin: 10px;
+    --section-main-padding: var(--space-2xl);
+    --header-padding: var(--space-sm);
+    --main-content-text-padding: 0 var(--space-lg) var(--space-xl) 0;
+    --section-stats-padding: var(--space-5xl) 0 var(--space-3xl) 0;
+    --section-padding-y: var(--space-3xl);
+    --section-events-margin: var(--space-3xl);
+	  --btn-margin: var(--space-sm);
   }
   @include mob-m {
-    --spacings-btn-margin: 8px;
+    --button-main-padding: var(--space-m);
+    --base-padding: var(--space-lg);
+    --header-padding: var(--space-s);
+    --main-content-text-padding: 0 0 var(--space-xl) 0;
+    --section-stats-padding: var(--space-4xl) 0 var(--space-2xl) 0;
+	  --btn-margin: var(--space-s);
   }
 }
+
+
+

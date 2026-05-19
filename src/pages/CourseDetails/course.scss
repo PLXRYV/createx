@@ -1,0 +1,22 @@
+.coursesBackground {
+	background: url(/src/pages/images/CoursesPage/background-courses.jpg) center center no-repeat;
+	background-size: cover;
+}
+
+.CoursesMain {
+	max-width: 1020px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: var(--section-main-padding) 0;
+}
+
+.CoursesMainTitle {
+	font-size: var(--font-size-5xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-heading);
+	padding-top: var(--space-m);
+}
+
