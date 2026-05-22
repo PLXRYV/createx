@@ -6,25 +6,27 @@ import profileImg from '../../../assets/images/common/images/testimonials/slider
 const TestimonialsSection: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const slidesData = [
+
         {
             name: "Eleanor Pena",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in euismod vulputate etiam eros. Pulvinar neque pharetra arcu diam maecenas diam integer in."
+            text: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in euismod vulputate etiam eros. Pulvinar neque pharetra arcu diam maecenas diam integer in."
         },
+
         {
             name: "Second Commit",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolor expedita illum inventore ipsam magni, mollitia nemo officiis quibusdam quis ratione sit tempore voluptatibus. Ab accusamus aliquam aperiam commodi consectetur debitis deleniti dolore ducimus eaque excepturi expedita libero magnam magni maiores nihil odio omnis optio perspiciatis placeat porro."
+            text: "Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolor expedita illum inventore ipsam magni, mollitia nemo officiis quibusdam quis ratione sit tempore voluptatibus. Ab accusamus aliquam aperiam commodi consectetur debitis deleniti dolore ducimus eaque excepturi expedita libero magnam magni maiores nihil odio omnis optio perspiciatis placeat porro."
         },
         {
             name: "Third Commit",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet at beatae dicta eius eveniet exercitationem ipsum iure, laboriosam laborum minima molestiae mollitia nulla optio perspiciatis quam quasi quibusdam quod ratione repellat unde voluptates! Aut cumque dignissimos enim esse est."
+            text: "Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid amet at beatae dicta eius eveniet exercitationem ipsum iure, laboriosam laborum minima molestiae mollitia nulla optio perspiciatis quam quasi quibusdam quod ratione repellat unde voluptates! Aut cumque dignissimos enim esse est."
         },
         {
             name: "Fourth Commit",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam commodi dicta distinctio, dolores, dolorum ex fugit nemo pariaturベース perspiciatis quo vel vitae!"
+            text: "Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam commodi dicta distinctio, dolores, dolorum ex fugit nemo pariaturベース perspiciatis quo vel vitae!"
         },
         {
             name: "Fifth Commit",
-            text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, possimus!"
+            text: "Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, possimus!"
         }
     ];
 

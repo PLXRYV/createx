@@ -3,11 +3,9 @@
 
 .blogSection {
 	padding: var(--space-9xl) 0 var(--section-padding-y);
-
 	@include tab-m {
 		padding-top: var(--space-5xl);
 	}
-
 	@include tab-sm {
 		padding-top: var(--space-2xl);
 	}
@@ -17,17 +15,14 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-
 		@include tab-md {
 			padding-bottom: var(--space-3xl);
 			flex-direction: column;
 			gap: var(--space-lg);
 		}
-
 		@include tab-m {
 			padding-bottom: var(--space-2xl);
 		}
-
 		@include tab-sm {
 			padding-bottom: var(--space-xl);
 			gap: var(--space-md);
@@ -49,7 +44,6 @@
 			font-weight: var(--font-weight-bold);
 			line-height: var(--line-height-body);
 			letter-spacing: var(--letter-spacing-none);
-
 			@include tab-sm {
 				font-size: var(--font-size-sm);
 			}
@@ -61,11 +55,9 @@
 			line-height: var(--line-height-heading);
 			letter-spacing: var(--letter-spacing-normal);
 			margin: 0;
-
 			@include tab-m {
 				font-size: var(--font-size-5xl);
 			}
-
 			@include tab-sm {
 				font-size: var(--font-size-5xl);
 				line-height: var(--line-height-body);
@@ -78,13 +70,11 @@
 			transform: translateY(0);
 			align-self: flex-start;
 		}
-
 		@include tab-m {
 			width: 100%;
 			text-align: center;
 			font-size: var(--font-size-lg);
 		}
-
 		@include tab-sm {
 			padding: var(--space-m) var(--space-xl);
 			font-size: var(--font-size-sm);
@@ -94,13 +84,11 @@
 	.blogContent {
 		display: flex;
 		gap: var(--space-2xl);
-
 		@include tab-md {
 			flex-wrap: wrap;
 			gap: var(--space-lg);
 			align-items: center;
 		}
-
 		@include tab-m {
 			text-align: center;
 			gap: var(--space-md);
@@ -110,13 +98,11 @@
 	.blogPost {
 		display: flex;
 		flex-direction: column;
-
 		@include tab-md {
 			flex: 1 1 calc(50% - 20px);
 			max-width: 400px;
 			margin: 0 auto;
 		}
-
 		@include tab-m {
 			flex: 1 1 100%;
 		}
@@ -144,7 +130,6 @@
 		background: var(--colors-white);
 		border-radius: var(--roundings-s);
 		padding: 1px var(--space-s);
-
 		@include mob-m {
 			top: 8px;
 			left: 8px;
@@ -164,7 +149,6 @@
 		line-height: var(--line-height-body);
 		letter-spacing: var(--letter-spacing-none);
 		margin: 0;
-
 		@include mob-m {
 			font-size: var(--font-size-xs);
 		}
@@ -179,16 +163,13 @@
 		font-weight: var(--font-weight-regular);
 		line-height: var(--line-height-body);
 		letter-spacing: var(--letter-spacing-none);
-
 		@include tab-m {
 			justify-content: center;
 		}
-
 		@include tab-sm {
 			flex-wrap: wrap;
 			gap: var(--space-s);
 		}
-
 		@include mob-m {
 			font-size: var(--font-size-xs);
 			gap: var(--space-2xs);
@@ -236,7 +217,6 @@
 		font-weight: var(--font-weight-regular);
 		line-height: var(--line-height-base);
 		letter-spacing: var(--letter-spacing-none);
-
 		@include tab-sm {
 			font-size: var(--font-size-sm);
 			line-height: var(--line-height-heading);
@@ -253,11 +233,9 @@
 		line-height: var(--line-height-body);
 		letter-spacing: var(--letter-spacing-none);
 		margin: 0;
-
 		@include tab-md {
 			font-size: var(--font-size-lg);
 		}
-
 		@include mob-m {
 			font-size: var(--font-size-sm);
 			padding-bottom: var(--space-2xs);
@@ -277,7 +255,6 @@
 		align-items: center;
 		text-decoration: none;
 		color: inherit;
-
 		@include tab-m {
 			justify-content: center;
 		}
@@ -291,11 +268,9 @@
 		line-height: var(--line-height-base);
 		letter-spacing: var(--letter-spacing-none);
 		margin: 0;
-
 		@include tab-sm {
 			font-size: var(--font-size-sm);
 		}
-
 		@include mob-m {
 			font-size: var(--font-size-xs);
 			padding-right: var(--space-s);

@@ -35,7 +35,7 @@ const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
                 <div className={styles.modalContent}>
                     <h2 className={styles.modalTitle}>Sign Up</h2>
                     <p className={styles.modalSubtitle}>
-                        Registration takes less than a minute but gives you full control over your studying.
+                        Registration's takes less than a minute but gives you full control over your studying.
                     </p>
                     <form className={styles.form} onSubmit={handleSubmit}>
                         <div className={styles.formField}>

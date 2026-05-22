@@ -4,6 +4,7 @@ import dotsSvg from '../../../assets/images/homepage/events/events_dots.svg';
 import circlesSvg from '../../../assets/images/homepage/events/events_circles.svg';
 
 const EVENTS_DATA = [
+
     {
         id: 1,
         day: "05",
@@ -14,6 +15,7 @@ const EVENTS_DATA = [
         type: "Online master-class",
         isLeftAligned: false
     },
+
     {
         id: 2,
         day: "24",
@@ -24,6 +26,7 @@ const EVENTS_DATA = [
         type: "Online lecture",
         isLeftAligned: true
     },
+
     {
         id: 3,
         day: "16",
@@ -44,7 +47,7 @@ const EventsSection: React.FC = () => {
             <div className="container">
                 <div className={styles.eventsContainer}>
                     <div className={styles.eventsHeader}>
-                        <p className={styles.eventsHeaderSubtitle}>OUR EVENTS</p>
+                        <p className={styles.eventsHeaderSubtitle}>OUR EVENT</p>
                         <h2 className={styles.eventsHeaderTitle}>Lectures & workshops</h2>
                     </div>
                     <div className={styles.eventsNavigation}>
@@ -74,7 +77,7 @@ const EventsSection: React.FC = () => {
                         </ul>
                     </div>
                     <div className={styles.eventsMore}>
-                        <p className={styles.eventsMoreText}>Do you want more?</p>
+                        <p className={styles.eventsMoreText}>Do you want more</p>
                         <button type="button" className={styles.buttonPrimary}>
                             Explore all events
                         </button>

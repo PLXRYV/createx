@@ -7,14 +7,12 @@
 	.certificateContainer {
 		display: flex;
 		gap: var(--certificate-container-gap);
-
 		@include tab-md {
 			gap: var(--space-7xl);
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
 		}
-
 		@include mob-m {
 			gap: var(--space-2xl);
 		}
@@ -25,11 +23,9 @@
 
 	.certificateHeader {
 		padding-bottom: var(--space-4xl);
-
 		@include tab-md {
 			padding-bottom: var(--space-2xl);
 		}
-
 		@include mob-m {
 			padding-bottom: var(--space-md);
 		}
@@ -42,7 +38,6 @@
 			font-weight: var(--font-weight-bold);
 			line-height: var(--line-height-body);
 			letter-spacing: var(--letter-spacing-none);
-
 			@include tab-md {
 				align-items: center;
 			}
@@ -74,13 +69,11 @@
 			display: flex;
 			padding-bottom: var(--space-9xl);
 			gap: var(--space-3xl);
-
 			@include tab-md {
 				padding-bottom: var(--space-2xl);
 				gap: var(--space-2xl);
 				justify-content: center;
 			}
-
 			@include mob-m {
 				display: block;
 				gap: var(--space-sm);
@@ -91,7 +84,6 @@
 		&Image {
 			display: block;
 			height: auto;
-
 			@include mob-m {
 				margin: 0 auto var(--space-s);
 				&:last-child {
@@ -110,12 +102,10 @@
 		height: auto;
 		display: block;
 		transform: translateY(40px);
-
 		@include desk-sm {
 			max-width: 100%;
 			width: 100%;
 		}
-
 		@include mob-m {
 			max-width: 90%;
 			margin: 0 auto;

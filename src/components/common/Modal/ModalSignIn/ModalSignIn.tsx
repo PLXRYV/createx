@@ -10,7 +10,6 @@ import linkedInIcon from '../../../../assets/icons/modal-icons/Linked-In.svg';
 interface ModalSignInProps {
     onClose: () => void;
 }
-
 const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
     const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -30,7 +29,7 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Sign in form submitted");
+        console.log("Sign's in form submitted");
     };
 
     return (
@@ -107,7 +106,6 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     );

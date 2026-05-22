@@ -8,9 +8,6 @@
 	position: relative;
 	width: 100%;
 
-	.eventsContainer {
-	}
-
 	.eventsHeader {
 		padding-top: var(--space-7xl);
 		display: flex;
@@ -35,7 +32,6 @@
 			line-height: var(--line-height-heading);
 			letter-spacing: var(--font-weight-regular);
 			margin: 0;
-
 			@include mob-m {
 				font-size: var(--font-size-2xl);
 			}
@@ -71,13 +67,11 @@
 			transform: scale(1.03);
 			box-shadow: 0 40px 40px color-mix(in srgb, var(--colors-primary) 15%, transparent);
 		}
-
 		@include tab-md {
 			padding: var(--space-xl) var(--space-2xl);
 			flex-wrap: wrap;
 			gap: var(--space-lg);
 		}
-
 		@include tab-sm {
 			flex-direction: column;
 			align-items: stretch;
@@ -98,11 +92,9 @@
 		time {
 			display: block;
 		}
-
 		@include tab-sm {
 			justify-content: flex-start;
 		}
-
 		@include mob-m {
 			gap: var(--space-sm);
 		}
@@ -152,11 +144,6 @@
 			line-height: var(--line-height-body);
 			letter-spacing: var(--letter-spacing-none);
 		}
-
-		&Left {
-
-		}
-
 		@include tab-md {
 			padding: 0;
 			flex: 1 1 100%;
@@ -166,7 +153,6 @@
 
 	.eventsLinkButton {
 		padding-left: var(--space-lg);
-
 		@include tab-sm {
 			padding-left: 0;
 			width: 100%;
@@ -195,11 +181,9 @@
 			background-clip: border-box;
 			-webkit-text-fill-color: initial;
 		}
-
 		@include desk-sm {
 			white-space: nowrap;
 		}
-
 		@include tab-sm {
 			align-self: center;
 			order: 3;
@@ -213,7 +197,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 		@include tab-md {
 			padding: var(--space-5xl) 0 var(--space-6xl);
 			flex-direction: column;
@@ -229,7 +212,6 @@
 		line-height: var(--line-height-body);
 		letter-spacing: var(--letter-spacing-none);
 		margin: 0;
-
 		@include tab-md {
 			padding: 0;
 		}
@@ -259,7 +241,6 @@
 		z-index: 1;
 		pointer-events: none;
 		display: block;
-
 		@include tab-md {
 			display: none;
 		}
