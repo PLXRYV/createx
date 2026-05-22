@@ -1,0 +1,167 @@
+@use "../../../../assets/style/variables/breakpoints" as *;
+@use "../../../../assets/style/variables/mixins" as *;
+
+.coursesSection {
+	padding-top: var(--section-padding-y);
+
+	.coursesContainHeader {
+		padding-bottom: var(--space-5xl);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@include tab-md {
+			flex-direction: column;
+			gap: var(--space-2xl);
+			text-align: center;
+		}
+	}
+
+	.coursesHeaderTtitle {
+		font-size: var(--font-size-5xl);
+		font-weight: var(--font-weight-black);
+		line-height: var(--line-height-heading);
+		letter-spacing: var(--letter-spacing-normal);
+
+		span {
+			padding-bottom: var(--space-s);
+			display: flex;
+			flex-direction: column;
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			letter-spacing: var(--letter-spacing-none);
+		}
+
+		@include mob-m {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.buttonSecondary {
+	}
+
+	.coursesContent {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto auto;
+		gap: var(--space-2xl);
+
+		@include desk-m {
+			grid-template-columns: 1fr;
+			gap: var(--space-lg);
+		}
+	}
+
+	.coursesContainerCard {
+		display: flex;
+		background-color: var(--colors-white);
+		border: 1px solid var(--colors-gray-300);
+		border-radius: var(--roundings-s);
+		transition: 0.4s;
+
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: 0 2px 4px var(--colors-black);
+		}
+
+		&:nth-child(2) .coursesCardBadge {
+			background: var(--colors-info);
+		}
+
+		&:nth-child(3) .coursesCardBadge {
+			background: var(--colors-warning);
+		}
+
+		&:nth-child(5) .coursesCardBadge {
+			background: var(--colors-info);
+		}
+
+		&:nth-child(6) .coursesCardBadge {
+			background: var(--colors-pink);
+		}
+
+		@include tab-sm {
+			flex-direction: column;
+		}
+	}
+
+	.coursesContentImg {
+		display: block;
+		object-fit: cover;
+	}
+
+	.coursesContentCard {
+		padding: var(--card-padding);
+	}
+
+	.coursesCardLink {
+		text-decoration: none;
+		color: inherit;
+		display: block;
+	}
+
+	.coursesCardContent {
+	}
+
+	.coursesCardBadge {
+		padding: var(--badge-padding);
+		display: inline-block;
+		color: var(--colors-white);
+		background: var(--colors-success);
+		font-size: var(--font-size-sm);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		border-radius: var(--roundings-s);
+	}
+
+	.coursesCardTag {
+		padding: var(--space-lg) 0;
+		font-size: var(--font-size-xl);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+
+		span {
+			display: block;
+		}
+	}
+
+	.coursesCardInfo {
+		display: flex;
+		align-items: center;
+	}
+
+	.coursesCardPrice {
+		color: var(--colors-danger);
+		font-size: var(--font-size-lg);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+	}
+
+	.coursesCardSpeaker {
+		color: var(--colors-gray-700);
+		font-size: var(--font-size-lg);
+		font-weight: var(--font-weight-regular);
+		line-height: var(--line-height-body);
+		letter-spacing: var(--letter-spacing-none);
+		margin: 0;
+	}
+
+	.containDivider {
+		height: 14px;
+		padding: 0 var(--space-s);
+		color: var(--colors-gray-700);
+	}
+
+	.verticalDivider {
+		width: 1px;
+		background-color: var(--colors-gray-700);
+		height: 100%;
+	}
+}

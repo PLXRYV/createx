@@ -1,0 +1,69 @@
+@use "/src/assets/style/style.scss" as *;
+@use "/src/assets/style/variables/breakpoints" as *;
+@use "/src/assets/style/variables/mixins" as *;
+
+.burger {
+	display: none;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+
+	&BtnAction {
+		width: 30px;
+		height: 20px;
+		position: relative;
+		display: block;
+
+		span {
+			position: absolute;
+			height: 2px;
+			top: calc(50% - 1px);
+			width: 100%;
+			background-color: var(--colors-gray-900);
+			left: 0;
+			transition: all 0.3s ease;
+
+			&:first-child {
+				top: 0;
+			}
+
+			&:last-child {
+				top: auto;
+				bottom: 0;
+			}
+		}
+	}
+
+	&Active {
+		.burgerBtnAction {
+			span {
+				&:nth-child(2) {
+					transform: scale(0);
+				}
+
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+					background-color: var(--colors-white);
+				}
+
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+					background-color: var(--colors-white);
+				}
+			}
+		}
+	}
+
+	@include tab-m {
+		display: block;
+		z-index: 101;
+
+		.burgerBtnAction {
+			width: 25px;
+			height: 18px;
+		}
+	}
+}

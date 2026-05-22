@@ -1,0 +1,163 @@
+@use "/src/assets/style/style.scss" as *;
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
+
+.headerBg {
+	background: url("../../../assets/images/common/images/header/background_head.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.header {
+	padding-top: var(--space-lg);
+	position: relative;
+
+	&Inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&Menu {
+		display: flex;
+		align-items: center;
+		gap: var(--space-5xl);
+
+		@include tab-sm {
+			.buttonConsultation {
+				display: none;
+			}
+		}
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		&Img {
+			display: block;
+		}
+	}
+
+	.nav {
+		display: flex;
+		align-items: center;
+
+		@include tab-m {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			height: 100vh;
+			width: 100%;
+			z-index: 100;
+			background-color: var(--colors-transparent-black);
+			@include transition;
+
+			&Open {
+				left: 0;
+			}
+		}
+	}
+
+	&NavMenu {
+		display: flex;
+		gap: var(--space-3xl);
+
+		@include tab-m {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: var(--space-lg);
+			padding: var(--space-8xl) var(--space-2xl) 0;
+			height: 100%;
+			width: 60%;
+			background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
+			overflow: auto;
+		}
+	}
+
+	&NavMenuItem {
+		list-style: none;
+	}
+
+	&NavMenuLink {
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-base);
+		letter-spacing: var(--letter-spacing-none);
+		text-decoration: none;
+		color: inherit;
+		@include transition;
+
+		&:hover {
+			color: var(--colors-primary);
+		}
+
+		@include tab-m {
+			font-size: var(--font-size-2xl);
+			line-height: var(--line-height-base);
+			color: var(--colors-white);
+		}
+	}
+
+	&InfoActions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-md);
+	}
+
+	&Auth {
+		padding-left: var(--space-3xl);
+		align-items: center;
+		display: flex;
+		gap: var(--space-2xs);
+		@include transition;
+
+		@include tab-m {
+			padding: var(--space-3xl) 0 0;
+			display: flex;
+			gap: 5px;
+		}
+
+		&Btn {
+			display: flex;
+			align-items: center;
+			gap: var(--space-2xs);
+			background: none;
+			border: none;
+			color: var(--colors-gray-800);
+			font-size: var(--font-size-base);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-base);
+			letter-spacing: var(--letter-spacing-none);
+			cursor: pointer;
+			@include transition;
+
+			&:hover {
+				color: var(--colors-primary);
+			}
+
+			@include tab-m {
+				font-size: var(--font-size-xl);
+				color: var(--colors-white);
+			}
+		}
+
+		&BtnSignin {
+		}
+
+		&BtnSignup {
+		}
+
+		&Icon {
+			display: block;
+			width: 16px;
+			height: 16px;
+		}
+
+		&Separator {
+			color: var(--colors-gray-800);
+			@include tab-m {
+				font-size: var(--font-size-xl);
+				color: var(--colors-white);
+			}
+		}
+	}
+}

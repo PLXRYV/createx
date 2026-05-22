@@ -1,4 +1,4 @@
-@use "/src/style/mixins.scss" as *;
+@use "../../../assets/style/variables/mixins.scss" as *;
 
 .buttonPrimary {
 	padding: 0 var(--space-3xl);
