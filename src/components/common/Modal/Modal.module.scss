@@ -11,8 +11,6 @@
 	overflow: auto;
 	@include transition;
 
-	&Register {}
-
 	.modalWrapper {
 		position: relative;
 		max-width: 480px;
@@ -42,8 +40,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
-		&Signup {}
 
 		&Icon {
 			display: block;
@@ -160,9 +156,6 @@
 				outline: none;
 				color: var(--colors-primary);
 			}
-		}
-
-		&TogglePasswordConfirm {
 		}
 
 		&Options {

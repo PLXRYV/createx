@@ -6,6 +6,7 @@ import partnerLogo3 from '../../../assets/images/common/images/certificate/certi
 import certificateImg from '../../../assets/images/common/images/certificate/certificate_createx.jpg';
 
 const CertificateSection: React.FC = () => {
+
     return (
         <section className={styles.certificateSection}>
             <div className="container">
@@ -29,13 +30,14 @@ const CertificateSection: React.FC = () => {
                         </div>
                     </div>
                     <div className={styles.certificateImageWrapper}>
-                        <img className={styles.certificateCreatex} src={certificateImg} alt="Createx official certificate layout"/>
+                        <img className={styles.certificateCreatex} src={certificateImg} alt="Createx official certificate layout's"/>
                     </div>
 
                 </div>
             </div>
         </section>
     );
+
 };
 
 export default CertificateSection;

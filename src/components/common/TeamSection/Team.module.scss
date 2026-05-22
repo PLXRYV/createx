@@ -1,4 +1,3 @@
-// 1. Подключаем брейкпоинты и миксины напрямую через относительные пути
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
@@ -6,7 +5,6 @@
 	background: url("../../../assets/images/common/images/team/team_background.jpg") center center no-repeat;
 	background-size: cover;
 	transform: translateY(-50px);
-
 	@include tab-md {
 		background: none;
 	}
@@ -19,13 +17,11 @@
 		padding-bottom: var(--space-5xl);
 		display: flex;
 		justify-content: space-between;
-
 		@include tab-md {
 			margin-top: var(--space-3xl);
 			justify-content: center;
 			flex-direction: column;
 		}
-
 		@include tab-sm {
 			padding-top: var(--space-3xl);
 		}
@@ -43,7 +39,6 @@
 			font-weight: var(--font-weight-bold);
 			line-height: var(--line-height-body);
 			letter-spacing: var(--letter-spacing-none);
-
 			@include tab-md {
 				align-items: center;
 			}
@@ -66,7 +61,6 @@
 	.teamArrows {
 		transform: translateY(50px);
 		display: flex;
-
 		@include tab-md {
 			display: none;
 			justify-content: center;
@@ -113,7 +107,6 @@
 			will-change: transform;
 			gap: 20px;
 			touch-action: pan-y;
-
 			@include tab-md {
 				gap: var(--space-lg);
 				flex-wrap: wrap;
@@ -128,12 +121,10 @@
 			align-items: center;
 			flex: 0 0 auto;
 			min-width: 0;
-
 			@include tab-md {
 				flex: 0 1 calc(50% - 20px);
 				max-width: 150px;
 			}
-
 			@include mob-sm {
 				max-width: 240px;
 			}
@@ -163,7 +154,6 @@
 					&:nth-child(3) { transition-delay: 0.3s; }
 				}
 			}
-
 			@include tab-sm {
 				&:active {
 					.teamImage {
@@ -196,11 +186,9 @@
 		&:hover {
 			box-shadow: inset 0 -200px 200px -200px var(--colors-black);
 		}
-
 		@include tab-md {
 			padding: var(--space-md) var(--space-md) 0;
 		}
-
 		@include mob-sm {
 			padding: var(--space-s) var(--space-s) 0;
 		}
@@ -245,22 +233,18 @@
 			height: 40px;
 			filter: drop-shadow(0 2px 4px var(--colors-black));
 			transition: opacity 0.3s ease, transform 0.3s ease;
-
 			@include tab-md {
 				width: 35px;
 				height: 35px;
 			}
-
 			@include tab-sm {
 				width: 36px;
 				height: 36px;
 			}
-
 			@include mob-m {
 				width: 30px;
 				height: 30px;
 			}
-
 			@include mob-sm {
 				width: 28px;
 				height: 28px;

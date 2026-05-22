@@ -11,19 +11,16 @@ import profileSvg from '../../../assets/images/common/images/header/Profile.svg'
 interface HeaderProps {
     button?: React.ReactNode;
 }
-
 const Header: React.FC<HeaderProps> = ({ button }) => {
     const [isBurgerOpen, setIsBurgerOpen] = useState(false);
     const [isSignInOpen, setIsSignInOpen] = useState(false);
     const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-
     const toggleBurger = () => setIsBurgerOpen(!isBurgerOpen);
 
     return (
         <header id="header" className={styles.header}>
             <div className="container">
                 <div className={styles.headerInner}>
-
                     <div className={styles.headerMenu}>
                         <Link to="/" className={styles.logo}>
                             <img className={styles.logoImg} src={logoSvg} alt="Logo of site"/>
@@ -31,19 +28,19 @@ const Header: React.FC<HeaderProps> = ({ button }) => {
                         <nav className={styles.nav}>
                             <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
                                 <li className={styles.navMenuItem}>
-                                    <a href="#about" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>About Us</a>
+                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>About Us</Link>
                                 </li>
                                 <li className={styles.navMenuItem}>
                                     <Link to="/courses" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Courses</Link>
                                 </li>
                                 <li className={styles.navMenuItem}>
-                                    <Link to="/events" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Events</Link>
+                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Events</Link>
                                 </li>
                                 <li className={styles.navMenuItem}>
-                                    <a href="#blog" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Blog</a>
+                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Blog</Link>
                                 </li>
                                 <li className={styles.navMenuItem}>
-                                    <a href="#contacts" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Contacts</a>
+                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Contacts</Link>
                                 </li>
                             </ul>
                         </nav>

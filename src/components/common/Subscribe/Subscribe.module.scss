@@ -41,7 +41,6 @@
 			line-height: var(--line-height-heading);
 			letter-spacing: var(--font-weight-regular);
 			z-index: 1000;
-
 			@include tab-m {
 				padding: 0 var(--space-md) var(--space-5xl);
 				font-size: var(--font-size-5xl);
@@ -55,7 +54,6 @@
 		width: 600px;
 		max-width: 100%;
 		z-index: 3;
-
 		@include tab-m {
 			width: 350px;
 		}
@@ -86,7 +84,6 @@
 		outline: none;
 		background: transparent;
 		font-size: var(--font-size-base);
-
 		@include tab-m {
 			font-size: var(--font-size-xs);
 		}
@@ -116,7 +113,6 @@
 		position: absolute;
 		transform: translateY(-245px);
 		z-index: 1;
-
 		@include tab-m {
 			display: none;
 		}

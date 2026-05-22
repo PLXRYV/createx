@@ -21,7 +21,6 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-5xl);
-
 		@include tab-sm {
 			.buttonConsultation {
 				display: none;
@@ -40,7 +39,6 @@
 	.nav {
 		display: flex;
 		align-items: center;
-
 		@include tab-m {
 			position: fixed;
 			top: 0;
@@ -50,7 +48,6 @@
 			z-index: 100;
 			background-color: var(--colors-transparent-black);
 			@include transition;
-
 			&Open {
 				left: 0;
 			}
@@ -60,7 +57,6 @@
 	&NavMenu {
 		display: flex;
 		gap: var(--space-3xl);
-
 		@include tab-m {
 			flex-direction: column;
 			align-items: flex-start;
@@ -89,7 +85,6 @@
 		&:hover {
 			color: var(--colors-primary);
 		}
-
 		@include tab-m {
 			font-size: var(--font-size-2xl);
 			line-height: var(--line-height-base);
@@ -109,7 +104,6 @@
 		display: flex;
 		gap: var(--space-2xs);
 		@include transition;
-
 		@include tab-m {
 			padding: var(--space-3xl) 0 0;
 			display: flex;
@@ -133,7 +127,6 @@
 			&:hover {
 				color: var(--colors-primary);
 			}
-
 			@include tab-m {
 				font-size: var(--font-size-xl);
 				color: var(--colors-white);

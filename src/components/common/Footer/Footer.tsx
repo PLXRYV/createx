@@ -11,7 +11,6 @@ import linkedInIcon from '../../../assets/images/common/images/footer/linked-In.
 import phoneIcon from '../../../assets/images/common/images/footer/phone.svg';
 import mailIcon from '../../../assets/images/common/images/footer/mail.svg';
 
-
 const Footer: React.FC = () => {
     const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -27,7 +26,7 @@ const Footer: React.FC = () => {
                             <img src={logoSvg} alt="Createx Online School Logo"/>
                         </div>
                         <p className={styles.footerBoxText}>
-                            Createx Online School is a leader in online studying. We have lots of courses and programs
+                            CreateX Online School is a leader in online studying. We have lots of courses and programs
                             from the main market experts. We provide relevant approaches to online learning, internships
                             and employment in the largest companies in the country.
                         </p>
@@ -119,7 +118,7 @@ const Footer: React.FC = () => {
                     </div>
                     <div className={styles.footerBoxForm}>
                         <p className={styles.footerInfoTitle}>
-                            SIGN UP TO OUR NEWSLETTER
+                            SIGN UP TO OUR NEWSLETTER'S
                         </p>
                         <form onSubmit={handleNewsletterSubmit}>
                             <div className={styles.inputWrapper}>
@@ -132,7 +131,7 @@ const Footer: React.FC = () => {
                             </div>
                         </form>
                         <p className={styles.footerNewsletterText}>
-                            *Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency.
+                            *Subscribe to our newsletter to receive communications and early updates from CreateX SEO Agency.
                         </p>
                     </div>
 

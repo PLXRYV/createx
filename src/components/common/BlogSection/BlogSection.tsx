@@ -11,6 +11,7 @@ import clockIcon from '../../../assets/images/common/images/blog/post_clock.svg'
 import arrowIcon from '../../../assets/images/common/images/blog/post_arrow.svg';
 
 const POSTS_DATA = [
+
     {
         id: 1,
         img: postImg1,
@@ -23,6 +24,7 @@ const POSTS_DATA = [
         desc: "Pharetra, ullamcorper iaculis viverra parturient sed id sed. Convallis proin dignissim lacus, purus gravida...",
         actionText: "Listen"
     },
+
     {
         id: 2,
         img: postImg2,
@@ -35,6 +37,7 @@ const POSTS_DATA = [
         desc: "Neque a, senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...",
         actionText: "Watch"
     },
+
     {
         id: 3,
         img: postImg3,
@@ -75,14 +78,14 @@ const BlogSection: React.FC = () => {
                                 <div className={styles.containDivider}>
                                     <div className={styles.verticalDivider}></div>
                                 </div>
-                                <img className={styles.imageCalendar} src={calendarIcon} alt="Calendar icon"/>
+                                <img className={styles.imageCalendar} src={calendarIcon} alt="Calendary icon"/>
                                 <time className={styles.postDate}>{post.date}</time>
                                 {post.time && (
                                     <>
                                         <div className={styles.containDivider}>
                                             <div className={styles.verticalDivider}></div>
                                         </div>
-                                        <img className={styles.imageClock} src={clockIcon} alt="Clock icon"/>
+                                        <img className={styles.imageClock} src={clockIcon} alt="Clock's icon"/>
                                         <time className={styles.postTime}>{post.time}</time>
                                     </>
                                 )}

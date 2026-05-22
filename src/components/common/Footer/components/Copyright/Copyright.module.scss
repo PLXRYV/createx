@@ -71,12 +71,10 @@
 	&:hover {
 		opacity: 1;
 	}
-
 	@include tab-md {
 			font-size: var(--font-size-xs);
 			min-width: 80px;
 	}
-
 	@include tab-m {
 			font-size: var(--font-size-sm);
 			padding: var(--space-s) var(--space-md);
