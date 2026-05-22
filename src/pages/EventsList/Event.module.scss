@@ -1,11 +1,10 @@
 @use "../../assets/style/variables/breakpoints" as *;
 @use "../../assets/style/variables/mixins" as *;
 
-.eventsSection { // Наш главный класс вместо .events
+.eventsSection {
 	background: none;
 
 	.eventsContainer {
-		// Обертка секции
 	}
 
 	.eventsHeader {
@@ -16,7 +15,6 @@
 		}
 	}
 
-	/* Панель сортировки и фильтров */
 	.eventsSort {
 		display: flex;
 		gap: var(--space-3xl);
@@ -80,7 +78,7 @@
 			min-width: 72px;
 		}
 
-		&BtnGroup { // Класс обертки стрелочек изменения количества
+		&BtnGroup {
 			padding-left: var(--space-lg);
 			display: flex;
 			flex-direction: column;
@@ -105,7 +103,6 @@
 			transform: translateY(-8px);
 		}
 
-		/* Блок поиска внутри сортировки */
 		&Search {
 			&Form {
 				border: 1px solid var(--colors-gray-400);
@@ -140,7 +137,6 @@
 			}
 		}
 
-		/* Иконки переключения вида */
 		&Visual {
 			display: flex;
 			gap: var(--space-sm);
@@ -157,7 +153,6 @@
 					color: var(--colors-primary);
 				}
 
-				// Подсвечиваем активную кнопку на основе React-стейта
 				&.isActive {
 					color: var(--colors-primary);
 				}
@@ -165,13 +160,11 @@
 		}
 	}
 
-	/* Динамическая сетка будущих карточек */
 	.eventsNavigation {
 		padding: 0;
 		margin: 0;
 		list-style: none;
 
-		// Стили для переключения в режим сетки (Grid Mode)
 		&.isActive {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
@@ -179,7 +172,6 @@
 		}
 	}
 
-	/* Пагинация страниц */
 	.eventsPagination {
 		padding: var(--space-5xl) 0 var(--section-padding-y);
 		display: flex;
@@ -207,14 +199,12 @@
 				color: var(--colors-primary);
 			}
 
-			// Подсвечиваем цифру текущей страницы
 			&.isActive {
 				color: var(--colors-primary);
 			}
 		}
 	}
 
-	/* Стили будущих карточек мероприятий (переведены в camelCase) */
 	.eventsLink {
 		&.isActive {
 			flex-direction: column;
@@ -286,7 +276,6 @@
 		}
 	}
 
-	/* Состояния загрузки карточек (сохранены из вашей логики) */
 	.eventsNavigation {
 		&.isActive {
 			opacity: 1;

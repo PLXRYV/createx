@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Event.module.scss';
 
-// Импортируем все SVG-иконки как модули для Vite
 import triangleUpIcon from '../../assets/images/homepage/events/buttonTriangleUp.svg';
 import triangleDownIcon from '../../assets/images/homepage/events/buttonTriangleDown.svg';
 import searchIcon from '../../assets/images/homepage/events/buttonSearch.svg';
@@ -10,18 +9,15 @@ import visualGridIcon from '../../assets/images/homepage/events/visualGridBtn.sv
 import arrowRightIcon from '../../assets/images/homepage/events/buttonArrowRight.svg';
 
 const EventsRoad: React.FC = () => {
-    // Стейт для переключения отображения: 'list' (список) или 'grid' (плитка)
     const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
 
-    // Стейт для текущей страницы пагинации
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     return (
         <section id="events" className={styles.eventsSection}>
-            <div className="container"> {/* Глобальный класс пишем строкой */}
+            <div className="container">
                 <div className={styles.eventsContainer}>
 
-                    {/* Заголовок секции */}
                     <div className={styles.eventsHeader}>
                         <h6 className={styles.eventsHeaderTtext}>
                             <span>OUR EVENTS</span>
@@ -29,10 +25,8 @@ const EventsRoad: React.FC = () => {
                         </h6>
                     </div>
 
-                    {/* Панель фильтров и сортировки */}
                     <div className={styles.eventsSort}>
 
-                        {/* Категории */}
                         <div className={styles.eventsSortItem}>
                             <p className={styles.eventsSortTitle}>Event category</p>
                             <select id="sortCategory" name="select" className={styles.eventsSortSelect}>
@@ -43,7 +37,6 @@ const EventsRoad: React.FC = () => {
                             </select>
                         </div>
 
-                        {/* Сортировка */}
                         <div className={styles.eventsSortItem}>
                             <p className={styles.eventsSortTitle}>Sort by</p>
                             <select id="sortOrder" name="select" className={styles.eventsSortSelect}>
@@ -52,7 +45,6 @@ const EventsRoad: React.FC = () => {
                             </select>
                         </div>
 
-                        {/* Количество на странице */}
                         <div className={styles.eventsSortItem}>
                             <span className={styles.eventsSortTitle}>Show</span>
                             <div className={styles.eventsSortValue}>
@@ -69,7 +61,6 @@ const EventsRoad: React.FC = () => {
                             <span className={styles.eventsSortDescription}>events per page</span>
                         </div>
 
-                        {/* Поиск */}
                         <div className={styles.eventsSortSearch}>
                             <form className={styles.eventsSortSearchForm} role="search" onSubmit={(e) => e.preventDefault()}>
                                 <input
@@ -85,7 +76,6 @@ const EventsRoad: React.FC = () => {
                             </form>
                         </div>
 
-                        {/* Переключение вида отображения (Интерактивные табы) */}
                         <div className={styles.eventsSortVisual}>
                             <button
                                 type="button"
@@ -105,12 +95,9 @@ const EventsRoad: React.FC = () => {
 
                     </div>
 
-                    {/* Сюда будут рендериться сами карточки мероприятий */}
                     <ul className={styles.eventsNavigation}>
-                        {/* Карточки мероприятий будут здесь */}
                     </ul>
 
-                    {/* Интерактивная Пагинация */}
                     <div className={styles.eventsPagination}>
                         {[1, 2, 3, 4].map((page) => (
                             <button

@@ -1,15 +1,14 @@
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
-.eventsSection { // Наш главный селектор вместо .events
+.eventsSection {
 	margin-top: var(--section-events-margin);
 	background: url("../../../assets/images/homepage/events/events_background.jpg") center center no-repeat;
 	background-size: cover;
-	position: relative; // Нужно для позиционирования узоров-картинок по бокам
+	position: relative;
 	width: 100%;
 
 	.eventsContainer {
-		// Основной контейнер секции
 	}
 
 	.eventsHeader {
@@ -18,7 +17,7 @@
 		flex-direction: column;
 		align-items: center;
 
-		&Subtitle { // Наш класс eventsHeaderSubtitle
+		&Subtitle {
 			padding-bottom: var(--space-s);
 			display: flex;
 			flex-direction: column;
@@ -29,7 +28,7 @@
 			letter-spacing: var(--letter-spacing-none);
 		}
 
-		&Title { // Наш класс eventsHeaderTitle
+		&Title {
 			padding-bottom: var(--space-5xl);
 			font-size: var(--font-size-5xl);
 			font-weight: var(--font-weight-black);
@@ -43,7 +42,6 @@
 		}
 	}
 
-	/* Обертка списка карточек */
 	.eventsNavigation {
 		display: flex;
 		flex-direction: column;
@@ -56,10 +54,9 @@
 		gap: var(--space-xl);
 		padding: 0;
 		margin: 0;
-		list-style: none; // Убираем маркеры, так как в TSX перешли на <ul> <li>
+		list-style: none;
 	}
 
-	/* Карточка мероприятия (Элемент списка) */
 	.eventsLink {
 		padding: var(--space-2xl) var(--space-3xl);
 		display: flex;
@@ -70,9 +67,8 @@
 		background: var(--colors-white);
 		transition: transform 0.6s ease, box-shadow 0.4s ease;
 
-		// Стили ховера перенесены из старого .events__navigation_list:hover
 		&:hover {
-			transform: scale(1.03); // Уменьшил с 1.1 до 1.03, чтобы карточки не перекрывали соседей
+			transform: scale(1.03);
 			box-shadow: 0 40px 40px color-mix(in srgb, var(--colors-primary) 15%, transparent);
 		}
 
@@ -88,7 +84,6 @@
 		}
 	}
 
-	/* Дата */
 	.eventsLinkDate {
 		display: flex;
 		justify-content: center;
@@ -139,7 +134,6 @@
 		}
 	}
 
-	/* Информация (Текст и Тип события) */
 	.eventsInfo {
 		display: flex;
 		flex-direction: column;
@@ -159,8 +153,9 @@
 			letter-spacing: var(--letter-spacing-none);
 		}
 
-		// Модификатор из вашего кода (если применится)
-		&Left {}
+		&Left {
+
+		}
 
 		@include tab-md {
 			padding: 0;
@@ -169,7 +164,6 @@
 		}
 	}
 
-	/* Кнопка "View More" внутри карточки */
 	.eventsLinkButton {
 		padding-left: var(--space-lg);
 
@@ -214,7 +208,6 @@
 		}
 	}
 
-	/* Блок "Do you want more?" под списком */
 	.eventsMore {
 		padding: var(--space-5xl) 0 var(--space-7xl);
 		display: flex;
@@ -242,7 +235,6 @@
 		}
 	}
 
-	/* Специфический стиль нижней кнопки "Explore all events" */
 	.buttonPrimary {
 		padding: 0 var(--space-2xl);
 		background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
@@ -261,16 +253,15 @@
 		}
 	}
 
-	/* Абсолютно позиционируемые декоративные элементы узоров */
 	.eventsDots,
 	.eventsCircles {
 		position: absolute;
 		z-index: 1;
-		pointer-events: none; // Чтобы картинки не мешали кликать по карточкам
+		pointer-events: none;
 		display: block;
 
 		@include tab-md {
-			display: none; // Скрываем декор на планшетах
+			display: none;
 		}
 	}
 

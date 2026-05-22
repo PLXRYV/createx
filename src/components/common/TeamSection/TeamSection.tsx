@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Team.module.scss';
 
-// Импортируем фотографии преподавателей как модули для Vite
 import tutorImg1 from '../../../assets/images/common/images/team/team_image-1.png';
 import tutorImg2 from '../../../assets/images/common/images/team/team_image-2.png';
 import tutorImg3 from '../../../assets/images/common/images/team/team_image-3.png';
 import tutorImg4 from '../../../assets/images/common/images/team/team_image-4.png';
 
-// Импортируем SVG иконки социальных сетей
 import facebookIcon from '../../../assets/images/common/images/team/Facebook.svg';
 import instagramIcon from '../../../assets/images/common/images/team/Instagram.svg';
 import linkedInIcon from '../../../assets/images/common/images/team/Linked-In.svg';
@@ -24,19 +22,14 @@ const TUTORS_DATA = [
 const TeamSection: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0);
     const [itemsPerView, setItemsPerView] = useState<number>(4);
-
-    // Ссылки на DOM-элементы для расчёта ширины (взамен querySelector)
     const listRef = useRef<HTMLDivElement>(null);
 
     const totalItems = TUTORS_DATA.length;
-    const gap = 20; // Фиксированный gap между карточками из вашего скрипта
-
-    // Функция расчёта количества видимых элементов (адаптировано из вашего скрипта)
+    const gap = 20;
     const updateItemsPerView = () => {
         if (!listRef.current || !listRef.current.parentElement) return;
 
         const containerWidth = listRef.current.parentElement.offsetWidth;
-        // Берём ширину первой карточки, если она отрендерена, иначе дефолтные 300px
         const firstItem = listRef.current.firstElementChild as HTMLElement;
         const itemWidth = firstItem ? firstItem.offsetWidth : 300;
 
@@ -46,19 +39,16 @@ const TeamSection: React.FC = () => {
         setItemsPerView(calculatedViews);
     };
 
-    // Следим за ресайзом окна
     useEffect(() => {
-        updateItemsPerView(); // Считаем при первой загрузке
+        updateItemsPerView();
 
         window.addEventListener('resize', updateItemsPerView);
         return () => window.removeEventListener('resize', updateItemsPerView);
     }, []);
 
-    // Корректируем индекс, если при изменении экрана maxIndex стал меньше текущего
     const maxIndex = Math.max(0, totalItems - itemsPerView);
     const safeIndex = Math.min(currentIndex, maxIndex);
 
-    // Функции переключения слайдов
     const nextSlide = () => {
         setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
     };
@@ -67,8 +57,6 @@ const TeamSection: React.FC = () => {
         setCurrentIndex((prev) => Math.max(prev - 1, 0));
     };
 
-    // Считаем значение сдвига для inline-стиля
-    // Будет пересчитываться автоматически при изменении safeIndex или ресайзе
     const getTranslateX = () => {
         if (!listRef.current) return 0;
         const firstItem = listRef.current.firstElementChild as HTMLElement;
@@ -80,8 +68,6 @@ const TeamSection: React.FC = () => {
         <section className={styles.teamAndTestimonials}>
             <div className="container">
                 <div className={styles.teamContainer}>
-
-                    {/* Шапка секции со стрелочками */}
                     <div className={styles.teamHeader}>
                         <div className={styles.teamHeaderTitleBox}>
                             <p className={styles.teamHeaderSubtitle}>BEST TUTORS ARE ALL HERE</p>
@@ -93,7 +79,7 @@ const TeamSection: React.FC = () => {
                                 type="button"
                                 className={styles.teamArrowLeft}
                                 onClick={prevSlide}
-                                disabled={safeIndex === 0} // Замена prevBtn.disabled = true
+                                disabled={safeIndex === 0}
                                 aria-label="Previous tutors"
                             >
                                 <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://w3.org">
@@ -104,7 +90,7 @@ const TeamSection: React.FC = () => {
                                 type="button"
                                 className={styles.teamArrowRight}
                                 onClick={nextSlide}
-                                disabled={safeIndex >= maxIndex} // Замена nextBtn.disabled = true
+                                disabled={safeIndex >= maxIndex}
                                 aria-label="Next tutors"
                             >
                                 <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://w3.org">
@@ -113,13 +99,10 @@ const TeamSection: React.FC = () => {
                             </button>
                         </div>
                     </div>
-
-                    {/* Слайдер контента */}
                     <div className={styles.teamNavigation}>
                         <div
-                            ref={listRef} // Вешаем реф на список
+                            ref={listRef}
                             className={styles.teamNavigationList}
-                            // Декларативно задаем трансформацию на основе стейта
                             style={{ transform: `translateX(${getTranslateX()}px)` }}
                         >
                             {TUTORS_DATA.map((tutor) => (

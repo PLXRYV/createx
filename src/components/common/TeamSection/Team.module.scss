@@ -2,7 +2,7 @@
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
-.teamAndTestimonials { // Наш главный селектор вместо .team__and-testimonials
+.teamAndTestimonials {
 	background: url("../../../assets/images/common/images/team/team_background.jpg") center center no-repeat;
 	background-size: cover;
 	transform: translateY(-50px);
@@ -15,7 +15,6 @@
 		padding-top: var(--section-padding-y);
 	}
 
-	/* Шапка секции со стрелочками */
 	.teamHeader {
 		padding-bottom: var(--space-5xl);
 		display: flex;
@@ -64,7 +63,6 @@
 		}
 	}
 
-	/* Стрелки управления слайдером */
 	.teamArrows {
 		transform: translateY(50px);
 		display: flex;
@@ -101,7 +99,6 @@
 		}
 	}
 
-	/* Слайдер и Сетка карточек */
 	.teamNavigation {
 		overflow: hidden;
 		position: relative;
@@ -142,13 +139,11 @@
 			}
 		}
 
-		/* Обертка картинки и соцсетей */
 		&ItemImages {
 			position: relative;
 			display: inline-block;
 			overflow: hidden;
 
-			// Ховер на десктопе
 			&:hover {
 				.teamImage {
 					filter: brightness(0.7);
@@ -169,7 +164,6 @@
 				}
 			}
 
-			// Тап на мобильных/планшетах
 			@include tab-sm {
 				&:active {
 					.teamImage {
@@ -190,7 +184,6 @@
 		}
 	}
 
-	/* Фотография преподавателя */
 	.teamImage {
 		padding: var(--space-lg) var(--space-lg) 0;
 		background: var(--colors-secondary);
@@ -213,7 +206,6 @@
 		}
 	}
 
-	/* Новая контейнерная обертка для соцсетей (Overlay) */
 	.teamSocialOverlay {
 		position: absolute;
 		top: 0;
@@ -226,14 +218,12 @@
 		transition: opacity 0.3s ease;
 	}
 
-	/* Ссылки на соцсети, позиционируемые внутри Overlay */
 	.teamSocialLink {
 		position: absolute;
 		top: 50%;
 		opacity: 0;
 		transition: all 0.3s ease;
 
-		// Распределяем Facebook, Instagram, LinkedIn по сетке (25%, 50%, 75%)
 		&:nth-child(1) {
 			left: 25%;
 			transform: translate(-50%, -50%) scale(0.8);
@@ -285,7 +275,6 @@
 		}
 	}
 
-	/* Описание карточки преподавателя (Имя и должность) */
 	.teamImageCaption {
 		display: flex;
 		flex-direction: column;

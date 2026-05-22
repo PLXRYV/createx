@@ -1,37 +1,29 @@
 import React, { useState } from 'react';
 import styles from './Benefits.module.scss';
 
-// Импортируем иконки для навигации табов
 import tutorsIcon from '../../../../assets/images/homepage/benefits/tutors.svg';
 import feedbackIcon from '../../../../assets/images/homepage/benefits/feedback.svg';
 import libraryIcon from '../../../../assets/images/homepage/benefits/library.svg';
 import communityIcon from '../../../../assets/images/homepage/benefits/community.svg';
 
-// Импортируем иллюстрации для контента
 import illustrationTutors from '../../../../assets/images/homepage/benefits/benefits_illustration.jpg';
 import illustrationSupport from '../../../../assets/images/homepage/benefits/benefits_illustration-support.jpg';
 
 const Benefits: React.FC = () => {
-    // Создаем стейт для хранения активного таба. По умолчанию открыты "tutors"
     const [activeTab, setActiveTab] = useState<string>('tutors');
 
     return (
         <section className={styles.benefitsSection}>
-            <div className="container"> {/* Глобальный класс пишем строкой */}
+            <div className="container">
                 <div className={styles.benefitsContainer}>
-
-                    {/* Шапка секции */}
                     <div className={styles.benefitsHeader}>
                         <h6 className={styles.benefitsHeaderTtitle}>
                             <span>OUR BENEFITS</span>
                             That’s how we do it
                         </h6>
                     </div>
-
-                    {/* Навигационная панель (Табы) */}
                     <div className={styles.benefitsNavigation}>
                         <nav className={styles.benefitsNavigationBar}>
-
                             <button
                                 className={`${styles.benefitsNavigationLink} ${activeTab === 'tutors' ? styles.isActive : ''}`}
                                 onClick={() => setActiveTab('tutors')}
@@ -70,8 +62,6 @@ const Benefits: React.FC = () => {
 
                         </nav>
                     </div>
-
-                    {/* Контентная часть табов (Рендерим только тот блок, который активен) */}
 
                     {activeTab === 'tutors' && (
                         <div className={`${styles.benefitsContent} ${styles.benefitsContentTutors}`}>

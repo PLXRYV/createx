@@ -1,10 +1,10 @@
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
-.subscribeSection { // Наш главный селектор вместо .subscribe
+.subscribeSection {
 	background: url("../../../assets/images/common/images/subscribe/subscribe_background.jpg") center center no-repeat;
 	background-size: cover;
-	position: relative; // Нужно для абсолютного позиционирования декоративных картинок
+	position: relative;
 	width: 100%;
 
 	.subscribeContainer {
@@ -23,7 +23,7 @@
 		align-items: center;
 		text-align: center;
 
-		&Subtitle { // Наш класс subscribeHeaderSubtitle
+		&Subtitle {
 			padding-bottom: var(--space-s);
 			display: flex;
 			flex-direction: column;
@@ -34,7 +34,7 @@
 			letter-spacing: var(--letter-spacing-none);
 		}
 
-		&Title { // Наш класс subscribeHeaderTitle
+		&Title {
 			padding-bottom: var(--space-5xl);
 			font-size: var(--font-size-5xl);
 			font-weight: var(--font-weight-black);
@@ -51,8 +51,6 @@
 			}
 		}
 	}
-
-	/* Блок формы подписки (изменен под новую структуру HTML/TSX) */
 	.subscribeFormBox {
 		width: 600px;
 		max-width: 100%;
@@ -94,18 +92,17 @@
 		}
 	}
 
-	/* Локальный стиль кнопки, если вы переопределяете UI-компонент */
 	.buttonPrimary {
 		padding: 0 var(--space-lg);
 		color: var(--colors-white);
 		background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
 		border: none;
-		border-radius: var(--roundings-s); // Добавил скругление кнопке, чтобы сочеталась с формой
+		border-radius: var(--roundings-s);
 		font-size: var(--font-size-base);
 		font-weight: var(--font-weight-bold);
 		line-height: var(--btn-height-md);
 		cursor: pointer;
-		white-space: nowrap; // Чтобы текст кнопки не переносился на узких экранах
+		white-space: nowrap;
 		transition: all 0.4s;
 
 		&:hover {
@@ -114,7 +111,6 @@
 		}
 	}
 
-	/* Абсолютное позиционирование узоров по бокам */
 	.subscribeImageFirst,
 	.subscribeImageSecond {
 		position: absolute;
@@ -122,7 +118,7 @@
 		z-index: 1;
 
 		@include tab-m {
-			display: none; // Скрываем графику на планшетах и мобильных
+			display: none;
 		}
 	}
 

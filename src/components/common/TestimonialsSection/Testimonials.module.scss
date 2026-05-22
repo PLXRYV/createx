@@ -1,7 +1,7 @@
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
-.testimonialsSection { // Наш главный селектор компонента
+.testimonialsSection {
 
 	.testimonialsContainer {
 		padding: var(--section-padding-y) 0;
@@ -20,7 +20,7 @@
 		flex-direction: column;
 		align-items: center;
 
-		&Subtitle { // Наш класс testimonialsHeaderSubtitle
+		&Subtitle {
 			padding-bottom: var(--space-s);
 			display: flex;
 			flex-direction: column;
@@ -35,7 +35,7 @@
 			}
 		}
 
-		&Title { // Наш класс testimonialsHeaderTitle
+		&Title {
 			padding-bottom: var(--space-5xl);
 			font-size: var(--font-size-5xl);
 			font-weight: var(--font-weight-black);
@@ -49,7 +49,7 @@
 
 			@include tab-sm {
 				padding-bottom: var(--space-3xl);
-				font-size: var(--font-size-5xl); // Сохраняем согласно вашему коду
+				font-size: var(--font-size-5xl);
 
 				span {
 					font-size: var(--font-size-base);
@@ -63,13 +63,11 @@
 		justify-content: space-between;
 		align-items: center;
 
-		// Ховер-эффект на стрелочки для изменения цвета SVG
 		button:hover svg path {
 			fill: var(--colors-white);
 		}
 	}
 
-	// Кнопки-стрелки слайдера
 	.testimonialsArrowLeft,
 	.testimonialsArrowRight {
 		padding: var(--space-lg) var(--space-lg);
@@ -89,7 +87,6 @@
 		}
 	}
 
-	/* Стили контейнера и элементов слайдера */
 	.sliderContainer {
 		background-color: var(--colors-white);
 		max-width: 1020px;
@@ -202,7 +199,7 @@
 
 			@include mob-m {
 				height: 50%;
-				width: 50%; // Сохраняем пропорции из вашего кода
+				width: 50%;
 			}
 		}
 	}
@@ -254,7 +251,6 @@
 		}
 	}
 
-	/* Декоративные кавычки/квадраты (Вложены в общую структуру) */
 	.rectangleBox {
 		display: flex;
 		padding-right: var(--space-2xl);
@@ -310,7 +306,6 @@
 		}
 	}
 
-	/* Дотсы пагинации слайдера (В самом низу секции) */
 	.testimonialsRectangles {
 		display: flex;
 		justify-content: center;
@@ -327,7 +322,7 @@
 		opacity: 0.3;
 		transition: opacity 0.3s ease;
 
-		&Modification { // Класс активного дотса
+		&Modification {
 			opacity: 1;
 		}
 	}

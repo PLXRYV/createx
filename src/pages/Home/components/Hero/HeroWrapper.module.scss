@@ -2,7 +2,6 @@
 @use "../../../../assets/style/variables/mixins" as *;
 
 .heroWrapperBg {
-	// Путь к картинке автоматически подхватится сборщиком Vite
 	background: url("../../../../assets/images/common/images/header/background_head.jpg") center center no-repeat;
 	background-size: cover;
 	width: 100%;

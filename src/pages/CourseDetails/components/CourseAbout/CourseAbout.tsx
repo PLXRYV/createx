@@ -1,15 +1,12 @@
 import React from 'react';
-import styles from './CourseAbout.module.scss'; // Импортируем локальные CSS-модули
+import styles from './CourseAbout.module.scss';
 
 const CourseAbout: React.FC = () => {
     return (
         <section className={styles.aboutCourseSection}>
-            <div className="container"> {/* Глобальный класс пишем строкой */}
-
+            <div className="container">
                 <div className={styles.aboutCourse}>
                     <div className={styles.aboutCourseTextContainer}>
-
-                        {/* Блок описания курса */}
                         <div className={styles.aboutCourseDescriptionBox}>
                             <h2 className={styles.courseDescriptionTitle}>About the course</h2>
                             <p className={styles.courseDescriptionText}>
@@ -22,8 +19,6 @@ const CourseAbout: React.FC = () => {
                                 Lorem risus nunc tincidunt tortor, mi nulla pellentesque
                             </p>
                         </div>
-
-                        {/* Блок преимуществ обучения */}
                         <div className={styles.aboutCourseLearn}>
                             <h2 className={styles.courseLearnTitle}>You will learn:</h2>
                             <ul className={styles.courseLearnList}>

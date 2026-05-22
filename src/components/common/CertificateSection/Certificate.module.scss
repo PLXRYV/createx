@@ -1,7 +1,7 @@
 @use "../../../assets/style/variables/breakpoints" as *;
 @use "../../../assets/style/variables/mixins" as *;
 
-.certificateSection { // Наш главный селектор вместо .certificate
+.certificateSection {
 	padding-top: var(--space-9xl);
 
 	.certificateContainer {
@@ -21,7 +21,6 @@
 	}
 
 	.certificateContent {
-		// Контейнер для левой текстовой части
 	}
 
 	.certificateHeader {
@@ -35,7 +34,7 @@
 			padding-bottom: var(--space-md);
 		}
 
-		&Subtitle { // Наш класс certificateHeaderSubtitle
+		&Subtitle {
 			padding-bottom: var(--space-s);
 			display: flex;
 			flex-direction: column;
@@ -49,12 +48,12 @@
 			}
 		}
 
-		&Title { // Наш класс certificateHeaderTitle
+		&Title {
 			font-size: var(--font-size-5xl);
 			font-weight: var(--font-weight-black);
 			line-height: var(--line-height-heading);
 			letter-spacing: var(--letter-spacing-normal);
-			margin: 0; // Сброс дефолтных отступов h2
+			margin: 0;
 		}
 	}
 
@@ -63,7 +62,7 @@
 			padding-bottom: var(--space-md);
 		}
 
-		&Text { // Наш класс certificateDescriptionText
+		&Text {
 			padding-bottom: var(--space-2xl);
 			color: var(--colors-gray-800);
 			font-size: var(--font-size-base);
@@ -71,7 +70,7 @@
 			margin: 0;
 		}
 
-		&Images { // Наш класс certificateDescriptionImages
+		&Images {
 			display: flex;
 			padding-bottom: var(--space-9xl);
 			gap: var(--space-3xl);
@@ -89,12 +88,12 @@
 			}
 		}
 
-		&Image { // Наш класс certificateDescriptionImage
+		&Image {
 			display: block;
 			height: auto;
 
 			@include mob-m {
-				margin: 0 auto var(--space-s); // Центрируем логотипы партнеров на мобильных при дисплее block
+				margin: 0 auto var(--space-s);
 				&:last-child {
 					margin-bottom: 0;
 				}
@@ -103,10 +102,8 @@
 	}
 
 	.certificateImageWrapper {
-		// Обертка для правого блока с картинкой
 	}
 
-	/* Большое изображение сертификата Createx */
 	.certificateCreatex {
 		position: relative;
 		z-index: 1;
@@ -121,7 +118,7 @@
 
 		@include mob-m {
 			max-width: 90%;
-			margin: 0 auto; // Центрируем картинку на телефонах
+			margin: 0 auto;
 		}
 	}
 }

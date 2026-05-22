@@ -1,11 +1,8 @@
 import React from 'react';
 import styles from './Events.module.scss';
-
-// Импортируем декоративные фоновые изображения как модули для Vite
 import dotsSvg from '../../../assets/images/homepage/events/events_dots.svg';
 import circlesSvg from '../../../assets/images/homepage/events/events_circles.svg';
 
-// 1. Выносим данные о мероприятиях в чистый массив объектов
 const EVENTS_DATA = [
     {
         id: 1,
@@ -25,7 +22,7 @@ const EVENTS_DATA = [
         isoDate: "2025-07-24",
         title: "Building a customer service department. Best Practices.",
         type: "Online lecture",
-        isLeftAligned: true // Маркер для сдвоенного модификатора из вашего кода
+        isLeftAligned: true
     },
     {
         id: 3,
@@ -42,26 +39,18 @@ const EVENTS_DATA = [
 const EventsSection: React.FC = () => {
     return (
         <section id="events" className={styles.eventsSection}>
-            {/* Декоративный фон */}
             <img className={styles.eventsDots} src={dotsSvg} alt="events dots decoration"/>
             <img className={styles.eventsCircles} src={circlesSvg} alt="events circles decoration"/>
-
-            <div className="container"> {/* Глобальный класс пишем просто строкой */}
+            <div className="container">
                 <div className={styles.eventsContainer}>
-
-                    {/* Шапка секции */}
                     <div className={styles.eventsHeader}>
                         <p className={styles.eventsHeaderSubtitle}>OUR EVENTS</p>
                         <h2 className={styles.eventsHeaderTitle}>Lectures & workshops</h2>
                     </div>
-
-                    {/* Список мероприятий рендерим через .map() */}
                     <div className={styles.eventsNavigation}>
                         <ul className={styles.eventsNavigationList}>
                             {EVENTS_DATA.map((event) => (
                                 <li key={event.id} className={styles.eventsLink}>
-
-                                    {/* Блок даты и времени */}
                                     <div className={styles.eventsLinkDate}>
                                         <time dateTime={event.isoDate}>{event.day}</time>
                                         <div className={styles.eventsLinkMonthTime}>
@@ -71,26 +60,19 @@ const EventsSection: React.FC = () => {
                                             </p>
                                         </div>
                                     </div>
-
-                                    {/* Блок информации с динамическим классом модификатора */}
                                     <div className={`${styles.eventsInfo} ${event.isLeftAligned ? styles.eventsInfoLeft : ''}`}>
                                         <span>{event.title}</span>
                                         {event.type}
                                     </div>
-
-                                    {/* Кнопка карточки */}
                                     <div className={styles.eventsLinkButton}>
                                         <button type="button" className={styles.eventsButton}>
                                             View More
                                         </button>
                                     </div>
-
                                 </li>
                             ))}
                         </ul>
                     </div>
-
-                    {/* Нижний блок с призывом к действию */}
                     <div className={styles.eventsMore}>
                         <p className={styles.eventsMoreText}>Do you want more?</p>
                         <button type="button" className={styles.buttonPrimary}>

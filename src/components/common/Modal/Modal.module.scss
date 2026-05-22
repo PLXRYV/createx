@@ -2,7 +2,7 @@
 @use "../../../assets/style/variables/mixins" as *;
 
 .modal {
-	display: flex; // Модалка сразу флексовая, так как React сам решает, рендерить ли её
+	display: flex;
 	z-index: 100;
 	position: fixed;
 	inset: 0;
@@ -11,7 +11,6 @@
 	overflow: auto;
 	@include transition;
 
-	// Специфический модификатор для формы регистрации (если нужен)
 	&Register {}
 
 	.modalWrapper {
@@ -99,7 +98,6 @@
 		margin: 0;
 	}
 
-	/* Вложенные стили внутренней формы */
 	.form {
 		display: flex;
 		flex-direction: column;
@@ -128,7 +126,7 @@
 			padding: var(--space-m) var(--space-md);
 			border: 1px solid var(--colors-gray-400);
 			color: var(--colors-gray-900);
-			font-size: var(--font-size-base); // Заменил некорректную переменную на рабочую
+			font-size: var(--font-size-base);
 			transition: border-color 0.3s;
 			width: 100%;
 			outline: none;
@@ -144,14 +142,13 @@
 			}
 		}
 
-		/* Кнопки-глазики показа пароля (абсолютное позиционирование) */
 		&TogglePassword,
 		&TogglePasswordConfirm {
 			display: flex;
 			position: absolute;
 			right: 17px;
-			top: 50%; // Центрируем относительно инпута
-			transform: translateY(4px); // Слегка корректируем с учетом высоты label
+			top: 50%;
+			transform: translateY(4px);
 			background: none;
 			border: none;
 			cursor: pointer;
@@ -166,7 +163,6 @@
 		}
 
 		&TogglePasswordConfirm {
-			// Сохраняем вашу логику отступа для инпута подтверждения пароля, если необходимо
 		}
 
 		&Options {
@@ -221,7 +217,6 @@
 		}
 	}
 
-	// Общие независимые элементы внутри модалки
 	.rememberCheckbox {
 		display: flex;
 		align-items: center;
@@ -236,7 +231,6 @@
 		flex-shrink: 0;
 	}
 
-	/* Соцсети в подвале модалки */
 	.modalFooter {
 		display: flex;
 		flex-direction: column;
@@ -277,7 +271,6 @@
 		}
 	}
 
-	/* Адаптив для мобильных устройств с маленькой высотой экрана */
 	@media (max-height: 600px) {
 		padding: 0;
 

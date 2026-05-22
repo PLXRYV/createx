@@ -1,7 +1,7 @@
 @use "/src/assets/style/variables/breakpoints" as *;
 @use "/src/assets/style/variables/mixins" as *;
 
-.heroSection { // Наш главный класс вместо .main
+.heroSection {
 	padding-top: var(--section-main-padding);
 
 	.mainContent {
@@ -23,7 +23,7 @@
 			img {
 				max-width: 80%;
 				margin: 0 auto;
-				display: block; // Чтобы убрать лишние отступы у инлайнового img
+				display: block;
 			}
 		}
 
@@ -50,7 +50,6 @@
 			}
 
 			@include tab-m {
-				// Управляем размерами обертки видео, если необходимо
 				width: auto;
 				height: auto;
 			}
@@ -99,7 +98,6 @@
 			transform: scale(0.95);
 		}
 
-		// Перенесли старый стиль размеров из обертки, если это относилось к кнопке
 		@include tab-m {
 			width: 70px;
 			height: 70px;
@@ -111,7 +109,6 @@
 	}
 
 	.mainVideoText {
-		// Стили для текста рядом с кнопкой play
 	}
 }
 
@@ -127,7 +124,7 @@
 		align-items: center;
 		padding: 0;
 		margin: 0;
-		list-style: none; // Убираем маркеры списка, так как перешли на <ul> <li>
+		list-style: none;
 
 		@include tab-md {
 			gap: var(--space-lg);
@@ -164,7 +161,6 @@
 			}
 		}
 
-		// Кружочек-разделитель между элементами статистики
 		&Circle {
 			margin: 0 var(--margin-2xl);
 			width: 8px;
@@ -176,7 +172,7 @@
 			overflow: hidden;
 
 			@include tab-md {
-				display: none; // Скрываем кружочки на планшетах
+				display: none;
 			}
 		}
 	}

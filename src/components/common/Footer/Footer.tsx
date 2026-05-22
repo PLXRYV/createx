@@ -1,19 +1,13 @@
 import React from 'react';
 import CopyrightSection from "./components/Copyright/CopyrightSection.tsx";
 import styles from './Footer.module.scss';
-
-// 1. Логотип (проверьте, лежит ли он в корне footer или тоже в icons)
 import logoSvg from '../../../assets/images/common/images/footer/logo.svg';
-
-// 2. Иконки социальных сетей
 import facebookIcon from '../../../assets/images/common/images/footer/facebook.svg';
 import twitterIcon from '../../../assets/images/common/images/footer/twitter.svg';
 import youtubeIcon from '../../../assets/images/common/images/footer/youtube.svg';
 import telegramIcon from '../../../assets/images/common/images/footer/telegram.svg';
 import instagramIcon from '../../../assets/images/common/images/footer/instagram.svg';
 import linkedInIcon from '../../../assets/images/common/images/footer/linked-In.svg';
-
-// 3. Системные иконки контактов (телефон и почта)
 import phoneIcon from '../../../assets/images/common/images/footer/phone.svg';
 import mailIcon from '../../../assets/images/common/images/footer/mail.svg';
 
@@ -26,10 +20,8 @@ const Footer: React.FC = () => {
 
     return (
         <footer className={styles.footer}>
-            <div className="container"> {/* Глобальный класс пишем просто строкой */}
+            <div className="container">
                 <div className={styles.footerContainer}>
-
-                    {/* Блок 1: Описание и соцсети */}
                     <div className={styles.footerBox}>
                         <div className={styles.footerLogoContainer}>
                             <img src={logoSvg} alt="Createx Online School Logo"/>
@@ -60,8 +52,6 @@ const Footer: React.FC = () => {
                             </a>
                         </div>
                     </div>
-
-                    {/* Блок 2: Навигационные списки (Карта сайта) */}
                     <div className={styles.footerNavigation}>
                         <div className={styles.footerNavigationSite}>
 
@@ -127,8 +117,6 @@ const Footer: React.FC = () => {
 
                         </div>
                     </div>
-
-                    {/* Блок 3: Рассылка новостей */}
                     <div className={styles.footerBoxForm}>
                         <p className={styles.footerInfoTitle}>
                             SIGN UP TO OUR NEWSLETTER
@@ -138,9 +126,7 @@ const Footer: React.FC = () => {
                                 <input type="email" placeholder="Email address" required />
                                 <button type="submit" className={styles.submitBtn} aria-label="Subscribe to newsletter">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" clipRule="evenodd"
-                                              d="M9.86193 4.52925C10.1223 4.2689 10.5444 4.2689 10.8047 4.52925L13.8047 7.52925C14.0651 7.7896 14.0651 8.21171 13.8047 8.47206L10.8047 11.4721C10.5444 11.7324 10.1223 11.7324 9.86193 11.4721C9.60158 11.2117 9.60158 10.7896 9.86193 10.5292L11.7239 8.66732H2.66667C2.29848 8.66732 2 8.36884 2 8.00065C2 7.63246 2.29848 7.33398 2.66667 7.33398H11.7239L9.86193 5.47206C9.60158 5.21171 9.60158 4.7896 9.86193 4.52925Z"
-                                              fill="currentColor"/>
+                                        <path fillRule="evenodd" clipRule="evenodd" d="M9.86193 4.52925C10.1223 4.2689 10.5444 4.2689 10.8047 4.52925L13.8047 7.52925C14.0651 7.7896 14.0651 8.21171 13.8047 8.47206L10.8047 11.4721C10.5444 11.7324 10.1223 11.7324 9.86193 11.4721C9.60158 11.2117 9.60158 10.7896 9.86193 10.5292L11.7239 8.66732H2.66667C2.29848 8.66732 2 8.36884 2 8.00065C2 7.63246 2.29848 7.33398 2.66667 7.33398H11.7239L9.86193 5.47206C9.60158 5.21171 9.60158 4.7896 9.86193 4.52925Z" fill="currentColor"/>
                                     </svg>
                                 </button>
                             </div>
@@ -153,7 +139,6 @@ const Footer: React.FC = () => {
                 </div>
             </div>
 
-            {/* Встраиваем компонент Copyright прямо в самый низ подвала */}
             <CopyrightSection />
         </footer>
     );

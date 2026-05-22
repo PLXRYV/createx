@@ -1,11 +1,10 @@
 @use "../../../../assets/style/variables/breakpoints" as *;
 @use "../../../../assets/style/variables/mixins" as *;
 
-.benefitsSection { // Наш главный класс компонента
+.benefitsSection {
 	padding-top: var(--section-padding-y);
 
 	.benefitsContainer {
-		// Обертка контента секции
 	}
 
 	.benefitsHeader {
@@ -20,7 +19,7 @@
 		font-weight: var(--font-weight-black);
 		line-height: var(--line-height-heading);
 		letter-spacing: var(--font-weight-regular);
-		margin: 0; // Сброс дефолтных отступов заголовка
+		margin: 0;
 
 		span {
 			padding-bottom: var(--space-s);
@@ -75,7 +74,7 @@
 		align-items: center;
 		justify-content: center;
 		border: 1px solid var(--colors-white);
-		background: none; // Сброс дефолтных стилей кнопки
+		background: none;
 		cursor: pointer;
 		flex: 1;
 		transition: all 0.3s ease;
@@ -86,7 +85,6 @@
 			border-radius: var(--roundings-s);
 		}
 
-		// React переключает состояние с помощью добавления класса .isActive
 		&.isActive {
 			color: var(--colors-primary);
 			border: 1px solid var(--colors-primary);
@@ -105,7 +103,6 @@
 		}
 	}
 
-	// Общий стиль для иконок внутри кнопок навигации табов
 	.navigationLinkIcon {
 		margin-right: 8px;
 		width: 16px;
@@ -114,10 +111,9 @@
 	}
 
 	.benefitsContent {
-		display: flex; // Теперь активный таб сразу рендерится как flex
+		display: flex;
 		opacity: 1;
 
-		// Специфические классы для комбинаций, если пригодятся
 		&Tutors {}
 		&Feedback {}
 		&Library {}
@@ -134,7 +130,6 @@
 	}
 
 	.benefitsContentBox {
-		// Стили текстового контейнера таба
 	}
 
 	.benefitsContentImgContainer {
@@ -152,7 +147,7 @@
 			@include tab-md {
 				max-width: 80%;
 				margin: 0 auto;
-				order: 1; // Опускает картинку под текст на мобильных
+				order: 1;
 			}
 		}
 	}

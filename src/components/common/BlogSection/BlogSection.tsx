@@ -1,22 +1,15 @@
 import React from 'react';
 import styles from './Blog.module.scss';
-
-// Импортируем фотографии постов блога как модули для Vite
 import postImg1 from '../../../assets/images/common/images/blog/blog_post-1.jpg';
 import postImg2 from '../../../assets/images/common/images/blog/blog_post-2.jpg';
 import postImg3 from '../../../assets/images/common/images/blog/blog_post-3.jpg';
-
-// Импортируем иконки бейджей типов контента
 import badgeMic from '../../../assets/images/common/images/blog/badge_mic.svg';
 import badgePlay from '../../../assets/images/common/images/blog/badge_play.svg';
 import badgeFile from '../../../assets/images/common/images/blog/badge_file.svg';
-
-// Импортируем системные иконки постов
 import calendarIcon from '../../../assets/images/common/images/blog/post_calendar.svg';
 import clockIcon from '../../../assets/images/common/images/blog/post_clock.svg';
 import arrowIcon from '../../../assets/images/common/images/blog/post_arrow.svg';
 
-// Чистый массив данных для динамического рендеринга постов
 const POSTS_DATA = [
     {
         id: 1,
@@ -49,7 +42,7 @@ const POSTS_DATA = [
         badgeText: "Article",
         direction: "Design",
         date: "August 8, 2025",
-        time: null, // У третьей статьи времени в вашей разметке не было
+        time: null,
         title: "Should you choose a creative profession if you are attracted to creativity?",
         desc: "Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...",
         actionText: "Read"
@@ -59,9 +52,7 @@ const POSTS_DATA = [
 const BlogSection: React.FC = () => {
     return (
         <section id="blog" className={styles.blogSection}>
-            <div className="container"> {/* Глобальный класс пишем строкой */}
-
-                {/* Шапка секции */}
+            <div className="container">
                 <div className={styles.blogContainer}>
                     <div className={styles.blogHeader}>
                         <p className={styles.blogHeaderSubtitle}>OUR BLOG</p>
@@ -69,13 +60,9 @@ const BlogSection: React.FC = () => {
                     </div>
                     <button type="button" className={styles.buttonPrimary}>Go to blog</button>
                 </div>
-
-                {/* Сетка блогов, отрисованная через чистый метод .map() */}
                 <div className={styles.blogContent}>
                     {POSTS_DATA.map((post) => (
                         <div key={post.id} className={styles.blogPost}>
-
-                            {/* Блок изображения с бейджиком сверху */}
                             <div className={styles.blogPostImage}>
                                 <img className={styles.postImage} src={post.img} alt={post.title}/>
                                 <div className={styles.postImageBadge}>
@@ -83,19 +70,13 @@ const BlogSection: React.FC = () => {
                                     <p className={styles.badgeText}>{post.badgeText}</p>
                                 </div>
                             </div>
-
-                            {/* Мета-информация (Направление, Дата, Время) */}
                             <div className={styles.blogPostInfo}>
                                 <p className={styles.postDirection}>{post.direction}</p>
-
                                 <div className={styles.containDivider}>
                                     <div className={styles.verticalDivider}></div>
                                 </div>
-
                                 <img className={styles.imageCalendar} src={calendarIcon} alt="Calendar icon"/>
                                 <time className={styles.postDate}>{post.date}</time>
-
-                                {/* Условие: если у поста есть время прочтения, рендерим блок часов */}
                                 {post.time && (
                                     <>
                                         <div className={styles.containDivider}>
@@ -106,28 +87,22 @@ const BlogSection: React.FC = () => {
                                     </>
                                 )}
                             </div>
-
-                            {/* Заголовок и Текст поста */}
                             <div className={styles.blogPostText}>
                                 <div className={styles.postText}>
                                     <h3 className={styles.postTitle}>{post.title}</h3>
                                     <p className={styles.postDescription}>{post.desc}</p>
                                 </div>
                             </div>
-
-                            {/* Ссылка-кнопка в подвале карточки */}
                             <div className={styles.blogPostFooter}>
                                 <a href="#" className={styles.blogPostLink}>
                                     <p className={styles.postFooterText}>{post.actionText}</p>
                                     <img className={styles.postArrow} src={arrowIcon} alt="Arrow link icon"/>
                                 </a>
                             </div>
-
                         </div>
                     ))}
-                </div> {/* Конец сетки blogContent */}
-
-            </div> {/* Конец глобального container */}
+                </div>
+            </div>
         </section>
     );
 };
