@@ -1,7 +1,7 @@
 @use "/src/assets/style/variables/mixins.scss" as *;
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: Lato, sans-serif;
   color: var(--colors-gray-900);
   background-color: var(--colors-white);
   font-size: 14px;

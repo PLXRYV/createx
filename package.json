@@ -9,10 +9,21 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@tanstack/eslint-plugin-query": "^5.100.14",
+    "@types/node": "^25.9.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "^9.22.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-simple-import-sort": "^13.0.0",
+    "prettier": "^3.8.3",
     "sass": "^1.94.2",
     "typed-scss-modules": "^8.1.1",
     "typescript": "^6.0.3",
@@ -27,6 +38,8 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-modal": "^3.16.3",
-    "react-router-dom": "^7.15.1"
+    "react-router-dom": "^7.15.1",
+    "typescript-eslint": "^8.59.4",
+    "vite-plugin-svgr": "^5.2.0"
   }
 }

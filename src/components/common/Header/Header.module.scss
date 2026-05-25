@@ -3,7 +3,7 @@
 @use "../../../assets/style/variables/mixins" as *;
 
 .headerBg {
-	background: url("../../../assets/images/common/images/header/background_head.jpg") center center no-repeat;
+	background: url("@assets/images/common/header/background_head.jpg") center center no-repeat;
 	background-size: cover;
 }
 
