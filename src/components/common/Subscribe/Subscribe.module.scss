@@ -2,7 +2,7 @@
 @use "../../../assets/style/variables/mixins" as *;
 
 .subscribeSection {
-	background: url("../../../assets/images/common/images/subscribe/subscribe_background.jpg") center center no-repeat;
+	background: url("@assets/images/common/subscribe/subscribe_background.jpg") center center no-repeat;
 	background-size: cover;
 	position: relative;
 	width: 100%;

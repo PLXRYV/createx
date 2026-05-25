@@ -1,78 +1,93 @@
+import logoSvg from '@assets/images/common/header/logo.svg';
+import profileSvg from '@assets/images/common/header/Profile.svg';
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Header.module.scss';
-import ButtonPrimary from '../../ui/Button/ButtonPrimary';
+
+import ModalSignIn from '../Modal/ModalSignIn/ModalSignIn';
+import ModalSignUp from '../Modal/ModalSignUp/ModalSignUp';
 import BurgerMenu from './components/BurgerMenu/BurgerMenu';
-import ModalSignIn from '../Modal/ModalSignIn/ModalSignIn.tsx';
-import ModalSignUp from '../Modal/ModalSignUp/ModalSignUp.tsx';
-import logoSvg from '../../../assets/images/common/images/header/logo.svg';
-import profileSvg from '../../../assets/images/common/images/header/Profile.svg';
+import styles from './Header.module.scss';
 
 interface HeaderProps {
-    button?: React.ReactNode;
+  button?: React.ReactNode;
 }
-const Header: React.FC<HeaderProps> = ({ button }) => {
-    const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-    const [isSignInOpen, setIsSignInOpen] = useState(false);
-    const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-    const toggleBurger = () => setIsBurgerOpen(!isBurgerOpen);
+const Header: React.FC<HeaderProps> = () => {
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const toggleBurger = () => setIsBurgerOpen(!isBurgerOpen);
 
-    return (
-        <header id="header" className={styles.header}>
-            <div className="container">
-                <div className={styles.headerInner}>
-                    <div className={styles.headerMenu}>
-                        <Link to="/" className={styles.logo}>
-                            <img className={styles.logoImg} src={logoSvg} alt="Logo of site"/>
-                        </Link>
-                        <nav className={styles.nav}>
-                            <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
-                                <li className={styles.navMenuItem}>
-                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>About Us</Link>
-                                </li>
-                                <li className={styles.navMenuItem}>
-                                    <Link to="/courses" className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Courses</Link>
-                                </li>
-                                <li className={styles.navMenuItem}>
-                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Events</Link>
-                                </li>
-                                <li className={styles.navMenuItem}>
-                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Blog</Link>
-                                </li>
-                                <li className={styles.navMenuItem}>
-                                    <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>Contacts</Link>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div className={styles.headerInfoActions}>
-                        {button}
-                        <div className={styles.headerAuth}>
-                            <button
-                                type="button"
-                                onClick={() => setIsSignInOpen(true)}
-                                className={`${styles.headerAuthBtn} ${styles.headerAuthBtnSignin}`}
-                            >
-                                <img className={styles.headerAuthIcon} src={profileSvg} alt="Profile"/>
-                                <span>Sign in</span>
-                            </button>
-                            <span className={styles.headerAuthSeparator}>/</span>
-                            <button
-                                type="button"
-                                onClick={() => setIsSignUpOpen(true)}
-                                className={`${styles.headerAuthBtn} ${styles.headerAuthBtnSignup}`}
-                            >
-                                Sign up
-                            </button>
-                        </div>
-                        <BurgerMenu isOpen={isBurgerOpen} onToggle={toggleBurger} />
-                    </div>
-                </div>
+  return (
+    <header id="header" className={styles.header}>
+      <div className="container">
+        <div className={styles.headerInner}>
+          <div className={styles.headerMenu}>
+            <Link to="/" className={styles.logo}>
+              <img className={styles.logoImg} src={logoSvg} alt="Logo of site" />
+            </Link>
+            <nav className={styles.nav}>
+              <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
+                <li className={styles.navMenuItem}>
+                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                    About Us
+                  </Link>
+                </li>
+                <li className={styles.navMenuItem}>
+                  <Link
+                    to="/courses"
+                    className={styles.navMenuLink}
+                    onClick={() => setIsBurgerOpen(false)}
+                  >
+                    Courses
+                  </Link>
+                </li>
+                <li className={styles.navMenuItem}>
+                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                    Events
+                  </Link>
+                </li>
+                <li className={styles.navMenuItem}>
+                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                    Blog
+                  </Link>
+                </li>
+                <li className={styles.navMenuItem}>
+                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                    Contacts
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className={styles.headerInfoActions}>
+            <ButtonPrimary />
+            <div className={styles.headerAuth}>
+              <button
+                type="button"
+                onClick={() => setIsSignInOpen(true)}
+                className={`${styles.headerAuthBtn} ${styles.headerAuthBtnSignin}`}
+              >
+                <img className={styles.headerAuthIcon} src={profileSvg} alt="Profile" />
+                <span>Sign in</span>
+              </button>
+              <span className={styles.headerAuthSeparator}>/</span>
+              <button
+                type="button"
+                onClick={() => setIsSignUpOpen(true)}
+                className={`${styles.headerAuthBtn} ${styles.headerAuthBtnSignup}`}
+              >
+                Sign up
+              </button>
             </div>
-            {isSignInOpen && <ModalSignIn onClose={() => setIsSignInOpen(false)} />}
-            {isSignUpOpen && <ModalSignUp onClose={() => setIsSignUpOpen(false)} />}
-        </header>
-    );
+            <BurgerMenu isOpen={isBurgerOpen} onToggle={toggleBurger} />
+          </div>
+        </div>
+      </div>
+      {isSignInOpen && <ModalSignIn onClose={() => setIsSignInOpen(false)} />}
+      {isSignUpOpen && <ModalSignUp onClose={() => setIsSignUpOpen(false)} />}
+    </header>
+  );
 };
 
 export default Header;
