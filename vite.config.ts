@@ -7,9 +7,8 @@ export default defineConfig({
   plugins: [
     react(),
     svgr({
-      include: '**/*.svg',
       svgrOptions: {
-        exportType: 'named',
+        exportType: 'default',
         svgo: true,
         svgoConfig: {
           multipass: true,

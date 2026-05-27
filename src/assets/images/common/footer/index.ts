@@ -1,0 +1,11 @@
+export { default as ArrowRight } from './ArrowRight.svg?react';
+export { default as FacebookIcon } from './Facebook.svg?react';
+export { default as InstagramIcon } from './Instagram.svg?react';
+export { default as LinkedInIcon } from './LinkedIn.svg?react';
+export { default as LogoSvg } from './Logo.svg?react';
+export { default as MailIcon } from './Mail.svg?react';
+export { default as PhoneIcon } from './Phone.svg?react';
+export { default as TelegramIcon } from './Telegram.svg?react';
+export { default as TwitterIcon } from './Twitter.svg?react';
+export { default as YoutubeIcon } from './Youtube.svg?react';
+
