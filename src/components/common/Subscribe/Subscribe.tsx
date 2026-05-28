@@ -1,4 +1,4 @@
-import subscribeSvg from '@assets/images/common/subscribe/subscribe_illustration.svg';
+import { SubscribeIllustration } from '@assets/images/common/subscribe';
 import React from 'react';
 
 import styles from './Subscribe.module.scss';
@@ -32,16 +32,8 @@ const Subscribe: React.FC = () => {
           </form>
         </div>
       </div>
-      <img
-        className={styles.subscribeImageFirst}
-        src={subscribeSvg}
-        alt="Subscribe decoration pattern"
-      />
-      <img
-        className={styles.subscribeImageSecond}
-        src={subscribeSvg}
-        alt="Subscribe decoration pattern"
-      />
+      <SubscribeIllustration className={styles.subscribeImageFirst} />
+      <SubscribeIllustration className={styles.subscribeImageSecond} />
     </section>
   );
 };

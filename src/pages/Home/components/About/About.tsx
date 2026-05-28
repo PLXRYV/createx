@@ -1,56 +1,50 @@
+import { AboutImage, Check, Circles, Dots } from '@assets/images/homepage/about';
+import React from 'react';
+
 import styles from './About.module.scss';
 
-const About = () => {
-    return (
-        <section id="about" className={styles.about}>
-            <img className={styles.dotsImage} src="../../../../assets/images/homepage/about/dots.svg" data-svg-fill="false" alt="dots image"/>
-            <div className={styles.container}>
-                <div className={styles.aboutBox}>
-                    <div>
-                        <img className={styles.aboutImg} src="../../../../assets/images/homepage/about/about_image.jpg" alt="About us image"/>
-                    </div>
-                    <div className={styles.aboutInner}>
-                        <h4 className={styles.aboutInnerSubtitle}>WHO WE ARE</h4>
-                        <h6 className={styles.aboutInnerTitle}>Why Createx?</h6>
-                        <div className={styles.aboutInfo}>
-                            <ul className={`${styles.aboutText} ${styles.aboutList}`}>
-                                <li className={`${styles.aboutInfoText} ${styles.aboutListItem}`}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p className={styles.aboutListItemText}>A fermentum in morbi pretium aliquam
-                                        adipiscing donec tempus.</p>
-                                </li>
-                                <li className={styles.aboutInfoText}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p className={styles.aboutListItemText}>Vulputate placerat amet pulvinar lorem
-                                        nisl.</p>
-                                </li>
-                                <li className={styles.aboutInfoText}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p>Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.</p>
-                                </li>
-                                <li className={styles.aboutInfoText}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p>Etiam duis lobortis in fames ultrices commodo nibh.</p>
-                                </li>
-                                <li className={styles.aboutInfoText}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p>Tincidunt sagittis neque sem ac eget.</p>
-                                </li>
-                                <li className={styles.aboutInfoText}>
-                                    <img className={styles.aboutListItemIcon} src="../../../../assets/images/homepage/about/check.svg" alt="Check icon svg"/>
-                                    <p>Ultricies amet justo et eget quisque purus vulputate dapibus tortor.</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <button className={styles.buttonPrimary}>More about us</button>
-                    </div>
-                </div>
+const ADVANTAGES_DATA = [
+  'A fermentum in morbi pretium aliquam adipiscing donec tempus.',
+  'Vulputate placerat amet pulvinar lorem nisl.',
+  'Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.',
+  'Etiam duis lobortis in fames ultrices commodo nibh.',
+  'Tincidunt sagittis neque sem ac eget.',
+  'Ultricies amet justo et eget quisque purus vulputate dapibus tortor.',
+];
+
+const About: React.FC = () => {
+  return (
+    <section id="about" className={styles.about}>
+      <Dots className={styles.dotsImage} />
+      <div className={styles.container}>
+        <div className={styles.aboutBox}>
+          <div>
+            <img src={AboutImage} alt="About Createx team" className={styles.aboutImg} />
+          </div>
+          <div className={styles.aboutInner}>
+            <h4 className={styles.aboutInnerSubtitle}>WHO WE ARE</h4>
+            <h6 className={styles.aboutInnerTitle}>Why Createx?</h6>
+            <div className={styles.aboutInfo}>
+              <ul className={`${styles.aboutText} ${styles.aboutList}`}>
+                {ADVANTAGES_DATA.map((text, index) => (
+                  <li key={index} className={`${styles.aboutInfoText} ${styles.aboutListItem}`}>
+                    <Check className={styles.aboutListItemIcon} />
+                    <p className={styles.aboutListItemText}>{text}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className={styles.circlesImageContainer}>
-                <img className={styles.circlesImage} src="../../../../assets/images/homepage/about/circles.svg" data-svg-fill="false" alt="circles image"/>
-            </div>
-        </section>
-    )
-}
+            <button type="button" className={styles.buttonPrimary}>
+              More about us
+            </button>
+          </div>
+        </div>
+      </div>
+      <div className={styles.circlesImageContainer}>
+        <Circles className={styles.circlesImage} />
+      </div>
+    </section>
+  );
+};
 
 export default About;

@@ -1,5 +1,4 @@
-import circlesSvg from '@assets/images/homepage/events/events_circles.svg';
-import dotsSvg from '@assets/images/homepage/events/events_dots.svg';
+import { EventsCircles, EventsDots } from '@assets/images/homepage/events';
 import React from 'react';
 
 import styles from './Events.module.scss';
@@ -42,8 +41,8 @@ const EVENTS_DATA = [
 const EventsSection: React.FC = () => {
   return (
     <section id="events" className={styles.eventsSection}>
-      <img className={styles.eventsDots} src={dotsSvg} alt="events dots decoration" />
-      <img className={styles.eventsCircles} src={circlesSvg} alt="events circles decoration" />
+      <EventsDots className={styles.eventsDots} />
+      <EventsCircles className={styles.eventsCircles} />
       <div className="container">
         <div className={styles.eventsContainer}>
           <div className={styles.eventsHeader}>
