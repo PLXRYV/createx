@@ -1,13 +1,15 @@
-import ArrowRight from '@assets/images/common/ArrowRight.svg?react';
-import FacebookIcon from '@assets/images/common/footer/Facebook.svg';
-import InstagramIcon from '@assets/images/common/footer/Instagram.svg';
-import LinkedInIcon from '@assets/images/common/footer/LinkedIn.svg';
-import LogoSvg from '@assets/images/common/footer/Logo.svg';
-import MailIcon from '@assets/images/common/footer/Mail.svg';
-import PhoneIcon from '@assets/images/common/footer/Phone.svg';
-import TelegramIcon from '@assets/images/common/footer/Telegram.svg';
-import TwitterIcon from '@assets/images/common/footer/Twitter.svg';
-import YoutubeIcon from '@assets/images/common/footer/Youtube.svg';
+import {
+  ArrowRight,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  LogoSvg,
+  MailIcon,
+  PhoneIcon,
+  TelegramIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from '@assets/images/common/footer';
 import React from 'react';
 
 import CopyrightSection from './components/Copyright/CopyrightSection';
@@ -17,6 +19,7 @@ const Footer: React.FC = () => {
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Newsletter form submitted');
+    h;
   };
 
   return (

@@ -2,7 +2,7 @@
 @use "../../../assets/style/variables/mixins" as *;
 
 .teamAndTestimonials {
-	background: url("@assets/images/common/team/team_background.jpg") center center no-repeat;
+	background: url("@assets/images/common/team/TeamBackground.jpg") center center no-repeat;
 	background-size: cover;
 	transform: translateY(-50px);
 	@include tab-md {

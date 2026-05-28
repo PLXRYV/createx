@@ -1,0 +1,9 @@
+export { default as ArrowLeft } from './ArrowLeft.svg?react';
+export { default as ArrowRight } from './ArrowRight.svg?react';
+export { default as Facebook } from './Facebook.svg?react';
+export { default as Instagram } from './Instagram.svg?react';
+export { default as LinkedIn } from './LinkedIn.svg?react';
+export { default as TeamImageFirst } from './TeamImageFirst.png';
+export { default as TeamImageFourth } from './TeamImageFourth.png';
+export { default as TeamImageSecond } from './TeamImageSecond.png';
+export { default as TeamImageThird } from './TeamImageThird.png';

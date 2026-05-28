@@ -1,0 +1,9 @@
+export { default as BadgeFile } from './BadgeFile.svg?react';
+export { default as BadgeMic } from './BadgeMic.svg?react';
+export { default as BadgePlay } from './BadgePlay.svg?react';
+export { default as BlogPostFirst } from './BlogPostFirst.jpg';
+export { default as BlogPostSecond } from './BlogPostSecond.jpg';
+export { default as BlogPostThird } from './BlogPostThird.jpg';
+export { default as PostArrow } from './PostArrow.svg?react';
+export { default as PostCalendar } from './PostCalendar.svg?react';
+export { default as PostClock } from './PostClock.svg?react';

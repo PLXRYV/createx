@@ -1,7 +1,9 @@
-import certificateImg from '@assets/images/common/certificate/certificate_createx.jpg';
-import partnerLogo1 from '@assets/images/common/certificate/certificate_image-1.svg';
-import partnerLogo2 from '@assets/images/common/certificate/certificate_image-2.svg';
-import partnerLogo3 from '@assets/images/common/certificate/certificate_image-3.svg';
+import {
+  CertificateCreatex,
+  CertificateImageFirst,
+  CertificateImageSecond,
+  CertificateImageThird,
+} from '@assets/images/common/certificate';
 import React from 'react';
 
 import styles from './Certificate.module.scss';
@@ -21,28 +23,16 @@ const CertificateSection: React.FC = () => {
                 We are accredited by international professional organizations and institutes:
               </p>
               <div className={styles.certificateDescriptionImages}>
-                <img
-                  className={styles.certificateDescriptionImage}
-                  src={partnerLogo1}
-                  alt="Accreditation partner logo 1"
-                />
-                <img
-                  className={styles.certificateDescriptionImage}
-                  src={partnerLogo2}
-                  alt="Accreditation partner logo 2"
-                />
-                <img
-                  className={styles.certificateDescriptionImage}
-                  src={partnerLogo3}
-                  alt="Accreditation partner logo 3"
-                />
+                <CertificateImageFirst className={styles.certificateDescriptionImage} />
+                <CertificateImageSecond className={styles.certificateDescriptionImage} />
+                <CertificateImageThird className={styles.certificateDescriptionImage} />
               </div>
             </div>
           </div>
           <div className={styles.certificateImageWrapper}>
             <img
               className={styles.certificateCreatex}
-              src={certificateImg}
+              src={CertificateCreatex}
               alt="Createx official certificate layout's"
             />
           </div>

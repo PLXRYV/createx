@@ -1,9 +1,11 @@
-import { CrossIcon } from '@assets/icons/cross.svg';
-import { FacebookIcon } from '@assets/icons/facebook.svg';
-import { EyeIcon } from '@assets/icons/modal-icons/eyepass.svg';
-import { GoogleIcon } from '@assets/icons/modal-icons/Google.svg';
-import { LinkedInIcon } from '@assets/icons/modal-icons/Linked-In.svg';
-import { TwitterIcon } from '@assets/icons/modal-icons/Twitter.svg';
+import {
+  CrossIcon,
+  EyeIcon,
+  FacebookIcon,
+  GoogleIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from '@assets/icons';
 import React, { useState } from 'react';
 
 import styles from '../Modal.module.scss';

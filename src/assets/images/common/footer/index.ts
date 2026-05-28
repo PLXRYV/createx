@@ -8,4 +8,3 @@ export { default as PhoneIcon } from './Phone.svg?react';
 export { default as TelegramIcon } from './Telegram.svg?react';
 export { default as TwitterIcon } from './Twitter.svg?react';
 export { default as YoutubeIcon } from './Youtube.svg?react';
-

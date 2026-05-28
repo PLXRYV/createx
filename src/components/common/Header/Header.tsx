@@ -1,5 +1,4 @@
-import logoSvg from '@assets/images/common/header/logo.svg';
-import profileSvg from '@assets/images/common/header/Profile.svg';
+import { Logo, Profile } from '@assets/images/common/header';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -24,7 +23,7 @@ const Header: React.FC<HeaderProps> = () => {
         <div className={styles.headerInner}>
           <div className={styles.headerMenu}>
             <Link to="/" className={styles.logo}>
-              <img className={styles.logoImg} src={logoSvg} alt="Logo of site" />
+              <Logo className={styles.logoImg} />
             </Link>
             <nav className={styles.nav}>
               <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
@@ -68,7 +67,7 @@ const Header: React.FC<HeaderProps> = () => {
                 onClick={() => setIsSignInOpen(true)}
                 className={`${styles.headerAuthBtn} ${styles.headerAuthBtnSignin}`}
               >
-                <img className={styles.headerAuthIcon} src={profileSvg} alt="Profile" />
+                <Profile className={styles.headerAuthIcon} />
                 <span>Sign in</span>
               </button>
               <span className={styles.headerAuthSeparator}>/</span>

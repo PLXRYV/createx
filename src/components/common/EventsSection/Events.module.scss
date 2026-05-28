@@ -1,9 +1,9 @@
-@use "../../../assets/style/variables/breakpoints" as *;
-@use "../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .eventsSection {
 	margin-top: var(--section-events-margin);
-	background: url("../../../assets/images/homepage/events/events_background.jpg") center center no-repeat;
+	background: url("../../../assets/images/homepage/events/EventsBackground.jpg") center center no-repeat;
 	background-size: cover;
 	position: relative;
 	width: 100%;
