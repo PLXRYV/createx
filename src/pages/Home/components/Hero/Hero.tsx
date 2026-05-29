@@ -1,4 +1,4 @@
-import { IllustrationMain, MainPlayVideo } from '@assets/images/homepage/main';
+import { IllustrationMain, MainPlayVideo } from '@assets/images/homepage/hero';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import { ReactNode } from 'react';
 
