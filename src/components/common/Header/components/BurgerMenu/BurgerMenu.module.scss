@@ -1,6 +1,6 @@
-@use "/src/assets/style/style.scss" as *;
-@use "/src/assets/style/variables/breakpoints" as *;
-@use "/src/assets/style/variables/mixins" as *;
+@use "@assets/style/style.scss" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .burger {
 	display: none;
@@ -8,62 +8,62 @@
 	border: none;
 	padding: 0;
 	cursor: pointer;
-
-	&BtnAction {
-		width: 30px;
-		height: 20px;
-		position: relative;
+	position: relative;
+	@include tab-m {
 		display: block;
+		z-index: 150;
+	}
+}
 
+.burgerBtnAction {
+	width: 30px;
+	height: 20px;
+	position: relative;
+	display: block;
+
+	@include tab-m {
+		width: 25px;
+		height: 18px;
+	}
+
+	span {
+		position: absolute;
+		height: 2px;
+		top: calc(50% - 1px);
+		width: 100%;
+		background-color: var(--colors-gray-900);
+		left: 0;
+		transition: all 0.3s ease;
+
+		&:first-child {
+			top: 0;
+		}
+
+		&:last-child {
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
+
+.burgerActive {
+	.burgerBtnAction {
 		span {
-			position: absolute;
-			height: 2px;
-			top: calc(50% - 1px);
-			width: 100%;
-			background-color: var(--colors-gray-900);
-			left: 0;
-			transition: all 0.3s ease;
+			&:nth-child(2) {
+				transform: scale(0);
+			}
 
 			&:first-child {
-				top: 0;
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+				background-color: var(--colors-white);
 			}
 
 			&:last-child {
-				top: auto;
-				bottom: 0;
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+				background-color: var(--colors-white);
 			}
-		}
-	}
-
-	&Active {
-		.burgerBtnAction {
-			span {
-				&:nth-child(2) {
-					transform: scale(0);
-				}
-
-				&:first-child {
-					transform: rotate(-45deg);
-					top: calc(50% - 1px);
-					background-color: var(--colors-white);
-				}
-
-				&:last-child {
-					transform: rotate(45deg);
-					bottom: calc(50% - 1px);
-					background-color: var(--colors-white);
-				}
-			}
-		}
-	}
-
-	@include tab-m {
-		display: block;
-		z-index: 101;
-
-		.burgerBtnAction {
-			width: 25px;
-			height: 18px;
 		}
 	}
 }

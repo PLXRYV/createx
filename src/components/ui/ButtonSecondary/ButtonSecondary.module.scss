@@ -1,17 +1,16 @@
 @use "@assets/style/variables/mixins.scss" as *;
 
-.buttonPrimary {
+.buttonSecondary {
 	padding: 0 var(--space-3xl);
-	color: var(--colors-white);
-	background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
-	border: none;
+	color: var(--colors-primary);
+	background: transparent;
+	border: 1px solid var(--colors-primary);
 	font-size: var(--font-size-base);
 	font-weight: var(--font-weight-bold);
 	line-height: var(--btn-height-md);
 	@include transition;
 	&:hover {
 		transform: scale(0.95);
-		box-shadow: 0 3px 4px var(--colors-orange);
 	}
 
 	&-mobile {
@@ -27,12 +26,12 @@
 	}
 }
 
-.button__primary-mobile {
+.button__secondary-mobile {
 	display: none;
 }
 
 @include tab-m {
-	.button__primary-mobile {
+	.button__secondary-mobile {
 		display: block;
 	}
 }
