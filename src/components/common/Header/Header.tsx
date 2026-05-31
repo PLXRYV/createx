@@ -11,11 +11,20 @@ import styles from './Header.module.scss';
 interface HeaderProps {
   button?: React.ReactNode;
 }
+
 const Header: React.FC<HeaderProps> = () => {
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
+  const [isSignInOpen, setIsSignInOpen] = useState<boolean>(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState<boolean>(false);
+
   const toggleBurger = () => setIsBurgerOpen(!isBurgerOpen);
+
+  // Функция для закрытия меню при клике мимо выезжающей панели
+  const handleOverlayClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (e.target === e.currentTarget) {
+      setIsBurgerOpen(false);
+    }
+  };
 
   return (
     <header id="header" className={styles.header}>
@@ -25,7 +34,12 @@ const Header: React.FC<HeaderProps> = () => {
             <Link to="/" className={styles.logo}>
               <Logo className={styles.logoImg} />
             </Link>
-            <nav className={styles.nav}>
+
+            {/* Навигация выполняет роль оверлея на мобильных устройствах */}
+            <nav
+              className={`${styles.nav} ${isBurgerOpen ? styles.navOpen : ''}`}
+              onClick={handleOverlayClick}
+            >
               <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
                 <li className={styles.navMenuItem}>
                   <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
@@ -59,8 +73,9 @@ const Header: React.FC<HeaderProps> = () => {
               </ul>
             </nav>
           </div>
+
           <div className={styles.headerInfoActions}>
-            <ButtonPrimary />
+            <ButtonPrimary className={styles.headerGetBtn}> Get Consultation </ButtonPrimary>
             <div className={styles.headerAuth}>
               <button
                 type="button"
@@ -83,6 +98,7 @@ const Header: React.FC<HeaderProps> = () => {
           </div>
         </div>
       </div>
+
       {isSignInOpen && <ModalSignIn onClose={() => setIsSignInOpen(false)} />}
       {isSignUpOpen && <ModalSignUp onClose={() => setIsSignUpOpen(false)} />}
     </header>

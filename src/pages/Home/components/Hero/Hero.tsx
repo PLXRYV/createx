@@ -1,5 +1,6 @@
 import { IllustrationMain, MainPlayVideo } from '@assets/images/homepage/hero';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
+import ButtonSecondary from '@components/ui/ButtonSecondary/ButtonSecondary';
 import { ReactNode } from 'react';
 
 import styles from './Hero.module.scss';
@@ -22,7 +23,9 @@ const Hero: React.FC<HeroProps> = ({ additionalButton }) => {
             </div>
             <h1 className={styles.mainInfoTitle}>Enjoy studying with Createx Online Courses</h1>
             <div className={styles.mainInfoActions}>
-              <button className={`${styles.button} ${styles.buttonSecondary}`}>About Us</button>
+              <ButtonSecondary className={`${styles.button} ${styles.buttonSecondary}`}>
+                About Us
+              </ButtonSecondary>
               <ButtonPrimary onClick={() => console.log('Explore courses clicked')}>
                 Explore courses
               </ButtonPrimary>

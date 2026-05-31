@@ -23,120 +23,121 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className={styles.footer}>
-      <div className="container">
-        <div className={styles.footerContainer}>
-          <div className={styles.footerBox}>
-            <div className={styles.footerLogoContainer}>
-              <LogoSvg />
-            </div>
-            <p className={styles.footerBoxText}>
-              CreateX Online School is a leader in online studying. We have lots of courses and
-              programs from the main market experts. We provide relevant approaches to online
-              learning, internships and employment in the largest companies in the country.
-            </p>
-            <div className={styles.footerSocial}>
-              <a href="#" className={styles.footerInfoLink} aria-label="Facebook">
-                <FacebookIcon />
-              </a>
-              <a href="#" className={styles.footerInfoLink} aria-label="Twitter">
-                <TwitterIcon />
-              </a>
-              <a href="#" className={styles.footerInfoLink} aria-label="YouTube">
-                <YoutubeIcon />
-              </a>
-              <a href="#" className={styles.footerInfoLink} aria-label="Telegram">
-                <TelegramIcon />
-              </a>
-              <a href="#" className={styles.footerInfoLink} aria-label="Instagram">
-                <InstagramIcon />
-              </a>
-              <a href="#" className={styles.footerInfoLink} aria-label="LinkedIn">
-                <LinkedInIcon />
-              </a>
-            </div>
-          </div>
-          <div className={styles.footerNavigation}>
-            <div className={styles.footerNavigationSite}>
-              <ul className={styles.footerInfo}>
-                <li className={styles.footerInfoTitle}>
-                  <p>SITE MAP</p>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#about">About Us</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#courses">Courses</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#events">Events</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#blog">Blog</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#contacts">Contacts</a>
-                </li>
-              </ul>
-
-              <ul className={styles.footerInfo}>
-                <li className={styles.footerInfoTitle}>
-                  <p>COURSES</p>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#">Marketing</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#">Management</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#">HR & Recruiting</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#">Design</a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="#">Development</a>
-                </li>
-              </ul>
-
-              <ul className={styles.footerInfo}>
-                <li className={styles.footerInfoTitle}>
-                  <p>CONTACT US</p>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="tel:4055550128" className={styles.footerContactLink}>
-                    <PhoneIcon />
-                    <span>(405) 555-0128</span>
-                  </a>
-                </li>
-                <li className={styles.footerInfoLink}>
-                  <a href="mailto:hello@createx.com" className={styles.footerContactLink}>
-                    <MailIcon />
-                    <span>hello@createx.com</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className={styles.footerBoxForm}>
-            <p className={styles.footerInfoTitle}>SIGN UP TO OUR NEWSLETTER'S</p>
-            <form onSubmit={handleNewsletterSubmit}>
-              <div className={styles.inputWrapper}>
-                <input type="email" placeholder="Email address" required />
-                <ArrowRight className={styles.submitBtn} />
+    <div>
+      <footer className={styles.footer}>
+        <div className="container">
+          <div className={styles.footerContainer}>
+            <div className={styles.footerBox}>
+              <div className={styles.footerLogoContainer}>
+                <LogoSvg />
               </div>
-            </form>
-            <p className={styles.footerNewsletterText}>
-              *Subscribe to our newsletter to receive communications and early updates from CreateX
-              SEO Agency.
-            </p>
+              <p className={styles.footerBoxText}>
+                CreateX Online School is a leader in online studying. We have lots of courses and
+                programs from the main market experts. We provide relevant approaches to online
+                learning, internships and employment in the largest companies in the country.
+              </p>
+              <div className={styles.footerSocial}>
+                <a href="#" className={styles.footerInfoLink} aria-label="Facebook">
+                  <FacebookIcon />
+                </a>
+                <a href="#" className={styles.footerInfoLink} aria-label="Twitter">
+                  <TwitterIcon />
+                </a>
+                <a href="#" className={styles.footerInfoLink} aria-label="YouTube">
+                  <YoutubeIcon />
+                </a>
+                <a href="#" className={styles.footerInfoLink} aria-label="Telegram">
+                  <TelegramIcon />
+                </a>
+                <a href="#" className={styles.footerInfoLink} aria-label="Instagram">
+                  <InstagramIcon />
+                </a>
+                <a href="#" className={styles.footerInfoLink} aria-label="LinkedIn">
+                  <LinkedInIcon />
+                </a>
+              </div>
+            </div>
+            <div className={styles.footerNavigation}>
+              <div className={styles.footerNavigationSite}>
+                <ul className={styles.footerInfo}>
+                  <li className={styles.footerInfoTitle}>
+                    <p>SITE MAP</p>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#about">About Us</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#courses">Courses</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#events">Events</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#blog">Blog</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#contacts">Contacts</a>
+                  </li>
+                </ul>
+
+                <ul className={styles.footerInfo}>
+                  <li className={styles.footerInfoTitle}>
+                    <p>COURSES</p>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#">Marketing</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#">Management</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#">HR & Recruiting</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#">Design</a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="#">Development</a>
+                  </li>
+                </ul>
+
+                <ul className={styles.footerInfo}>
+                  <li className={styles.footerInfoTitle}>
+                    <p>CONTACT US</p>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="tel:4055550128" className={styles.footerContactLink}>
+                      <PhoneIcon />
+                      <span>(405) 555-0128</span>
+                    </a>
+                  </li>
+                  <li className={styles.footerInfoLink}>
+                    <a href="mailto:hello@createx.com" className={styles.footerContactLink}>
+                      <MailIcon />
+                      <span>hello@createx.com</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className={styles.footerBoxForm}>
+              <p className={styles.footerInfoTitle}>SIGN UP TO OUR NEWSLETTER'S</p>
+              <form onSubmit={handleNewsletterSubmit}>
+                <div className={styles.inputWrapper}>
+                  <input type="email" placeholder="Email address" required />
+                  <ArrowRight className={styles.submitBtn} />
+                </div>
+              </form>
+              <p className={styles.footerNewsletterText}>
+                *Subscribe to our newsletter to receive communications and early updates from
+                CreateX SEO Agency.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
+      </footer>
       <CopyrightSection />
-    </footer>
+    </div>
   );
 };
 

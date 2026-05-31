@@ -15,6 +15,14 @@ interface ModalSignUpProps {
 }
 
 const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('Form submitted');
+  };
+
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -83,17 +91,14 @@ const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
                 placeholder="Confirm your password"
                 required
               />
+              {/* Исправлено: вместо падавшего <img> теперь используется компонент <EyeIcon /> */}
               <button
                 type="button"
                 className={styles.formTogglePasswordConfirm}
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 aria-label={showConfirmPassword ? 'Hide password' : 'Show password'}
               >
-                <img
-                  className={styles.modalCloseIcon}
-                  src={eyeIcon}
-                  alt="Toggle password visibility"
-                />
+                <EyeIcon className={styles.modalCloseIcon} />
               </button>
             </div>
             <div className={styles.formOptions}>
