@@ -12,9 +12,10 @@ import styles from '../Modal.module.scss';
 
 interface ModalSignUpProps {
   onClose: () => void;
+  onSwitchToSignIn: () => void;
 }
 
-const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
+const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose, onSwitchToSignIn }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
 
@@ -91,7 +92,6 @@ const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
                 placeholder="Confirm your password"
                 required
               />
-              {/* Исправлено: вместо падавшего <img> теперь используется компонент <EyeIcon /> */}
               <button
                 type="button"
                 className={styles.formTogglePasswordConfirm}
@@ -113,9 +113,9 @@ const ModalSignUp: React.FC<ModalSignUpProps> = ({ onClose }) => {
             </button>
             <div className={styles.formRegister}>
               <p className={styles.formRegisterText}>Already have an account?</p>
-              <a className={styles.formRegisterLink} href="#">
+              <button type="button" className={styles.formRegisterLink} onClick={onSwitchToSignIn}>
                 Sign in
-              </a>
+              </button>
             </div>
           </form>
         </div>

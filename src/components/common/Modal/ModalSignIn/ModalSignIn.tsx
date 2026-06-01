@@ -12,8 +12,10 @@ import styles from '../Modal.module.scss';
 
 interface ModalSignInProps {
   onClose: () => void;
+  onSwitchToSignUp: () => void;
 }
-const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
+
+const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose, onSwitchToSignUp }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   useEffect(() => {
@@ -86,7 +88,7 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
                 <span className={styles.checkmark}></span>
                 <span className={styles.checkboxText}>Keep me signed in</span>
               </label>
-              <a href="#" className={styles.forgotPassword}>
+              <a href="#" className={styles.forgotPassword} onClick={(e) => e.preventDefault()}>
                 Forgot password?
               </a>
             </div>
@@ -95,9 +97,9 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
             </button>
             <div className={styles.formRegister}>
               <p className={styles.formRegisterText}>Don't have an account?</p>
-              <a className={styles.formRegisterLink} href="#">
+              <button type="button" className={styles.formRegisterLink} onClick={onSwitchToSignUp}>
                 Sign up
-              </a>
+              </button>
             </div>
           </form>
         </div>
@@ -106,16 +108,16 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose }) => {
         <div className={styles.modalFooter}>
           <p className={styles.modalFooterText}>Or sign in with</p>
           <div className={styles.modalFooterSocial}>
-            <a className={styles.modalFooterLink} href="#">
+            <a className={styles.modalFooterLink} href="#" onClick={(e) => e.preventDefault()}>
               <FacebookIcon className={styles.modalSocialLinkImg} />
             </a>
-            <a className={styles.modalFooterLink} href="#">
+            <a className={styles.modalFooterLink} href="#" onClick={(e) => e.preventDefault()}>
               <GoogleIcon className={styles.modalSocialLinkImg} />
             </a>
-            <a className={styles.modalFooterLink} href="#">
+            <a className={styles.modalFooterLink} href="#" onClick={(e) => e.preventDefault()}>
               <TwitterIcon className={styles.modalSocialLinkImg} />
             </a>
-            <a className={styles.modalFooterLink} href="#">
+            <a className={styles.modalFooterLink} href="#" onClick={(e) => e.preventDefault()}>
               <LinkedInIcon className={styles.modalSocialLinkImg} />
             </a>
           </div>

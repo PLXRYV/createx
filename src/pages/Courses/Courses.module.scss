@@ -1,0 +1,11 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.coursesPageTestimonials {
+	background: url("@assets/images/common/testimonials/BackgroundOnPages.jpg") center center no-repeat;
+	background-size: cover;
+}
+
+.coursesPageCertificate {
+	padding-bottom: var(--space-9xl);
+}

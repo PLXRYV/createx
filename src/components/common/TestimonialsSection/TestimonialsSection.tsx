@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 
 import styles from './Testimonials.module.scss';
 
-const TestimonialsSection: React.FC = () => {
+interface TestimonialsSectionProps {
+  className?: string;
+}
+
+const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ className = '' }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+
   const slidesData = [
     {
       name: 'Eleanor Pena',
@@ -20,7 +25,7 @@ const TestimonialsSection: React.FC = () => {
     },
     {
       name: 'Fourth Commit',
-      text: 'Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam commodi dicta distinctio, dolores, dolorum ex fugit nemo pariaturベース perspiciatis quo vel vitae!',
+      text: 'Lorem Ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam commodi dicta distinctio, dolores, dolorum ex fugit nemo pariatur base de datos perspiciatis quo vel vitae!',
     },
     {
       name: 'Fifth Commit',
@@ -29,6 +34,7 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   const totalSlides = slidesData.length;
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
@@ -38,7 +44,7 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className={styles.testimonialsSection}>
+    <section className={`${styles.testimonialsSection} ${className}`}>
       <div className="container">
         <div className={styles.testimonialsContainer}>
           <div className={styles.testimonialsHeader}>

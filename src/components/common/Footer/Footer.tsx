@@ -11,6 +11,7 @@ import {
   YoutubeIcon,
 } from '@assets/images/common/footer';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import CopyrightSection from './components/Copyright/CopyrightSection';
 import styles from './Footer.module.scss';
@@ -19,7 +20,6 @@ const Footer: React.FC = () => {
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log('Newsletter form submitted');
-    h;
   };
 
   return (
@@ -64,43 +64,41 @@ const Footer: React.FC = () => {
                     <p>SITE MAP</p>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#about">About Us</a>
+                    <Link to="/about">About Us</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#courses">Courses</a>
+                    <Link to="/courses">Courses</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#events">Events</a>
+                    <Link to="/events">Events</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#blog">Blog</a>
+                    <Link to="/blog">Blog</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#contacts">Contacts</a>
+                    <Link to="/contacts">Contacts</Link>
                   </li>
                 </ul>
-
                 <ul className={styles.footerInfo}>
                   <li className={styles.footerInfoTitle}>
                     <p>COURSES</p>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#">Marketing</a>
+                    <Link to="/courses">Marketing</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#">Management</a>
+                    <Link to="/courses">Management</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#">HR & Recruiting</a>
+                    <Link to="/courses">HR & Recruiting</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#">Design</a>
+                    <Link to="/courses">Design</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <a href="#">Development</a>
+                    <Link to="/courses">Development</Link>
                   </li>
                 </ul>
-
                 <ul className={styles.footerInfo}>
                   <li className={styles.footerInfoTitle}>
                     <p>CONTACT US</p>
@@ -120,12 +118,19 @@ const Footer: React.FC = () => {
                 </ul>
               </div>
             </div>
+
             <div className={styles.footerBoxForm}>
               <p className={styles.footerInfoTitle}>SIGN UP TO OUR NEWSLETTER'S</p>
               <form onSubmit={handleNewsletterSubmit}>
                 <div className={styles.inputWrapper}>
                   <input type="email" placeholder="Email address" required />
-                  <ArrowRight className={styles.submitBtn} />
+                  <button
+                    type="submit"
+                    className={styles.footerSubmitButton}
+                    aria-label="Subscribe"
+                  >
+                    <ArrowRight className={styles.submitBtn} />
+                  </button>
                 </div>
               </form>
               <p className={styles.footerNewsletterText}>
