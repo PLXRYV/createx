@@ -1,6 +1,6 @@
-@use "@assets/style/style.scss" as *;
-@use "@assets/style/variables/breakpoints" as *;
-@use "@assets/style/variables/mixins" as *;
+@use "/src/assets/style/style.scss" as *;
+@use "../../../assets/style/variables/breakpoints" as *;
+@use "../../../assets/style/variables/mixins" as *;
 
 .headerBg {
 	background: url("@assets/images/common/header/BackgroundHead.jpg") center center no-repeat;
@@ -107,6 +107,14 @@
 		font-size: var(--font-size-2xl);
 		line-height: var(--line-height-base);
 		color: var(--colors-white);
+	}
+}
+
+.navMenuLinkActive {
+	color: var(--colors-primary) !important;
+
+	@include tab-m {
+		color: var(--colors-gray-700) !important;
 	}
 }
 

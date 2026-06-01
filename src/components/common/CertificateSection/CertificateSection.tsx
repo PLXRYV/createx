@@ -8,9 +8,13 @@ import React from 'react';
 
 import styles from './Certificate.module.scss';
 
-const CertificateSection: React.FC = () => {
+interface CertificateSectionProps {
+  className?: string;
+}
+
+const CertificateSection: React.FC<CertificateSectionProps> = ({ className = '' }) => {
   return (
-    <section className={styles.certificateSection}>
+    <section className={`${styles.certificateSection} ${className}`}>
       <div className="container">
         <div className={styles.certificateContainer}>
           <div className={styles.certificateContent}>

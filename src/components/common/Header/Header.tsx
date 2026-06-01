@@ -1,7 +1,7 @@
 import { Logo, Profile } from '@assets/images/common/header';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import ModalSignIn from '../Modal/ModalSignIn/ModalSignIn';
 import ModalSignUp from '../Modal/ModalSignUp/ModalSignUp';
@@ -19,12 +19,14 @@ const Header: React.FC<HeaderProps> = () => {
 
   const toggleBurger = () => setIsBurgerOpen(!isBurgerOpen);
 
-  // Функция для закрытия меню при клике мимо выезжающей панели
   const handleOverlayClick = (e: React.MouseEvent<HTMLElement>) => {
     if (e.target === e.currentTarget) {
       setIsBurgerOpen(false);
     }
   };
+
+  const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `${styles.navMenuLink} ${isActive ? styles.navMenuLinkActive : ''}`;
 
   return (
     <header id="header" className={styles.header}>
@@ -34,46 +36,59 @@ const Header: React.FC<HeaderProps> = () => {
             <Link to="/" className={styles.logo}>
               <Logo className={styles.logoImg} />
             </Link>
-
-            {/* Навигация выполняет роль оверлея на мобильных устройствах */}
             <nav
               className={`${styles.nav} ${isBurgerOpen ? styles.navOpen : ''}`}
               onClick={handleOverlayClick}
             >
               <ul className={`${styles.navMenu} ${isBurgerOpen ? styles.navMenuOpen : ''}`}>
                 <li className={styles.navMenuItem}>
-                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                  <NavLink
+                    to="/about"
+                    className={getNavLinkClass}
+                    onClick={() => setIsBurgerOpen(false)}
+                  >
                     About Us
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className={styles.navMenuItem}>
-                  <Link
+                  <NavLink
                     to="/courses"
-                    className={styles.navMenuLink}
+                    className={getNavLinkClass}
                     onClick={() => setIsBurgerOpen(false)}
                   >
                     Courses
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className={styles.navMenuItem}>
-                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                  <NavLink
+                    to="/events"
+                    className={getNavLinkClass}
+                    onClick={() => setIsBurgerOpen(false)}
+                  >
                     Events
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className={styles.navMenuItem}>
-                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                  <NavLink
+                    to="/blog"
+                    className={getNavLinkClass}
+                    onClick={() => setIsBurgerOpen(false)}
+                  >
                     Blog
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className={styles.navMenuItem}>
-                  <Link className={styles.navMenuLink} onClick={() => setIsBurgerOpen(false)}>
+                  <NavLink
+                    to="/contacts"
+                    className={getNavLinkClass}
+                    onClick={() => setIsBurgerOpen(false)}
+                  >
                     Contacts
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
           </div>
-
           <div className={styles.headerInfoActions}>
             <ButtonPrimary className={styles.headerGetBtn}> Get Consultation </ButtonPrimary>
             <div className={styles.headerAuth}>
@@ -99,8 +114,25 @@ const Header: React.FC<HeaderProps> = () => {
         </div>
       </div>
 
-      {isSignInOpen && <ModalSignIn onClose={() => setIsSignInOpen(false)} />}
-      {isSignUpOpen && <ModalSignUp onClose={() => setIsSignUpOpen(false)} />}
+      {isSignInOpen && (
+        <ModalSignIn
+          onClose={() => setIsSignInOpen(false)}
+          onSwitchToSignUp={() => {
+            setIsSignInOpen(false);
+            setIsSignUpOpen(true);
+          }}
+        />
+      )}
+
+      {isSignUpOpen && (
+        <ModalSignUp
+          onClose={() => setIsSignUpOpen(false)}
+          onSwitchToSignIn={() => {
+            setIsSignUpOpen(false);
+            setIsSignInOpen(true);
+          }}
+        />
+      )}
     </header>
   );
 };

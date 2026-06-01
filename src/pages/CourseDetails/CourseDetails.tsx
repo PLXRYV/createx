@@ -1,27 +1,25 @@
-import React from 'react';
-import Header from '../../components/common/Header/Header';
-import Footer from '../../components/common/Footer/Footer';
-import CourseMain from './components/CourseMain/CourseMain.tsx';
-import CourseAbout from './components/CourseAbout/CourseAbout.tsx';
+import '@assets/style/style.scss';
 
-import '../../assets/style/style.scss';
+import Footer from '@components/common/Footer/Footer';
+import CourseCurator from '@pages/CourseDetails/components/CourseCurator/CourseCurator';
+import CourseMainSteps from '@pages/CourseDetails/components/CourseMainSteps/CourseMainSteps';
+import React from 'react';
+
+import CourseAbout from './components/CourseAbout/CourseAbout';
+import CourseMain from './components/CourseMain/CourseMain';
 
 const CourseDetails: React.FC = () => {
-    return (
-        <div>
-            {/* Шапка сайта */}
-            <Header />
-
-            {/* Контент страницы курса */}
-            <main>
-                <CourseMain />
-                <CourseAbout />
-            </main>
-
-            {/* Подвал сайта */}
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <main>
+        <CourseMain />
+        <CourseAbout />
+        <CourseCurator />
+        <CourseMainSteps />
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default CourseDetails;

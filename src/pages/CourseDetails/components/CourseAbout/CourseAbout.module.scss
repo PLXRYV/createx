@@ -1,0 +1,145 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.aboutCourseSection {
+	padding: var(--section-padding-y) 0;
+	background-color: var(--colors-white);
+}
+
+.aboutCourseBox {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--about-box-gap, 130px);
+
+	@include tab-md {
+		flex-direction: column;
+		gap: var(--space-4xl);
+	}
+}
+
+.aboutCourse {
+	flex: 1;
+	width: 100%;
+}
+
+.aboutCourseTextContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-3xl);
+}
+
+.aboutCourseDescriptionBox {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
+.courseDescriptionTitle,
+.courseLearnTitle {
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.courseDescriptionText {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-700);
+	margin: 0;
+}
+
+.aboutCourseLearn {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+}
+
+.courseLearnList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.courseLearnListItem {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-md);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-800);
+
+	svg, img {
+		flex-shrink: 0;
+		width: 16px;
+		height: 16px;
+		margin-top: 4px;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+.courseDiscriptionContainer {
+	width: 100%;
+	max-width: 390px;
+	padding: var(--card-padding);
+	background-color: var(--colors-white);
+	border: 1px solid var(--colors-gray-300);
+	border-radius: var(--roundings-s);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+	flex-shrink: 0;
+
+	@include tab-md {
+		position: sticky;
+		top: var(--space-xl);
+	}
+
+	div {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2xs);
+
+		h3 {
+			font-size: var(--font-size-xs);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-base);
+			color: var(--colors-gray-900);
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin: 0;
+		}
+
+		time, .priceValue {
+			font-size: var(--font-size-2xl);
+			font-weight: var(--font-weight-bold);
+			line-height: var(--line-height-body);
+			color: var(--colors-primary);
+		}
+
+		p {
+			font-size: var(--font-size-sm);
+			font-weight: var(--font-weight-regular);
+			line-height: var(--line-height-body);
+			color: var(--colors-gray-600);
+			margin: 0;
+		}
+	}
+
+	button {
+		width: 100%;
+		margin-top: var(--space-s);
+	}
+}

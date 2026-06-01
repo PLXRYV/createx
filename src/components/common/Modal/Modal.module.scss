@@ -1,5 +1,5 @@
-@use "../../../assets/style/variables/breakpoints" as *;
-@use "../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .modal {
 	display: flex;
@@ -264,7 +264,7 @@
 		}
 	}
 
-	@media (max-height: 600px) {
+	@include tab-sm {
 		padding: 0;
 
 		.modalWrapper {
@@ -272,5 +272,19 @@
 			border-radius: 0;
 			width: 100%;
 		}
+	}
+}
+
+.formRegisterLink {
+	background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	color: var(--colors-primary);
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
 	}
 }

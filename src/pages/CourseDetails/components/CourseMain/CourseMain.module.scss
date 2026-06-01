@@ -1,9 +1,9 @@
-.coursesBackground {
-	background: url(/src/pages/images/CoursesPage/background-courses.jpg) center center no-repeat;
+.courseBackground {
+	background: url('@assets/images/courseDetails/BackgroundCourse.jpg') center center no-repeat;
 	background-size: cover;
 }
 
-.CoursesMain {
+.courseMainContent {
 	max-width: 1020px;
 	width: 100%;
 	display: flex;
@@ -13,7 +13,11 @@
 	padding: var(--section-main-padding) 0;
 }
 
-.CoursesMainTitle {
+.courseMainHeading {
+	color: var(--colors-primary);
+}
+
+.courseMainTitle {
 	font-size: var(--font-size-5xl);
 	font-weight: var(--font-weight-black);
 	line-height: var(--line-height-heading);

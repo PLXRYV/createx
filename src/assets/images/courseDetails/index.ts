@@ -1,0 +1,9 @@
+export { default as Behance } from './Behance.svg?react';
+export { default as Check } from './Check.svg?react';
+export { default as Circles } from './Circles.svg?react';
+export { default as Facebook } from './Facebook.svg?react';
+export { default as LinkedIn } from './LinkedIn.svg?react';
+export { default as Play } from './Play.svg?react';
+export { default as Profile } from './Profile.svg?react';
+export { default as Star } from './Star.svg?react';
+export { default as Twitter } from './Twitter.svg?react';
