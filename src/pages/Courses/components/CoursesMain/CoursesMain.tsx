@@ -1,7 +1,7 @@
 import '@assets/style/style.scss';
 
 import { ButtonSearch, Convert } from '@assets/images/courses';
-import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary'; // Ваша кнопка
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React, { useEffect, useState } from 'react';
 
 import CoursesGrid, { defaultCourses } from '../CoursesGrid/CoursesGrid';
