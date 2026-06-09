@@ -1,0 +1,123 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.courseTimerSection {
+	background-color: var(--colors-white);
+}
+
+.timerContent {
+	position: relative;
+	height: 243px;
+	padding: var(--space-5xl, 60px) var(--space-4xl, 48px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: var(--roundings-s);
+	overflow: hidden;
+}
+
+.backgroundWrapper {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.backgroundImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.topRow {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.promoTitle {
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.countdown {
+	display: flex;
+	gap: var(--space-xl);
+}
+
+.countdownItem {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.countdownNumber {
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-black);
+	line-height: 1;
+	color: var(--colors-gray-900);
+}
+
+.countdownLabel {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-regular);
+	color: var(--colors-gray-900);
+	opacity: 0.6;
+	margin-top: var(--space-2xs);
+}
+
+.timerForm {
+	margin-top: var(--space-2xl);
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+	width: 100%;
+	gap: var(--space-xl, 24px);
+}
+
+.formField {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-s);
+	flex: 1;
+}
+
+.formLabel {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	color: var(--colors-gray-800);
+}
+
+.formInput {
+	width: 100%;
+	padding: var(--space-m) var(--space-md);
+	font-size: var(--font-size-base);
+	color: var(--colors-gray-900);
+	background-color: var(--colors-white);
+	border: 1px solid var(--colors-gray-300);
+	border-radius: var(--roundings-s);
+	outline: none;
+	transition: border-color 0.2s ease-in-out;
+
+	&::placeholder {
+		color: var(--colors-gray-500);
+	}
+
+	&:focus {
+		border-color: var(--colors-primary);
+	}
+}
+
+.formSubmitBtn {
+	flex-shrink: 0;
+	padding: 0 var(--space-3xl);
+}

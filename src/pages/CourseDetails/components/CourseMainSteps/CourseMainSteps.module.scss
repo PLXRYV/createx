@@ -2,7 +2,7 @@
 @use "@assets/style/variables/mixins" as *;
 
 .courseMainSteps {
-	padding-top: var(--section-padding-y);
+	padding: var(--section-padding-y) 0 var(--section-padding-y) 0;
 	background-color: var(--colors-white);
 }
 

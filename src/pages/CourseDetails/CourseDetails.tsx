@@ -7,6 +7,7 @@ import React from 'react';
 
 import CourseAbout from './components/CourseAbout/CourseAbout';
 import CourseMain from './components/CourseMain/CourseMain';
+import CourseTimer from './components/CourseTimer/CourseTimer';
 
 const CourseDetails: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const CourseDetails: React.FC = () => {
         <CourseAbout />
         <CourseCurator />
         <CourseMainSteps />
+        <CourseTimer />
       </main>
       <Footer />
     </div>
