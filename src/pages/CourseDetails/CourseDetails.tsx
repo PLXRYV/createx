@@ -1,6 +1,7 @@
 import '@assets/style/style.scss';
 
 import Footer from '@components/common/Footer/Footer';
+import CourseBenefits from '@pages/CourseDetails/components/CourseBenefits/CourseBenefits';
 import CourseCurator from '@pages/CourseDetails/components/CourseCurator/CourseCurator';
 import CourseMainSteps from '@pages/CourseDetails/components/CourseMainSteps/CourseMainSteps';
 import React from 'react';
@@ -18,6 +19,7 @@ const CourseDetails: React.FC = () => {
         <CourseCurator />
         <CourseMainSteps />
         <CourseTimer />
+        <CourseBenefits />
       </main>
       <Footer />
     </div>
