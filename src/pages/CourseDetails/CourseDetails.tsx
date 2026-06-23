@@ -4,6 +4,7 @@ import Footer from '@components/common/Footer/Footer';
 import CourseBenefits from '@pages/CourseDetails/components/CourseBenefits/CourseBenefits';
 import CourseCurator from '@pages/CourseDetails/components/CourseCurator/CourseCurator';
 import CourseMainSteps from '@pages/CourseDetails/components/CourseMainSteps/CourseMainSteps';
+import CourseProgram from '@pages/CourseDetails/components/CourseProgram/CourseProgram';
 import React from 'react';
 
 import CourseAbout from './components/CourseAbout/CourseAbout';
@@ -20,6 +21,7 @@ const CourseDetails: React.FC = () => {
         <CourseMainSteps />
         <CourseTimer />
         <CourseBenefits />
+        <CourseProgram />
       </main>
       <Footer />
     </div>
