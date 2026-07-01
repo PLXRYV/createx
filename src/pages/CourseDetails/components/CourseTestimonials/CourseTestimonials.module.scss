@@ -1,0 +1,12 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.courseTestimonials {
+	position: relative;
+	background-image: var(--bg-url);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-color: var(--colors-gray-200, #f4f5f7);
+	overflow: hidden;
+}

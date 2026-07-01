@@ -5,6 +5,7 @@ import CourseBenefits from '@pages/CourseDetails/components/CourseBenefits/Cours
 import CourseCurator from '@pages/CourseDetails/components/CourseCurator/CourseCurator';
 import CourseMainSteps from '@pages/CourseDetails/components/CourseMainSteps/CourseMainSteps';
 import CourseProgram from '@pages/CourseDetails/components/CourseProgram/CourseProgram';
+import CourseTestimonials from '@pages/CourseDetails/components/CourseTestimonials/CourseTestimonials';
 import React from 'react';
 
 import CourseAbout from './components/CourseAbout/CourseAbout';
@@ -22,6 +23,7 @@ const CourseDetails: React.FC = () => {
         <CourseTimer />
         <CourseBenefits />
         <CourseProgram />
+        <CourseTestimonials />
       </main>
       <Footer />
     </div>
