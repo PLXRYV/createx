@@ -1,3 +1,5 @@
+export { default as ArrowLeft } from './ArrowLeft.svg?react';
+export { default as ArrowRight } from './ArrowRight.svg?react';
 export { default as Behance } from './Behance.svg?react';
 export { default as Check } from './Check.svg?react';
 export { default as Circles } from './Circles.svg?react';
