@@ -6,7 +6,6 @@ import courseImg3 from '../../../../assets/images/homepage/courses/course-3.jpg'
 import courseImg4 from '../../../../assets/images/homepage/courses/course-4.jpg';
 import courseImg5 from '../../../../assets/images/homepage/courses/course-5.jpg';
 import courseImg6 from '../../../../assets/images/homepage/courses/course-6.jpg';
-//import { Link } from 'react-router-dom';
 import styles from './Courses.module.scss';
 
 const Courses: React.FC = () => {

@@ -1,0 +1,229 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.checkCoursesSection {
+	padding: var(--section-padding-y) 0;
+	background-color: var(--colors-white);
+}
+
+.sectionHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding-bottom: var(--space-5xl);
+
+	@include tab-sm {
+		flex-direction: column;
+		gap: var(--space-xl);
+		align-items: center;
+		margin-bottom: var(--space-4xl);
+	}
+}
+
+.titleBlock {
+	h5 {
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-base);
+		letter-spacing: 1px;
+		color: var(--colors-gray-900);
+		text-transform: uppercase;
+		margin: 0 0 var(--space-s) 0;
+	}
+
+	h2 {
+		font-size: var(--font-size-5xl);
+		font-weight: var(--font-weight-black);
+		line-height: var(--line-height-body);
+		color: var(--colors-gray-900);
+		margin: 0;
+	}
+}
+
+.controlsWrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2xl, 40px);
+
+	@include mob-m {
+		width: 100%;
+		justify-content: space-between;
+	}
+}
+
+.sliderArrows {
+	display: flex;
+	gap: var(--space-m, 12px);
+}
+
+.arrowBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: background-color var(--transition-base, 0.2s ease);
+
+	&:hover {
+		background-color: var(--colors-primary-light, #ff3f3a1a);
+
+		svg, path {
+			fill: var(--colors-primary, #ff3f3a);
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+		transition: fill var(--transition-base, 0.2s ease);
+	}
+}
+
+.coursesGridWrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
+	gap: var(--space-2xl);
+
+	@include tab-sm {
+		grid-template-columns: 1fr;
+		gap: var(--space-lg);
+	}
+}
+
+.coursesContainerCard {
+	display: flex;
+	background-color: var(--colors-white);
+	border: 1px solid var(--colors-gray-300);
+	border-radius: var(--roundings-s);
+	transition: 0.4s;
+	animation: slideFadeIn var(--transition-base, 0.3s ease-in-out);
+
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0 2px 4px var(--colors-black);
+	}
+
+	@include tab-sm {
+		flex-direction: column;
+	}
+}
+
+.coursesContentImg {
+	display: block;
+	object-fit: cover;
+}
+
+.coursesContentCard {
+	padding: var(--card-padding);
+}
+
+.coursesCardLink {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+.coursesCardBadge {
+	padding: var(--badge-padding);
+	display: inline-block;
+	color: var(--colors-white);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
+	border-radius: var(--roundings-s);
+}
+
+.marketingBadge {
+	background: var(--colors-success);
+}
+
+.managementBadge {
+	background: var(--colors-info);
+}
+
+.hrBadge {
+	background: var(--colors-warning);
+}
+
+.designBadge {
+	background: var(--colors-pink, #f5222d);
+}
+
+.coursesCardTag {
+	padding: var(--space-lg) 0;
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
+	margin: 0;
+
+	span {
+		display: block;
+	}
+}
+
+.coursesCardInfo {
+	display: flex;
+	align-items: center;
+}
+
+.coursesCardPrice {
+	color: var(--colors-danger);
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
+	margin: 0;
+}
+
+.coursesCardSpeaker {
+	color: var(--colors-gray-700);
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	letter-spacing: var(--letter-spacing-none);
+	margin: 0;
+}
+
+.containDivider {
+	height: 14px;
+	padding: 0 var(--space-s);
+	color: var(--colors-gray-700);
+}
+
+.verticalDivider {
+	width: 1px;
+	background-color: var(--colors-gray-700);
+	height: 100%;
+}
+
+@keyframes slideFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+.moreCoursesBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--space-2xl);
+}
+
+.moreCourses {
+	color: var(--colors-gray-900);
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+}

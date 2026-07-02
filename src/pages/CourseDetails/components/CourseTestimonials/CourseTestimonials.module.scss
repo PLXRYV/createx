@@ -10,3 +10,13 @@
 	background-color: var(--colors-gray-200, #f4f5f7);
 	overflow: hidden;
 }
+
+.testimonialsContainer {
+	padding: 0 !important;
+	@include tab-md {
+		padding-bottom: var(--space-9xl);
+	}
+	@include tab-sm {
+		padding-bottom: var(--space-2xl);
+	}
+}
