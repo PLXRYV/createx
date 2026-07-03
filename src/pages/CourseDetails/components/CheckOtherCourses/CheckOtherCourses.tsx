@@ -6,8 +6,8 @@ import courseImg4 from '@assets/images/homepage/courses/course-4.jpg';
 import courseImg5 from '@assets/images/homepage/courses/course-5.jpg';
 import courseImg6 from '@assets/images/homepage/courses/course-6.jpg';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './CheckOtherCourses.module.scss';
 
@@ -72,6 +72,11 @@ const COURSES_DATA = [
 
 const CheckOtherCourses: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? COURSES_DATA.length - 2 : prev - 1));
@@ -123,7 +128,9 @@ const CheckOtherCourses: React.FC = () => {
                       )}
                     </h3>
                     <div className={styles.coursesCardInfo}>
-                      <p className={styles.coursesCardPrice}>{course.price}</p>
+                      <p className={styles.colorsDanger || styles.coursesCardPrice}>
+                        {course.price}
+                      </p>
                       <div className={styles.containDivider}>
                         <div className={styles.verticalDivider}></div>
                       </div>
@@ -135,10 +142,12 @@ const CheckOtherCourses: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={styles.moreCoursesBox}>
-          <p className={styles.moreCourses}>Do you want more courses?</p>
-          <ButtonPrimary>View all courses</ButtonPrimary>
-        </div>
+        <Link to="/courses">
+          <div className={styles.moreCoursesBox}>
+            <p className={styles.moreCourses}>Do you want more courses?</p>
+            <ButtonPrimary>View all courses</ButtonPrimary>
+          </div>
+        </Link>
       </div>
     </section>
   );

@@ -70,10 +70,10 @@
 	transition: background-color var(--transition-base, 0.2s ease);
 
 	&:hover {
-		background-color: var(--colors-primary-light, #ff3f3a1a);
+		background-color: var(--colors-primary);
 
 		svg, path {
-			fill: var(--colors-primary, #ff3f3a);
+			fill: var(--colors-white);
 		}
 	}
 
