@@ -1,5 +1,6 @@
 import courseImg1 from '@assets/images/homepage/courses/course-1.jpg';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import courseImg2 from '../../../../assets/images/homepage/courses/course-2.jpg';
 import courseImg3 from '../../../../assets/images/homepage/courses/course-3.jpg';
@@ -7,6 +8,76 @@ import courseImg4 from '../../../../assets/images/homepage/courses/course-4.jpg'
 import courseImg5 from '../../../../assets/images/homepage/courses/course-5.jpg';
 import courseImg6 from '../../../../assets/images/homepage/courses/course-6.jpg';
 import styles from './Courses.module.scss';
+
+export interface Course {
+  id: number;
+  image: string;
+  badge: string;
+  title: string | React.ReactNode;
+  price: string;
+  speaker: string;
+}
+
+export const defaultCourses: Course[] = [
+  {
+    id: 1,
+    image: courseImg1,
+    badge: 'Marketing',
+    title: 'The Ultimate Google Ads Training Course',
+    price: '$200',
+    speaker: 'Jerome Bell',
+  },
+  {
+    id: 2,
+    image: courseImg2,
+    badge: 'Management',
+    title: (
+      <>
+        <span>Product Management </span>
+        <span>Fundamentals</span>
+      </>
+    ),
+    price: '$480',
+    speaker: 'Marvin McKinney',
+  },
+  {
+    id: 3,
+    image: courseImg3,
+    badge: 'HR & Recruiting',
+    title: 'HR Management and Analytics',
+    price: '$200',
+    speaker: 'Leslie Alexander Li',
+  },
+  {
+    id: 4,
+    image: courseImg4,
+    badge: 'Marketing',
+    title: 'Brand Management & PR Communications',
+    price: '$530',
+    speaker: 'Kristin Watson',
+  },
+  {
+    id: 5,
+    image: courseImg5,
+    badge: 'Management',
+    title: (
+      <>
+        <span>Business Development </span>
+        <span>Management</span>
+      </>
+    ),
+    price: '$400',
+    speaker: 'Dianne Russell',
+  },
+  {
+    id: 6,
+    image: courseImg6,
+    badge: 'Design',
+    title: 'Graphic Design Basic',
+    price: '$500',
+    speaker: 'Guy Hawkins',
+  },
+];
 
 const Courses: React.FC = () => {
   return (
@@ -19,139 +90,35 @@ const Courses: React.FC = () => {
               Featured Courses
             </h6>
           </div>
-          <button className={styles.buttonSecondary}>View all courses</button>
+          <Link to="/courses">
+            <button className={styles.buttonSecondary}>View all courses</button>
+          </Link>
         </div>
         <div className={styles.coursesContent}>
-          <div className={styles.coursesContainerCard}>
-            <img className={styles.coursesContentImg} src={courseImg1} alt="Course Ads Training" />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>Marketing</p>
-                  <h3 className={styles.coursesCardTag}>The Ultimate Google Ads Training Course</h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$200</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
+          {defaultCourses.map((course) => (
+            <div key={course.id} className={styles.coursesContainerCard}>
+              <img
+                className={styles.coursesContentImg}
+                src={course.image}
+                alt={`Course ${course.speaker}`}
+              />
+              <div className={styles.coursesContentCard}>
+                <Link to={`/courses/${course.id}`} className={styles.coursesCardLink}>
+                  <div className={styles.coursesCardContent}>
+                    <p className={styles.coursesCardBadge}>{course.badge}</p>
+                    <h3 className={styles.coursesCardTag}>{course.title}</h3>
+                    <div className={styles.coursesCardInfo}>
+                      <p className={styles.coursesCardPrice}>{course.price}</p>
+                      <div className={styles.containDivider}>
+                        <div className={styles.verticalDivider}></div>
+                      </div>
+                      <p className={styles.coursesCardSpeaker}>by {course.speaker}</p>
                     </div>
-                    <p className={styles.coursesCardSpeaker}>by Jerome Bell</p>
                   </div>
-                </div>
-              </a>
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className={styles.coursesContainerCard}>
-            <img
-              className={styles.coursesContentImg}
-              src={courseImg2}
-              alt="Course Product Management"
-            />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>Management</p>
-                  <h3 className={styles.coursesCardTag}>
-                    <span>Product Management </span>
-                    <span>Fundamentals</span>
-                  </h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$480</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
-                    </div>
-                    <p className={styles.coursesCardSpeaker}>by Marvin McKinney</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className={styles.coursesContainerCard}>
-            <img className={styles.coursesContentImg} src={courseImg3} alt="Course HR Management" />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>HR & Recruiting</p>
-                  <h3 className={styles.coursesCardTag}>HR Management and Analytics</h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$200</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
-                    </div>
-                    <p className={styles.coursesCardSpeaker}>by Leslie Alexander Li</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className={styles.coursesContainerCard}>
-            <img
-              className={styles.coursesContentImg}
-              src={courseImg4}
-              alt="Course Brand Management"
-            />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>Marketing</p>
-                  <h3 className={styles.coursesCardTag}>Brand Management & PR Communications</h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$530</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
-                    </div>
-                    <p className={styles.coursesCardSpeaker}>by Kristin Watson</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className={styles.coursesContainerCard}>
-            <img
-              className={styles.coursesContentImg}
-              src={courseImg5}
-              alt="Course Business Development"
-            />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>Management</p>
-                  <h3 className={styles.coursesCardTag}>
-                    <span>Business Development </span>
-                    <span>Management</span>
-                  </h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$400</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
-                    </div>
-                    <p className={styles.coursesCardSpeaker}>by Dianne Russell</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div className={styles.coursesContainerCard}>
-            <img
-              className={styles.coursesContentImg}
-              src={courseImg6}
-              alt="Course Graphic Design"
-            />
-            <div className={styles.coursesContentCard}>
-              <a href="#" className={styles.coursesCardLink}>
-                <div className={styles.coursesCardContent}>
-                  <p className={styles.coursesCardBadge}>Design</p>
-                  <h3 className={styles.coursesCardTag}>Graphic Design Basic</h3>
-                  <div className={styles.coursesCardInfo}>
-                    <p className={styles.coursesCardPrice}>$500</p>
-                    <div className={styles.containDivider}>
-                      <div className={styles.verticalDivider}></div>
-                    </div>
-                    <p className={styles.coursesCardSpeaker}>by Guy Hawkins</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
