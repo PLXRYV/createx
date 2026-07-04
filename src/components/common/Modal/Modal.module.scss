@@ -252,8 +252,24 @@
 			align-items: center;
 			@include transition;
 
+			svg {
+				fill: currentColor;
+
+				path, circle, rect {
+					fill: currentColor;
+				}
+			}
+
 			&:hover {
 				color: var(--colors-primary);
+
+				svg {
+					fill: var(--colors-primary);
+
+					path, circle, rect {
+						fill: var(--colors-primary);
+					}
+				}
 			}
 		}
 
@@ -263,6 +279,7 @@
 			height: 24px;
 		}
 	}
+
 
 	@include tab-sm {
 		padding: 0;

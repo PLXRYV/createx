@@ -160,11 +160,26 @@
 			display: block;
 			width: 20px;
 			height: 20px;
+		}
+
+		svg {
 			fill: currentColor;
+
+			path, circle, rect {
+				fill: currentColor;
+			}
 		}
 
 		&:hover {
 			color: var(--colors-primary);
+
+			svg {
+				fill: var(--colors-primary);
+
+				path, circle, rect {
+					fill: var(--colors-primary);
+				}
+			}
 		}
 	}
 }
