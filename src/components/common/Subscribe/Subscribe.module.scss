@@ -1,5 +1,5 @@
-@use "../../../assets/style/variables/breakpoints" as *;
-@use "../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .subscribeSection {
 	background: url("@assets/images/common/subscribe/SubscribeBackground.jpg") center center no-repeat;
@@ -51,7 +51,9 @@
 		}
 	}
 	.subscribeFormBox {
+		display: flex;
 		width: 600px;
+		gap: var(--space-xl);
 		max-width: 100%;
 		z-index: 3;
 		@include tab-m {
@@ -90,7 +92,7 @@
 	}
 
 	.buttonPrimary {
-		padding: 0 var(--space-lg);
+		padding: 0 var(--space-3xl);
 		color: var(--colors-white);
 		background: linear-gradient(to top right, var(--colors-primary), var(--colors-orange));
 		border: none;
@@ -100,12 +102,6 @@
 		line-height: var(--btn-height-md);
 		cursor: pointer;
 		white-space: nowrap;
-		transition: all 0.4s;
-
-		&:hover {
-			transform: scale(0.95);
-			box-shadow: 0 2px 4px var(--colors-black);
-		}
 	}
 
 	.subscribeImageFirst,

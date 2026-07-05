@@ -1,4 +1,5 @@
 import { SubscribeIllustration } from '@assets/images/common/subscribe';
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React from 'react';
 
 import styles from './Subscribe.module.scss';
@@ -26,10 +27,10 @@ const Subscribe: React.FC = () => {
               className={styles.subscribeInput}
               required
             />
-            <button type="submit" className={styles.buttonPrimary}>
-              Subscribe
-            </button>
           </form>
+          <ButtonPrimary type="submit" className={styles.buttonPrimary}>
+            Subscribe
+          </ButtonPrimary>
         </div>
       </div>
       <SubscribeIllustration className={styles.subscribeImageFirst} />

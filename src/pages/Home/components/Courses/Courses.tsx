@@ -1,4 +1,6 @@
 import courseImg1 from '@assets/images/homepage/courses/course-1.jpg';
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
+import ButtonSecondary from '@components/ui/ButtonSecondary/ButtonSecondary';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -91,7 +93,7 @@ const Courses: React.FC = () => {
             </h6>
           </div>
           <Link to="/courses">
-            <button className={styles.buttonSecondary}>View all courses</button>
+            <ButtonSecondary className={styles.buttonSecondary}>View all courses</ButtonSecondary>
           </Link>
         </div>
         <div className={styles.coursesContent}>

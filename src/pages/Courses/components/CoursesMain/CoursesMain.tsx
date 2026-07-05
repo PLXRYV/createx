@@ -3,19 +3,36 @@ import '@assets/style/style.scss';
 import { ButtonSearch, Convert } from '@assets/images/courses';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React, { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import CoursesGrid, { defaultCourses } from '../CoursesGrid/CoursesGrid';
 import styles from './CoursesMain.module.scss';
 
 const CoursesMain: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('category') || 'all';
 
+  const [activeCategory, setActiveCategory] = useState<string>(categoryFromUrl);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [visibleCount, setVisibleCount] = useState<number>(9);
+
+  useEffect(() => {
+    setActiveCategory(categoryFromUrl);
+  }, [categoryFromUrl]);
 
   useEffect(() => {
     setVisibleCount(9);
   }, [activeCategory, searchQuery]);
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    if (category === 'all') {
+      searchParams.delete('category');
+    } else {
+      searchParams.set('category', category);
+    }
+    setSearchParams(searchParams);
+  };
 
   const countCourses = (category: string) => {
     if (category === 'all') return defaultCourses.length;
@@ -49,7 +66,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'all' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('all')}
+                  onClick={() => handleCategoryChange('all')}
                 >
                   All <span className={styles.navMainTag}>{countCourses('all')}</span>
                 </button>
@@ -57,7 +74,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'marketing' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('marketing')}
+                  onClick={() => handleCategoryChange('marketing')}
                 >
                   Marketing <span className={styles.navMainTag}>{countCourses('marketing')}</span>
                 </button>
@@ -65,7 +82,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'management' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('management')}
+                  onClick={() => handleCategoryChange('management')}
                 >
                   Management <span className={styles.navMainTag}>{countCourses('management')}</span>
                 </button>
@@ -73,7 +90,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'hr' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('hr')}
+                  onClick={() => handleCategoryChange('hr')}
                 >
                   HR & Recruiting <span className={styles.navMainTag}>{countCourses('hr')}</span>
                 </button>
@@ -81,7 +98,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'design' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('design')}
+                  onClick={() => handleCategoryChange('design')}
                 >
                   Design <span className={styles.navMainTag}>{countCourses('design')}</span>
                 </button>
@@ -89,7 +106,7 @@ const CoursesMain: React.FC = () => {
               <li className={styles.navMainButtonsList}>
                 <button
                   className={`${styles.navMainButton} ${activeCategory === 'development' ? styles.navMainButtonActive : ''}`}
-                  onClick={() => setActiveCategory('development')}
+                  onClick={() => handleCategoryChange('development')}
                 >
                   Development{' '}
                   <span className={styles.navMainTag}>{countCourses('development')}</span>

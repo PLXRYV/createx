@@ -9,6 +9,7 @@ import {
   PostCalendar,
   PostClock,
 } from '@assets/images/common/blog';
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React from 'react';
 
 import styles from './Blog.module.scss';
@@ -61,9 +62,9 @@ const BlogSection: React.FC = () => {
             <p className={styles.blogHeaderSubtitle}>OUR BLOG</p>
             <h2 className={styles.blogHeaderTitle}>Latest posts</h2>
           </div>
-          <button type="button" className={styles.buttonPrimary}>
+          <ButtonPrimary type="button" className={styles.buttonPrimary}>
             Go to blog
-          </button>
+          </ButtonPrimary>
         </div>
         <div className={styles.blogContent}>
           {POSTS_DATA.map((post) => {

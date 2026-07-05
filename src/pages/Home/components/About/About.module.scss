@@ -3,6 +3,7 @@
 
 .about {
 	padding-top: var(--section-padding-y);
+	position: relative;
 
 	&Box {
 		display: flex;
@@ -70,9 +71,6 @@
 			min-width: 16px;
 			min-height: 16px;
 			color: var(--colors-primary);
-		}
-
-		&Text {
 		}
 	}
 
@@ -201,16 +199,17 @@
 }
 
 .circlesImage {
-	&Container {
-
-	}
+	position: absolute;
+	right: 0;
+	top: 80%;
+	transform: translateY(-50%);
+	z-index: 1;
+	pointer-events: none;
 
 	@include tab-md {
-		transform: translateY(-200px);
 		width: 120px;
 	}
 	@include tab-m {
-		transform: translateY(-150px);
 		width: 100px;
 	}
 	@include tab-sm {

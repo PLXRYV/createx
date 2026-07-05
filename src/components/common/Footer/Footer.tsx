@@ -84,19 +84,19 @@ const Footer: React.FC = () => {
                     <p>COURSES</p>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <Link to="/courses">Marketing</Link>
+                    <Link to="/courses?category=marketing">Marketing</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <Link to="/courses">Management</Link>
+                    <Link to="/courses?category=management">Management</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <Link to="/courses">HR & Recruiting</Link>
+                    <Link to="/courses?category=hr">HR & Recruiting</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <Link to="/courses">Design</Link>
+                    <Link to="/courses?category=design">Design</Link>
                   </li>
                   <li className={styles.footerInfoLink}>
-                    <Link to="/courses">Development</Link>
+                    <Link to="/courses?category=development">Development</Link>
                   </li>
                 </ul>
                 <ul className={styles.footerInfo}>

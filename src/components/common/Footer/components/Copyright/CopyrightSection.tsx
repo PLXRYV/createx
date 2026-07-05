@@ -1,4 +1,5 @@
 import heartIcon from '@assets/images/common/footer/heart.svg';
+import { scrollToTopSmooth } from '@hooks/useScrollToTop';
 import React from 'react';
 
 import styles from './Copyright.module.scss';
@@ -14,9 +15,9 @@ const CopyrightSection: React.FC = () => {
             <img src={heartIcon} alt="Heart icon love" />
             <p className={styles.copyrightText}>by CreateX Studio</p>
           </div>
-          <a href="#" className={styles.btnUp}>
+          <button type="button" className={styles.btnUp} onClick={scrollToTopSmooth}>
             GO TO TOP
-          </a>
+          </button>
         </div>
       </div>
     </div>
