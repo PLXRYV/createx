@@ -1,5 +1,5 @@
-@use "../../../assets/style/variables/breakpoints" as *;
-@use "../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .blogSection {
 	padding: var(--space-9xl) 0 var(--section-padding-y);
@@ -39,7 +39,6 @@
 			padding-bottom: var(--space-s);
 			display: flex;
 			flex-direction: column;
-			align-items: center;
 			font-size: var(--font-size-base);
 			font-weight: var(--font-weight-bold);
 			line-height: var(--line-height-body);

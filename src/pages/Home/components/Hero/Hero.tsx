@@ -1,7 +1,8 @@
 import { IllustrationMain, MainPlayVideo } from '@assets/images/homepage/hero';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import ButtonSecondary from '@components/ui/ButtonSecondary/ButtonSecondary';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Hero.module.scss';
 
@@ -26,9 +27,9 @@ const Hero: React.FC<HeroProps> = ({ additionalButton }) => {
               <ButtonSecondary className={`${styles.button} ${styles.buttonSecondary}`}>
                 About Us
               </ButtonSecondary>
-              <ButtonPrimary onClick={() => console.log('Explore courses clicked')}>
-                Explore courses
-              </ButtonPrimary>
+              <Link to="/courses">
+                <ButtonPrimary>Explore courses</ButtonPrimary>
+              </Link>
             </div>
           </div>
           <div className={styles.mainIllustrationContainer}>

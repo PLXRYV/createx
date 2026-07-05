@@ -1,4 +1,5 @@
 import { AboutImage, Check, Circles, Dots } from '@assets/images/homepage/about';
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React from 'react';
 
 import styles from './About.module.scss';
@@ -34,9 +35,9 @@ const About: React.FC = () => {
                 ))}
               </ul>
             </div>
-            <button type="button" className={styles.buttonPrimary}>
+            <ButtonPrimary type="button" className={styles.buttonPrimary}>
               More about us
-            </button>
+            </ButtonPrimary>
           </div>
         </div>
       </div>

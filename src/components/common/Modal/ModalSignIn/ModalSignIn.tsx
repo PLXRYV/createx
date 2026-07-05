@@ -1,4 +1,5 @@
 import {
+  ClosedEyeIcon,
   CrossIcon,
   EyeIcon,
   FacebookIcon,
@@ -76,10 +77,14 @@ const ModalSignIn: React.FC<ModalSignInProps> = ({ onClose, onSwitchToSignUp }) 
               <button
                 type="button"
                 className={styles.formTogglePassword}
-                onClick={() => setShowPassword(!showPassword)}
+                onClick={() => setShowPassword((prev) => !prev)}
                 aria-label={showPassword ? 'Hide password' : 'Show password'}
               >
-                <EyeIcon className={styles.modalCloseIcon} />
+                {showPassword ? (
+                  <EyeIcon className={styles.modalCloseIcon} />
+                ) : (
+                  <ClosedEyeIcon className={styles.modalCloseIcon} />
+                )}
               </button>
             </div>
             <div className={styles.formOptions}>

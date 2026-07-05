@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './CourseTimer.module.scss';
 
 const CourseTimer: React.FC = () => {
+  const [isExpired, setIsExpired] = useState<boolean>(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 6,
     hours: 18,
@@ -28,6 +29,12 @@ const CourseTimer: React.FC = () => {
     }
 
     const targetTime = Number(deadlineStr);
+    const initialNow = new Date().getTime();
+
+    if (targetTime - initialNow <= 0) {
+      setIsExpired(true);
+      return;
+    }
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -35,7 +42,8 @@ const CourseTimer: React.FC = () => {
 
       if (difference <= 0) {
         clearInterval(timer);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        localStorage.removeItem(STORAGE_KEY);
+        setIsExpired(true);
       } else {
         const d = Math.floor(difference / (1000 * 60 * 60 * 24));
         const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -55,6 +63,10 @@ const CourseTimer: React.FC = () => {
   };
 
   const formatNumber = (num: number) => String(num).padStart(2, '0');
+
+  if (isExpired) {
+    return null;
+  }
 
   return (
     <section className={styles.courseTimerSection}>
