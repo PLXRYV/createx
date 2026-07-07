@@ -20,7 +20,7 @@ export interface EventItem {
   category: 'Online lecture' | 'Online workshop' | 'Online master-class';
 }
 
-const EVENTS_DATA: EventItem[] = [
+export const EVENTS_DATA: EventItem[] = [
   {
     id: 1,
     day: '05',
@@ -138,9 +138,9 @@ const EventsRoad: React.FC = () => {
   });
 
   const sortedEvents = [...filteredEvents].sort((a, b) => {
-    const months: { [key: string]: number } = { July: 7, August: 8 };
-    const dateA = months[a.month] * 100 + parseInt(a.day, 10);
-    const dateB = months[b.month] * 100 + parseInt(b.day, 10);
+    const monthsMap: { [key: string]: number } = { May: 5, June: 6, July: 7, August: 8 };
+    const dateA = (monthsMap[a.month] || 0) * 100 + parseInt(a.day, 10);
+    const dateB = (monthsMap[b.month] || 0) * 100 + parseInt(b.day, 10);
     return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
   });
 
@@ -282,7 +282,6 @@ const EventsRoad: React.FC = () => {
               ))
             )}
           </ul>
-
           <div className={styles.eventsPagination}>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
@@ -294,6 +293,7 @@ const EventsRoad: React.FC = () => {
                 {page}
               </button>
             ))}
+
             <button
               type="button"
               className={styles.eventsPaginationPage}
