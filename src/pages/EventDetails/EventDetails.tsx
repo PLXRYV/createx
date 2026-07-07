@@ -1,9 +1,14 @@
-import Header from '@components/common/Header/Header';
+import React from 'react';
 
-const EventDetails = () => {
+import EventAbout from './components/EventAbout/EventAbout';
+import EventMain from './components/EventMain/EventMain';
+import styles from './EventDetails.module.scss';
+
+const EventDetails: React.FC = () => {
   return (
-    <div>
-      <Header />
+    <div className={styles.eventDetailsPage}>
+      <EventMain />
+      <EventAbout />
     </div>
   );
 };

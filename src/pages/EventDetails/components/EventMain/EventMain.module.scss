@@ -1,0 +1,47 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.eventMain {
+	background: url('@assets/images/eventDetails/EventDetailsMainBackground.jpg') center center no-repeat;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.eventMainContent {
+	max-width: 1020px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: var(--space-9xl) 0;
+	margin: 0 auto;
+}
+
+.eventMainHeading {
+	color: var(--colors-primary);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.eventMainTitle {
+	font-size: var(--font-size-5xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-heading);
+	color: var(--colors-gray-900);
+	padding-top: var(--space-m);
+	margin: 0;
+
+	@include tab-md {
+		font-size: var(--font-size-4xl);
+	}
+
+	@include tab-sm {
+		font-size: var(--font-size-3xl);
+	}
+}
