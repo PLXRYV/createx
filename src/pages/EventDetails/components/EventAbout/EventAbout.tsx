@@ -1,5 +1,8 @@
+import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import styles from '@pages/EventDetails/components/EventAbout/EventAbout.module.scss';
+import { EVENTS_DATA } from '@pages/EventsList/EventsRoad';
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const TOPICS_DATA = [
   {
@@ -33,11 +36,18 @@ const TOPICS_DATA = [
 ];
 
 const EventAbout: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
   const [activeTopicId, setActiveTopicId] = useState<number | null>(1);
+
+  const event = EVENTS_DATA.find((item) => item.id === Number(id));
 
   const toggleTopic = (id: number) => {
     setActiveTopicId(activeTopicId === id ? null : id);
   };
+
+  if (!event) return null;
+
+  const displayPrice = event.id <= 2 ? 'Free' : `$${40 + event.id * 5}`;
 
   return (
     <section className={styles.eventAboutSection}>
@@ -71,6 +81,28 @@ const EventAbout: React.FC = () => {
               })}
             </ul>
           </div>
+
+          <aside className={styles.eventDescriptionContainer}>
+            <div className={styles.eventDates}>
+              <h3>Time</h3>
+              <p className={styles.eventTimeValue}>
+                {event.month} {event.day}, {event.time}
+              </p>
+              <p>Metus turpis sit lorem lacus, in elit tellus lacus.</p>
+            </div>
+
+            <div className={styles.eventPrice}>
+              <h3>PRICE</h3>
+              <p className={styles.priceValue}>{displayPrice}</p>
+              <p>
+                Nulla sem adipiscing adipiscing felis fringilla. Adipiscing mauris quam ac elit
+                tristique dis.
+              </p>
+            </div>
+            <ButtonPrimary type="button" className={styles.joinBtn}>
+              Join the event
+            </ButtonPrimary>
+          </aside>
         </div>
       </div>
     </section>
