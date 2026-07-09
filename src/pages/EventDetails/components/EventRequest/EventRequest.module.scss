@@ -1,0 +1,119 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.requestSection {
+	padding-bottom: var(--section-padding-y);
+}
+
+.requestGrid {
+	display: flex;
+	gap: var(--space-9xl);
+
+	@include tab-md {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--about-box-gap, 130px);
+	}
+}
+
+.formContainer {
+	flex: 1;
+	width: 100%;
+	max-width: 485px;
+}
+
+.requestHeader {
+	margin-bottom: var(--space-3xl);
+}
+
+.requestSubtitle {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-base);
+	letter-spacing: 1px;
+	color: var(--colors-gray-900);
+	text-transform: uppercase;
+	margin: 0 0 var(--space-xs) 0;
+}
+
+.requestTitle {
+	font-size: var(--font-size-4xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-heading);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.requestForm {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xl);
+}
+
+.formField {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+.formLabel {
+	font-size: var(--font-size-sm);
+	color: var(--colors-gray-800);
+	font-weight: var(--font-weight-regular);
+}
+
+.formInput {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: var(--space-m, 13px) var(--space-l, 16px);
+	height: var(--input-height, 52px);
+	border: 1px solid var(--colors-gray-300);
+	border-radius: var(--border-radius-base, 4px);
+	font-size: var(--font-size-base);
+	color: var(--colors-gray-900);
+	background-color: var(--colors-white);
+	font-family: inherit;
+	transition: border-color var(--transition-base, 0.2s ease);
+
+	&::placeholder {
+		color: var(--colors-gray-600);
+	}
+
+	&:focus {
+		outline: none;
+		border-color: var(--colors-primary);
+	}
+}
+
+.formSubmitBtn {
+	width: 100%;
+	margin-top: var(--space-s);
+}
+
+.formNote {
+	font-size: var(--font-size-xs);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-700);
+	margin: 0;
+}
+
+.imageBlock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	width: 100%;
+	max-width: 492px;
+
+	@include tab-md {
+		display: none;
+	}
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

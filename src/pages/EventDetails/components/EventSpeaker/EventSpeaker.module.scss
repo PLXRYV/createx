@@ -1,8 +1,8 @@
-@use "../../../../assets/style/variables/breakpoints" as *;
-@use "../../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .courseCuratorSection {
-	padding: var(--section-padding-y) 0;
+	padding-bottom: var(--section-padding-y);
 	background-color: var(--colors-white);
 }
 

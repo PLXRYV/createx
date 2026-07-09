@@ -1,0 +1,216 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.moreEventsSection {
+	padding-top: var(--space-8xl);
+	padding-bottom: var(--section-padding-y);
+	background-color: var(--colors-gray-200);
+}
+
+.sectionHeader {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-xl);
+	margin-bottom: var(--space-4xl);
+
+	@include tab-sm {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
+
+.titleBlock {
+	.subtitle {
+		font-size: var(--font-size-base);
+		font-weight: var(--font-weight-bold);
+		line-height: var(--line-height-base);
+		letter-spacing: 1px;
+		color: var(--colors-gray-900);
+		text-transform: uppercase;
+		margin: 0 0 var(--space-xs) 0;
+	}
+
+	.title {
+		font-size: var(--font-size-5xl);
+		font-weight: var(--font-weight-black);
+		line-height: var(--line-height-heading);
+		color: var(--colors-gray-900);
+		margin: 0;
+	}
+}
+
+.sliderArrows {
+	display: flex;
+	gap: var(--space-m, 12px);
+}
+
+.arrowBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: background-color var(--transition-base, 0.2s ease);
+
+	&:hover {
+		background-color: var(--colors-primary);
+
+		svg, path {
+			fill: var(--colors-white);
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.eventsGridWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	gap: var(--space-2xl);
+	margin-bottom: var(--space-5xl);
+
+	@include tab-sm {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include desk-m {
+		grid-template-columns: 1fr;
+	}
+}
+
+.eventCard {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: var(--space-2xl);
+	background-color: var(--colors-white);
+	border: 1px solid var(--colors-gray-300);
+	border-radius: var(--roundings-s);
+	min-height: 320px;
+	height: 100%;
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+	animation: slideFadeIn var(--transition-base, 0.3s ease-in-out);
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 80px 80px -40px color-mix(in srgb, var(--colors-primary) 10%, transparent);
+	}
+}
+
+.eventDateBlock {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	gap: var(--space-s);
+	padding-bottom: var(--space-m);
+}
+
+.eventDay {
+	font-size: var(--font-size-5xl);
+	font-weight: var(--font-weight-black);
+	color: var(--colors-primary);
+	line-height: var(--line-height-heading);
+}
+
+.eventMonthTime {
+	display: flex;
+	flex-direction: row;
+	gap: var(--space-s);
+	align-items: baseline;
+}
+
+.eventMonth {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	color: var(--colors-gray-900);
+}
+
+.eventTime {
+	font-size: var(--font-size-sm);
+	color: var(--colors-gray-700);
+	opacity: 0.6;
+}
+
+.eventInfoBlock {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+	margin-bottom: var(--space-xl);
+}
+
+.eventTitle {
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.eventCategory {
+	font-size: var(--font-size-sm);
+	color: var(--colors-gray-600);
+	margin: 0;
+}
+
+.eventBtnLink {
+	margin-top: auto;
+	width: 100%;
+	text-align: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-m) var(--space-2xl);
+	border: 1px solid var(--colors-primary);
+	border-radius: var(--roundings-s);
+	color: var(--colors-primary);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-bold);
+	text-decoration: none;
+	white-space: nowrap;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: var(--colors-primary);
+		color: var(--colors-white);
+	}
+}
+
+.sectionFooter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-xl);
+	padding-top: var(--space-lg);
+
+	@include mob-m {
+		flex-direction: column;
+		gap: var(--space-m);
+	}
+}
+
+.footerText {
+	font-size: var(--font-size-2xl);
+	font-weight: var(--font-weight-bold);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+@keyframes slideFadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

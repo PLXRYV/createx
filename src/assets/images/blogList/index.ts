@@ -1,0 +1,16 @@
+export { default as ArrowRightGray } from './ArrowRightGray.svg?react';
+export { default as ArrowRightPrimary } from './ArrowRightPrimary.svg?react';
+export { default as CalendarImage } from './CalendarImage.svg?react';
+export { default as ClockImage } from './ClockImage.svg?react';
+export { default as FilesImage } from './FilesImage.svg?react';
+export { default as ImageBlogEighth } from './ImageBlogEighth.jpg';
+export { default as ImageBlogFifth } from './ImageBlogFifth.jpg';
+export { default as ImageBlogFirst } from './ImageBlogFirst.jpg';
+export { default as ImageBlogFourth } from './ImageBlogFourth.jpg';
+export { default as ImageBlogSecond } from './ImageBlogSecond.jpg';
+export { default as ImageBlogSeventh } from './ImageBlogSeventh.jpg';
+export { default as ImageBlogSixth } from './ImageBlogSixth.jpg';
+export { default as ImageBlogThird } from './ImageBlogThird.jpg';
+export { default as MicImage } from './MicImage.svg?react';
+export { default as PlayImage } from './PlayImage.svg?react';
+export { default as SearchImage } from './SearchImage.svg?react';

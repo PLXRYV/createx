@@ -4,9 +4,13 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
+  TeamImageEighth,
+  TeamImageFifth,
   TeamImageFirst,
   TeamImageFourth,
   TeamImageSecond,
+  TeamImageSeventh,
+  TeamImageSixth,
   TeamImageThird,
 } from '@assets/images/common/team';
 import TestimonialsSection from '@components/common/TestimonialsSection/TestimonialsSection';
@@ -31,15 +35,27 @@ const TUTORS_DATA = [
   },
   {
     id: 5,
-    name: 'Marvin McKinney',
-    role: 'PM, Curator of Management Course',
-    img: TeamImageFourth,
+    name: 'Leslie Alexander Li',
+    role: 'Curator of HR & Recruting Course',
+    img: TeamImageFifth,
   },
   {
     id: 6,
-    name: 'Marvin McKinney',
-    role: 'PM, Curator of Management Course',
-    img: TeamImageFourth,
+    name: 'Kathryn Murphy',
+    role: 'Analyst and Marketing specialist',
+    img: TeamImageSixth,
+  },
+  {
+    id: 7,
+    name: 'Brooklyn Simmons',
+    role: 'Curator of Development Course',
+    img: TeamImageSeventh,
+  },
+  {
+    id: 8,
+    name: 'Cody Fisher',
+    role: 'UX Designer, Curator of Design Course',
+    img: TeamImageEighth,
   },
 ];
 

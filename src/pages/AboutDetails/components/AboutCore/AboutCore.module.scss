@@ -1,0 +1,110 @@
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
+
+.coreSection {
+	padding-bottom: var(--section-padding-y);
+	background-color: var(--colors-white);
+}
+
+.coreContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.coreHeader {
+	margin-bottom: var(--space-4xl);
+}
+
+.coreSubtitle {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-base);
+	letter-spacing: 1px;
+	color: var(--colors-gray-900);
+	text-transform: uppercase;
+	margin: 0 0 var(--space-xs) 0;
+}
+
+.coreTitle {
+	font-size: var(--font-size-5xl);
+	font-weight: var(--font-weight-black);
+	line-height: var(--line-height-heading);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.coreGrid {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0;
+
+
+
+	@include tab-md {
+		flex-direction: column;
+		width: 100%;
+		gap: var(--space-2xl);
+	}
+}
+
+.coreCard {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 var(--space-l);
+	box-sizing: border-box;
+}
+
+.iconWrapper {
+	margin-bottom: var(--space-xl);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 48px;
+
+	svg, img {
+		display: block;
+		width: auto;
+		height: auto;
+	}
+}
+
+.cardContent {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-xs);
+}
+
+.cardTitle {
+	font-size: var(--font-size-xl);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-900);
+	margin: 0;
+}
+
+.cardText {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-body);
+	color: var(--colors-gray-700);
+	margin: 0;
+}
+
+.verticalDivider {
+	display: block;
+	width: 1px;
+	height: 160px;
+	background-color: var(--colors-gray-300);
+	align-self: center;
+	flex-shrink: 0;
+
+	@include tab-md {
+		display: none;
+	}
+}
