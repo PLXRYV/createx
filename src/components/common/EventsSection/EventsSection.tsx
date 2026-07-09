@@ -1,5 +1,6 @@
 import { EventsCircles, EventsDots } from '@assets/images/homepage/events';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Events.module.scss';
 
@@ -14,7 +15,6 @@ const EVENTS_DATA = [
     type: 'Online master-class',
     isLeftAligned: false,
   },
-
   {
     id: 2,
     day: '24',
@@ -25,7 +25,6 @@ const EVENTS_DATA = [
     type: 'Online lecture',
     isLeftAligned: true,
   },
-
   {
     id: 3,
     day: '16',
@@ -69,9 +68,11 @@ const EventsSection: React.FC = () => {
                     {event.type}
                   </div>
                   <div className={styles.eventsLinkButton}>
-                    <button type="button" className={styles.eventsButton}>
-                      View More
-                    </button>
+                    <Link to={`/events/${event.id}`}>
+                      <button type="button" className={styles.eventsButton}>
+                        View More
+                      </button>
+                    </Link>
                   </div>
                 </li>
               ))}
@@ -79,9 +80,11 @@ const EventsSection: React.FC = () => {
           </div>
           <div className={styles.eventsMore}>
             <p className={styles.eventsMoreText}>Do you want more</p>
-            <button type="button" className={styles.buttonPrimary}>
-              Explore all events
-            </button>
+            <Link to="/events">
+              <button type="button" className={styles.buttonPrimary}>
+                Explore all events
+              </button>
+            </Link>
           </div>
         </div>
       </div>

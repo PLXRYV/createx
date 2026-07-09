@@ -1,4 +1,9 @@
+export { default as ArrowLeft } from './ArrowLeft.svg?react';
+export { default as ArrowRight } from './ArrowRight.svg?react';
+export { default as CharacterRequest } from './CharacterRequest.svg?react';
 export { default as CirclesImg } from './CirclesImg.svg?react';
+export { default as EventCheck } from './EventCheck.svg?react';
+export { default as IllustrationNewsletter } from './EventIllustrationNewsletter.svg?react';
 export { default as FacebookLogo } from './FacebookLogo.svg?react';
 export { default as InstagramLogo } from './InstagramLogo.svg?react';
 export { default as LinkedInLogo } from './LinkedInLogo.svg?react';
