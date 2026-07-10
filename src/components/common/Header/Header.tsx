@@ -90,7 +90,11 @@ const Header: React.FC<HeaderProps> = () => {
             </nav>
           </div>
           <div className={styles.headerInfoActions}>
-            <ButtonPrimary className={styles.headerGetBtn}> Get Consultation </ButtonPrimary>
+            <Link to="/contacts" className={styles.headerBtnLink}>
+              <ButtonPrimary type="button" className={styles.headerGetBtn}>
+                Get Consultation
+              </ButtonPrimary>
+            </Link>
             <div className={styles.headerAuth}>
               <button
                 type="button"

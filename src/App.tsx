@@ -2,7 +2,9 @@ import '@assets/style/style.scss';
 
 import { useScrollToTop } from '@hooks/useScrollToTop';
 import AboutDetails from '@pages/AboutDetails/AboutDetails';
+import BlogDetails from '@pages/BlogDetails/BlogDetails';
 import BlogList from '@pages/BlogList/BlogList';
+import Contacts from '@pages/Contacts/Contacts';
 import CourseDetails from '@pages/CourseDetails/CourseDetails';
 import Courses from '@pages/Courses/Courses';
 import EventDetails from '@pages/EventDetails/EventDetails';
@@ -23,6 +25,8 @@ const AppRoutes = () => {
       <Route path="/courses/:id" element={<CourseDetails />} />
       <Route path="/about" element={<AboutDetails />} />
       <Route path="/blog" element={<BlogList />} />
+      <Route path="/blog/:id" element={<BlogDetails />} />
+      <Route path="/contacts" element={<Contacts />} />
     </Routes>
   );
 };

@@ -1,0 +1,14 @@
+export { default as ArrowLeft } from './ArrowLeft.svg?react';
+export { default as ArrowRight } from './ArrowRight.svg?react';
+export { default as AuthorImage } from './AuthorImage.jpg';
+export { default as CalendarImage } from './CalendarImage.svg?react';
+export { default as Check } from './Check.svg?react';
+export { default as ClockImage } from './ClockImage.svg?react';
+export { default as FacebookLogo } from './FacebookLogo.svg?react';
+export { default as FilesImage } from './FilesImage.svg?react';
+export { default as InstagramLogo } from './InstagramLogo.svg?react';
+export { default as LinkedInLogo } from './LinkedInLogo.svg?react';
+export { default as MicImage } from './MicImage.svg?react';
+export { default as PlayImage } from './PlayImage.svg?react';
+export { default as SearchImage } from './SearchImage.svg?react';
+export { default as TwitterLogo } from './TwitterLogo.svg?react';

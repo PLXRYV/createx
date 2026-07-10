@@ -24,9 +24,11 @@ const Hero: React.FC<HeroProps> = ({ additionalButton }) => {
             </div>
             <h1 className={styles.mainInfoTitle}>Enjoy studying with Createx Online Courses</h1>
             <div className={styles.mainInfoActions}>
-              <ButtonSecondary className={`${styles.button} ${styles.buttonSecondary}`}>
-                About Us
-              </ButtonSecondary>
+              <Link to="/about" className={styles.aboutLinkWrapper}>
+                <ButtonSecondary type="button" className={styles.buttonSecondary}>
+                  About Us
+                </ButtonSecondary>
+              </Link>
               <Link to="/courses">
                 <ButtonPrimary>Explore courses</ButtonPrimary>
               </Link>

@@ -11,6 +11,7 @@ import {
 } from '@assets/images/common/blog';
 import ButtonPrimary from '@components/ui/ButtonPrimary/ButtonPrimary';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Blog.module.scss';
 
@@ -62,9 +63,11 @@ const BlogSection: React.FC = () => {
             <p className={styles.blogHeaderSubtitle}>OUR BLOG</p>
             <h2 className={styles.blogHeaderTitle}>Latest posts</h2>
           </div>
-          <ButtonPrimary type="button" className={styles.buttonPrimary}>
-            Go to blog
-          </ButtonPrimary>
+          <Link to="/blog">
+            <ButtonPrimary type="button" className={styles.buttonPrimary}>
+              Go to blog
+            </ButtonPrimary>
+          </Link>
         </div>
         <div className={styles.blogContent}>
           {POSTS_DATA.map((post) => {
@@ -103,10 +106,10 @@ const BlogSection: React.FC = () => {
                   </div>
                 </div>
                 <div className={styles.blogPostFooter}>
-                  <a href="#" className={styles.blogPostLink}>
+                  <Link to={`/blog/${post.id}`} className={styles.blogPostLink}>
                     <p className={styles.postFooterText}>{post.actionText}</p>
                     <PostArrow className={styles.postArrow} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             );
