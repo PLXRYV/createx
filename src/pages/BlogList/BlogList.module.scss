@@ -179,12 +179,11 @@
 	}
 }
 
-
 .blogSearchInput {
 	width: 100%;
 	min-width: 240px;
 	min-height: 44px;
-	padding: var(--space-m) var(--space-l);
+	padding: var(--space-m) var(--space-md);
 	border: 1px solid var(--colors-gray-400);
 	border-radius: var(--roundings-s);
 	font-size: var(--font-size-sm);
@@ -195,6 +194,10 @@
 	&:focus {
 		border-color: var(--colors-primary);
 	}
+}
+
+.blogSearchBtn {
+	transform: translateX(-30px);
 }
 
 .blogRowsContainer {
@@ -418,4 +421,73 @@
 	font-size: var(--font-size-lg);
 	color: var(--colors-gray-600);
 	width: 100%;
+}
+
+.blogPagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-m);
+	margin-top: var(--space-5xl);
+	width: 100%;
+}
+
+.paginationPage {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font-family: inherit;
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-bold);
+	color: var(--colors-gray-800);
+	cursor: pointer;
+	min-width: 24px;
+	height: 24px;
+	transition: color var(--transition-base, 0.2s ease);
+
+	&:hover {
+		color: var(--colors-primary);
+	}
+
+	&.isActive {
+		color: var(--colors-primary);
+		pointer-events: none;
+	}
+}
+
+.paginationNextBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	transition: transform var(--transition-base, 0.2s ease);
+
+	&:hover:not(:disabled) {
+		transform: translateX(4px);
+
+		svg, path {
+			fill: var(--colors-primary);
+		}
+	}
+
+	&:disabled {
+		opacity: 0.3;
+		cursor: not-allowed;
+	}
+
+	svg {
+		display: block;
+		width: 16px;
+		height: 16px;
+	}
 }

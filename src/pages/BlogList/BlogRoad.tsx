@@ -16,7 +16,6 @@ import {
   PlayImage,
   SearchImage,
 } from '@assets/images/blogList';
-import { ButtonSearch } from '@assets/images/courses';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +34,7 @@ export interface PostItem {
   actionText: string;
 }
 
-const POSTS_DATA: PostItem[] = [
+export const POSTS_DATA: PostItem[] = [
   {
     id: 1,
     img: ImageBlogFirst,
@@ -134,10 +133,47 @@ const POSTS_DATA: PostItem[] = [
   },
 ];
 
+const badges = [MicImage, FilesImage, PlayImage];
+const badgeTexts = ['Podcast', 'Article', 'Video'];
+const directions = ['Marketing', 'Development', 'Design', 'HR & Recruiting', 'Management'];
+const images = [
+  ImageBlogFirst,
+  ImageBlogSecond,
+  ImageBlogThird,
+  ImageBlogFourth,
+  ImageBlogFifth,
+  ImageBlogSixth,
+  ImageBlogSeventh,
+  ImageBlogEighth,
+];
+const actions = ['Listen', 'Read', 'Watch'];
+
+for (let i = 9; i <= 32; i++) {
+  const randIndex = i % 3;
+  const dirIndex = i % 5;
+  const imgIndex = i % 8;
+
+  POSTS_DATA.push({
+    id: i,
+    img: images[imgIndex],
+    badgeIcon: badges[randIndex],
+    badgeText: badgeTexts[randIndex],
+    direction: directions[dirIndex],
+    date: `July ${(i % 28) + 1}, 2025`,
+    time: randIndex === 1 ? null : `${30 + (i % 20)} min`,
+    title: `Premium School Journal Post Vol. ${i}: Core Insights and Expert Guidelines.`,
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...',
+    actionText: actions[randIndex],
+  });
+}
+
 const BlogRoad: React.FC = () => {
   const [activeType, setActiveType] = useState<string>('All');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
+  const [searchInputValue, setSearchInputValue] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const filteredPosts = POSTS_DATA.filter((post) => {
     const matchesType = activeType === 'All' || post.badgeText === activeType;
@@ -147,6 +183,30 @@ const BlogRoad: React.FC = () => {
       post.desc.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesType && matchesCategory && matchesSearch;
   });
+
+  const postsPerPage = 8;
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage) || 1;
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPagePosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handleSearchSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSearchQuery(searchInputValue);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      handlePageChange(currentPage + 1);
+    }
+  };
 
   return (
     <section className={styles.blogRoadSection}>
@@ -165,7 +225,10 @@ const BlogRoad: React.FC = () => {
                 <button
                   type="button"
                   className={`${styles.typeBtn} ${activeType === 'All' ? styles.typeBtnActive : ''}`}
-                  onClick={() => setActiveType('All')}
+                  onClick={() => {
+                    setActiveType('All');
+                    setCurrentPage(1);
+                  }}
                 >
                   All
                 </button>
@@ -174,7 +237,10 @@ const BlogRoad: React.FC = () => {
                 <button
                   type="button"
                   className={`${styles.typeBtn} ${activeType === 'Article' ? styles.typeBtnActive : ''}`}
-                  onClick={() => setActiveType('Article')}
+                  onClick={() => {
+                    setActiveType('Article');
+                    setCurrentPage(1);
+                  }}
                 >
                   <FilesImage className={styles.typeIcon} /> Articles
                 </button>
@@ -183,7 +249,10 @@ const BlogRoad: React.FC = () => {
                 <button
                   type="button"
                   className={`${styles.typeBtn} ${activeType === 'Video' ? styles.typeBtnActive : ''}`}
-                  onClick={() => setActiveType('Video')}
+                  onClick={() => {
+                    setActiveType('Video');
+                    setCurrentPage(1);
+                  }}
                 >
                   <PlayImage className={styles.typeIcon} /> Videos
                 </button>
@@ -192,7 +261,10 @@ const BlogRoad: React.FC = () => {
                 <button
                   type="button"
                   className={`${styles.typeBtn} ${activeType === 'Podcast' ? styles.typeBtnActive : ''}`}
-                  onClick={() => setActiveType('Podcast')}
+                  onClick={() => {
+                    setActiveType('Podcast');
+                    setCurrentPage(1);
+                  }}
                 >
                   <MicImage className={styles.typeIcon} /> Podcasts
                 </button>
@@ -207,7 +279,10 @@ const BlogRoad: React.FC = () => {
                 <select
                   className={styles.blogSelect}
                   value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  onChange={(e) => {
+                    setSelectedCategory(e.target.value);
+                    setCurrentPage(1);
+                  }}
                 >
                   <option value="all">all themes</option>
                   <option value="Design">Design</option>
@@ -218,19 +293,22 @@ const BlogRoad: React.FC = () => {
                 </select>
               </li>
               <li className={styles.searchFilterItem}>
-                <form className={styles.blogSearchForm} onSubmit={(e) => e.preventDefault()}>
+                <form className={styles.blogSearchForm} onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
                     className={styles.blogSearchInput}
-                    placeholder="Search blog"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search blog..."
+                    value={searchInputValue}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setSearchInputValue(value);
+                      if (value.trim() === '') {
+                        setSearchQuery('');
+                        setCurrentPage(1);
+                      }
+                    }}
                   />
-                  <button
-                    className={styles.blogSortSearchBtn}
-                    type="submit"
-                    aria-label="Submit search"
-                  >
+                  <button className={styles.blogSearchBtn} type="submit">
                     <SearchImage />
                   </button>
                 </form>
@@ -238,14 +316,13 @@ const BlogRoad: React.FC = () => {
             </ul>
           </nav>
         </div>
-
         <div className={styles.blogRowsContainer}>
-          {filteredPosts.length === 0 ? (
+          {currentPagePosts.length === 0 ? (
             <div className={styles.noPosts}>No articles found matching your criteria.</div>
           ) : (
             <>
               <div className={styles.blogStandardGrid}>
-                {filteredPosts.slice(0, 3).map((post) => {
+                {currentPagePosts.slice(0, 3).map((post) => {
                   const BadgeIconComponent = post.badgeIcon;
                   return (
                     <div key={post.id} className={styles.blogPostCard}>
@@ -272,7 +349,7 @@ const BlogRoad: React.FC = () => {
                         <div className={styles.blogPostFooter}>
                           <Link to={`/blog/${post.id}`} className={styles.blogPostLink}>
                             <span className={styles.postFooterText}>{post.actionText}</span>
-                            <ArrowRightPrimary className={styles.postArrow} />
+                            <ArrowRightPrimary className={styles.postArrowHover} />
                           </Link>
                         </div>
                       </div>
@@ -280,8 +357,9 @@ const BlogRoad: React.FC = () => {
                   );
                 })}
               </div>
+
               <div className={styles.blogMiddleRow}>
-                {filteredPosts.slice(3, 4).map((post) => {
+                {currentPagePosts.slice(3, 4).map((post) => {
                   const BadgeIconComponent = post.badgeIcon;
                   return (
                     <div key={post.id} className={styles.blogHorizontalCard}>
@@ -308,14 +386,15 @@ const BlogRoad: React.FC = () => {
                         <div className={styles.blogPostFooter}>
                           <Link to={`/blog/${post.id}`} className={styles.blogPostLink}>
                             <span className={styles.postFooterText}>{post.actionText}</span>
-                            <ArrowRightPrimary className={styles.postArrow} />
+                            <ArrowRightPrimary className={styles.postArrowHover} />
                           </Link>
                         </div>
                       </div>
                     </div>
                   );
                 })}
-                {filteredPosts.slice(4, 5).map((post) => {
+
+                {currentPagePosts.slice(4, 5).map((post) => {
                   const BadgeIconComponent = post.badgeIcon;
                   return (
                     <div key={post.id} className={styles.blogWideCard}>
@@ -351,7 +430,7 @@ const BlogRoad: React.FC = () => {
                         <div className={styles.blogPostFooter}>
                           <Link to={`/blog/${post.id}`} className={styles.blogPostLink}>
                             <span className={styles.postFooterText}>{post.actionText}</span>
-                            <ArrowRightPrimary className={styles.postArrow} />
+                            <ArrowRightPrimary className={styles.postArrowHover} />
                           </Link>
                         </div>
                       </div>
@@ -359,8 +438,9 @@ const BlogRoad: React.FC = () => {
                   );
                 })}
               </div>
+
               <div className={styles.blogStandardGrid}>
-                {filteredPosts.slice(5, 8).map((post) => {
+                {currentPagePosts.slice(5, 8).map((post) => {
                   const BadgeIconComponent = post.badgeIcon;
                   return (
                     <div key={post.id} className={styles.blogPostCard}>
@@ -396,7 +476,7 @@ const BlogRoad: React.FC = () => {
                         <div className={styles.blogPostFooter}>
                           <Link to={`/blog/${post.id}`} className={styles.blogPostLink}>
                             <span className={styles.postFooterText}>{post.actionText}</span>
-                            <ArrowRightPrimary className={styles.postArrow} />
+                            <ArrowRightPrimary className={styles.postArrowHover} />
                           </Link>
                         </div>
                       </div>
@@ -406,6 +486,29 @@ const BlogRoad: React.FC = () => {
               </div>
             </>
           )}
+        </div>
+
+        <div className={styles.blogPagination}>
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              type="button"
+              className={`${styles.paginationPage} ${currentPage === page ? styles.isActive : ''}`}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            type="button"
+            className={styles.paginationNextBtn}
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+          >
+            <ArrowRightGray />
+          </button>
         </div>
       </div>
     </section>

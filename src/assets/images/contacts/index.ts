@@ -1,0 +1,11 @@
+export { default as Chat } from './Chat.svg?react';
+export { default as Facebook } from './Facebook.svg?react';
+export { default as Illustration } from './Illustration.jpg';
+export { default as Instagram } from './Instagram.svg?react';
+export { default as LinkedIn } from './LinkedIn.svg?react';
+export { default as Map } from './Map.jpg';
+export { default as Outline } from './Outline.svg?react';
+export { default as Phone } from './Phone.svg?react';
+export { default as Telegram } from './Telegram.svg?react';
+export { default as Twitter } from './Twitter.svg?react';
+export { default as YouTube } from './YouTube.svg?react';
