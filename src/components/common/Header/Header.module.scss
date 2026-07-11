@@ -1,6 +1,6 @@
 @use "/src/assets/style/style.scss" as *;
-@use "../../../assets/style/variables/breakpoints" as *;
-@use "../../../assets/style/variables/mixins" as *;
+@use "@assets/style/variables/breakpoints" as *;
+@use "@assets/style/variables/mixins" as *;
 
 .headerBg {
 	background: url("@assets/images/common/header/BackgroundHead.jpg") center center no-repeat;
@@ -135,6 +135,11 @@
 		display: flex;
 		gap: 5px;
 	}
+	span {
+		@include tab-sm{
+			font-size: var(--font-size-sm);
+		};
+	}
 }
 
 .headerAuthBtn {
@@ -158,6 +163,10 @@
 	@include tab-m {
 		font-size: var(--font-size-xl);
 	}
+
+	@include tab-sm{
+		font-size: var(--font-size-sm);
+	};
 }
 
 .headerAuthIcon {

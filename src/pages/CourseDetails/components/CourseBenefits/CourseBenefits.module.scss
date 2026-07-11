@@ -10,6 +10,10 @@
 	display: flex;
 	gap: var(--space-4xl);
 
+	@include desk-sm {
+		display: block;
+	}
+
 	@include tab-md {
 		flex-direction: row;
 		justify-content: space-between;
