@@ -48,6 +48,13 @@
 		@include desk-m {
 			grid-template-columns: 1fr;
 			gap: var(--space-lg);
+
+		}
+
+		@include tab-sm {
+			flex-direction: column;
+			max-width: 300px;
+			margin: 0 auto;
 		}
 	}
 

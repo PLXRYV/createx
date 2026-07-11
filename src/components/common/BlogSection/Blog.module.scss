@@ -32,7 +32,8 @@
 	.blogHeader {
 		@include tab-md {
 			display: flex;
-			text-align: center;
+			align-items: center;
+			flex-direction: column;
 		}
 
 		&Subtitle {
@@ -66,6 +67,7 @@
 
 	.buttonPrimary {
 		@include tab-md {
+
 			transform: translateY(0);
 			align-self: flex-start;
 		}
@@ -75,7 +77,6 @@
 			font-size: var(--font-size-lg);
 		}
 		@include tab-sm {
-			padding: var(--space-m) var(--space-xl);
 			font-size: var(--font-size-sm);
 		}
 	}

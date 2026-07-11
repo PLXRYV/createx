@@ -15,6 +15,7 @@
 	}
 
 	@include tab-sm {
+		max-width: 300px;
 		grid-template-columns: repeat(1, minmax(280px, 390px));
 		justify-content: center;
 		gap: 20px;
