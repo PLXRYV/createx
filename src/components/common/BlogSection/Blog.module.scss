@@ -93,6 +93,10 @@
 			text-align: center;
 			gap: var(--space-md);
 		}
+		@include mob-m {
+			max-width: 300px;
+			margin: 0 auto;
+		}
 	}
 
 	.blogPost {

@@ -207,6 +207,11 @@
 	width: 100%;
 	max-width: 1230px;
 	margin: 0 auto;
+
+	@include mob-m {
+		max-width: 300px;
+		margin: 0 auto;
+	}
 }
 
 .blogStandardGrid {
