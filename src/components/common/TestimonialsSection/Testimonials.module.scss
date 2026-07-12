@@ -176,6 +176,7 @@
 				text-align: center;
 			}
 			@include mob-m {
+				margin: 0 auto;
 				height: 50%;
 				width: 50%;
 			}

@@ -45,6 +45,11 @@
 	@include desk-m {
 		grid-template-columns: 1fr;
 	}
+
+	@include mob-m {
+		max-width: 300px;
+		margin: 0 auto;
+	}
 }
 
 .directionCard {
